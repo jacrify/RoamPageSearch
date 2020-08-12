@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.jc.roampagesearch</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>3D04A873-9014-4A2A-BA23-1A7D1AF25369</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EE341FD2-38E2-440A-9072-1AA4B9DF1A25</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>4574976C-551F-4B76-882C-B407599C2842</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9B1204F4-C451-4A32-B3EF-D6592EDE88F1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>9B1204F4-C451-4A32-B3EF-D6592EDE88F1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DB1B6FB8-7CB0-47B4-B5E8-71D471B6F4D5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E1042330-8DA6-4CA6-9F67-89733B706456</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C98D1012-5979-49E9-A758-F78A5EE0118F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>John Cranney</string>
+	<key>description</key>
+	<string>Search for Roam Pages</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Roam Page Search</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>2</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>roam</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>...searching...</string>
+				<key>script</key>
+				<string>#@osa-lang:AppleScript#Roam Reuse 1.0###current window being scannedset windowIndex to 1#current tab being scannedset tabIndex to 0#list of list of tab urls from all windowsset allWindowsTabURLList to ""#list of list of tab titles from all windowsset allWindowsTabTitlesList to ""#list of all windows, chrome first, then safariglobal allWindowsList, tabIndex, windowIndexset allWindowsList to ""#set kmInst to system attribute "KMINSTANCE"#global dbName, block #tell application "Keyboard Maestro Engine"#	set block to getvariable "local_roam_block" instance kmInst#	set dbName to getvariable "local_roam_dbName" instance kmInst#end tell#search chrome, then safari tabs for a string and activate it#windowIndex (current windows being searched)#tabIndex (how far through current window we are)# Inputs:set searchString to "roamresearch.com"set lastTargetSearchString to searchStringlog "Fetching titles from safari"tell application "Safari"	#store windows so we keep the same order	#if we don't store them the windows get out of order when we being stuff to front	set allWindowsList to windows	set allWindowsTabURLList to (URL of tabs of every window)	set allWindowsTabTitlesList to (name of tabs of every window)end tellset windowIndex to 1set tabIndex to 0#log "tabIndex start: " &amp; tabIndex#TODO do we need this?set found to false#stop looping when we get back to where we started, to handle cast where no tabs foundset startWindowIndex to windowIndexset tabIndex to tabIndex + 1set windowsSearched to 0#iterate through all windowsrepeat while windowIndex ≤ length of allWindowsTabURLList and windowIndex &gt; 0		#log "WindowIndex: " &amp; windowIndex	#log "tabIndex: " &amp; tabIndex	set thisWindowsTabsURLs to item windowIndex of allWindowsTabURLList	set thisWindowsTabsTitles to item windowIndex of allWindowsTabTitlesList	#log thisWindowsTabsURLs	#iterate through all tabs in each window	repeat while tabIndex ≤ length of thisWindowsTabsURLs and tabIndex &gt; 0		#log "tabIndex : " &amp; tabIndex		set TabURL to item tabIndex of thisWindowsTabsURLs		set Tabtitle to item tabIndex of thisWindowsTabsTitles		if ((TabURL as text) contains searchString) or (Tabtitle contains searchString) then						return activateSarariTab()						set found to true						exit repeat		end if		#TODO Backward				set tabIndex to tabIndex + 1	end repeat		if found then exit repeat			set tabIndex to 1	set windowIndex to windowIndex + 1	if windowIndex &gt; length of allWindowsTabURLList then		set windowIndex to 1	end if			set windowsSearched to windowsSearched + 1	if windowsSearched &gt; length of allWindowsList then		exit repeat	end ifend repeatif not found then	log "not found"end if#	delay 0.1#end repeat#beepreturn foundon activateSarariTab()	log "Activating Safari windowIndex: " &amp; windowIndex &amp; " tabindex:" &amp; tabIndex		tell application "Safari"				set w to item windowIndex of allWindowsList		set index of w to 1		tell w to set current tab to tab tabIndex		set response to (do JavaScript "JSON.stringify({items:window.roamAlphaAPI.q('[:find ?e :where [?e :node/title]]').map(n=&gt;{let o=window.roamAlphaAPI.pull('[*]', n[0]);return {title:o[':node/title'],uid:o[':block/uid'],arg:o[':block/uid']}})});" in document 1)	end tell	return response	#this delay seems to be needed to remove timing voodo		#tell application "System Events"	#	tell application process "Safari"	#		tell window 1	#			perform action "AXRaise"	#		end tell	#	end tell	#end tell		end activateSarariTab</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>searchAllPages.sh</string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Roam Page to Search for</string>
+				<key>type</key>
+				<integer>8</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>9B1204F4-C451-4A32-B3EF-D6592EDE88F1</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>15</integer>
+				<key>hotmod</key>
+				<integer>1179648</integer>
+				<key>hotstring</key>
+				<string>R</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>4574976C-551F-4B76-882C-B407599C2842</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>on run argv
+#@osa-lang:AppleScript#Roam Reuse 1.0###current window being scannedset dbname to (system attribute "DBName")if (dbname is "") then	display dialog "Please set DBName in workflow environment variables"	returnend ifset windowIndex to 1#current tab being scannedset tabIndex to 0set lastTargetSearchString to ""#list of list of tab urls from all windowsset allWindowsTabURLList to ""#list of list of tab titles from all windowsset allWindowsTabTitlesList to ""#list of all windows, chrome first, then safariglobal allWindowsList, tabIndex, windowIndexset allWindowsList to ""#number of chrome windows in list aboveset chromeWindowCount to 0global dbname, blockset myurl to item 1 of argv
+#log "Time since last run in seconds:" &amp; timeSinceLastRun#search chrome, then safari tabs for a string and activate it#windowIndex (current windows being searched)#tabIndex (how far through current window we are)# Inputs:set searchString to "roamresearch.com"set direction to "forward"set lastTargetSearchString to searchStringlog "Fetching titles from chrome"tell application "Google Chrome"	#store windows so we keep the same order	#if we don't store them the windows get out of order when we being stuff to front	set allWindowsList to windows	set allWindowsTabURLList to URL of tabs of every window	set allWindowsTabTitlesList to title of tabs of every windowend tellset chromeWindowCount to length of allWindowsListlog "Fetching titles from safari"tell application "Safari"	#store windows so we keep the same order	#if we don't store them the windows get out of order when we being stuff to front	set allWindowsList to allWindowsList &amp; windows	set allWindowsTabURLList to allWindowsTabURLList &amp; (URL of tabs of every window)	set allWindowsTabTitlesList to allWindowsTabTitlesList &amp; (name of tabs of every window)end tellset windowIndex to 1set tabIndex to 0#log "tabIndex start: " &amp; tabIndex#TODO do we need this?set found to falselog "Total windows: " &amp; length of allWindowsListlog "Chrome windows: " &amp; chromeWindowCount#stop looping when we get back to where we started, to handle cast where no tabs foundset startWindowIndex to windowIndexif direction = "forward" then	set tabIndex to tabIndex + 1else	set tabIndex to tabIndex - 1end ifset windowsSearched to 0#iterate through all windowsrepeat while windowIndex ≤ length of allWindowsTabURLList and windowIndex &gt; 0		#log "WindowIndex: " &amp; windowIndex	#log "tabIndex: " &amp; tabIndex	set thisWindowsTabsURLs to item windowIndex of allWindowsTabURLList	set thisWindowsTabsTitles to item windowIndex of allWindowsTabTitlesList	#log thisWindowsTabsURLs	#iterate through all tabs in each window	repeat while tabIndex ≤ length of thisWindowsTabsURLs and tabIndex &gt; 0		#log "tabIndex : " &amp; tabIndex		set TabURL to item tabIndex of thisWindowsTabsURLs		set Tabtitle to item tabIndex of thisWindowsTabsTitles		if ((TabURL as text) contains searchString) or (Tabtitle contains searchString) then						#chrome windows are first in array			if windowIndex ≤ chromeWindowCount then				tell application "Google Chrome"					activate					set w to item windowIndex of allWindowsList					set index of w to 1					tell w to set active tab index to tabIndex										#		log myurl					#set myurl to "https://roamresearch.com/#/app/" &amp; dbname &amp; "/page/" &amp; arg					tell w to set URL of active tab to myurl				end tell				#this delay seems to be needed to remove timing voodo				delay 0.1				tell application "System Events"					tell application process "Google Chrome"						tell window 1							perform action "AXRaise"						end tell					end tell				end tell			else								tell application "Safari"					activate					set w to item windowIndex of allWindowsList					set index of w to 1					tell w to set current tab to tab tabIndex					set URL of document 1 to myurl				end tell				#this delay seems to be needed to remove timing voodo				delay 0.1				tell application "System Events"					tell application process "Safari"						tell window 1							perform action "AXRaise"						end tell					end tell				end tell							end if			set found to true						exit repeat		end if		#TODO Backward		if (direction = "forward") then			set tabIndex to tabIndex + 1		else			set tabIndex to tabIndex - 1		end if	end repeat		if found then exit repeat		if (direction = "forward") then		set tabIndex to 1		set windowIndex to windowIndex + 1		if windowIndex &gt; length of allWindowsTabURLList then			set windowIndex to 1		end if			else		set windowIndex to windowIndex - 1		if windowIndex &lt; 1 then			set windowIndex to length of allWindowsTabURLList		end if		set tabIndex to length of item windowIndex of allWindowsTabURLList			end if	set windowsSearched to windowsSearched + 1	if windowsSearched &gt; length of allWindowsList then		exit repeat	end ifend repeatif not found then	log "not found"end ifreturn foundend runscript GetTick --&gt; for more precise timer calculations	use framework "Foundation"	on Now()		return (current application's NSDate's timeIntervalSinceReferenceDate) as real	end Nowend script</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>targetID.sh</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>DB1B6FB8-7CB0-47B4-B5E8-71D471B6F4D5</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>on run argv
+#@osa-lang:AppleScript#Roam Reuse 1.0###current window being scannedset dbname to (system attribute "DBName")if (dbname is "") then	display dialog "Please set DBName in workflow environment variables"	returnend ifset windowIndex to 1#current tab being scannedset tabIndex to 0set lastTargetSearchString to ""#list of list of tab urls from all windowsset allWindowsTabURLList to ""#list of list of tab titles from all windowsset allWindowsTabTitlesList to ""#list of all windows, chrome first, then safariglobal allWindowsList, tabIndex, windowIndexset allWindowsList to ""#number of chrome windows in list aboveset chromeWindowCount to 0global dbname, blockset myurl to item 1 of argv
+#log "Time since last run in seconds:" &amp; timeSinceLastRun#search chrome, then safari tabs for a string and activate it#windowIndex (current windows being searched)#tabIndex (how far through current window we are)# Inputs:set searchString to "roamresearch.com"set direction to "forward"set lastTargetSearchString to searchStringlog "Fetching titles from chrome"tell application "Google Chrome"	#store windows so we keep the same order	#if we don't store them the windows get out of order when we being stuff to front	set allWindowsList to windows	set allWindowsTabURLList to URL of tabs of every window	set allWindowsTabTitlesList to title of tabs of every windowend tellset chromeWindowCount to length of allWindowsListlog "Fetching titles from safari"tell application "Safari"	#store windows so we keep the same order	#if we don't store them the windows get out of order when we being stuff to front	set allWindowsList to allWindowsList &amp; windows	set allWindowsTabURLList to allWindowsTabURLList &amp; (URL of tabs of every window)	set allWindowsTabTitlesList to allWindowsTabTitlesList &amp; (name of tabs of every window)end tellset windowIndex to 1set tabIndex to 0#log "tabIndex start: " &amp; tabIndex#TODO do we need this?set found to falselog "Total windows: " &amp; length of allWindowsListlog "Chrome windows: " &amp; chromeWindowCount#stop looping when we get back to where we started, to handle cast where no tabs foundset startWindowIndex to windowIndexif direction = "forward" then	set tabIndex to tabIndex + 1else	set tabIndex to tabIndex - 1end ifset windowsSearched to 0#iterate through all windowsrepeat while windowIndex ≤ length of allWindowsTabURLList and windowIndex &gt; 0		#log "WindowIndex: " &amp; windowIndex	#log "tabIndex: " &amp; tabIndex	set thisWindowsTabsURLs to item windowIndex of allWindowsTabURLList	set thisWindowsTabsTitles to item windowIndex of allWindowsTabTitlesList	#log thisWindowsTabsURLs	#iterate through all tabs in each window	repeat while tabIndex ≤ length of thisWindowsTabsURLs and tabIndex &gt; 0		#log "tabIndex : " &amp; tabIndex		set TabURL to item tabIndex of thisWindowsTabsURLs		set Tabtitle to item tabIndex of thisWindowsTabsTitles		if ((TabURL as text) contains searchString) or (Tabtitle contains searchString) then						#chrome windows are first in array			if windowIndex ≤ chromeWindowCount then				tell application "Google Chrome"					activate					set w to item windowIndex of allWindowsList					set index of w to 1					tell w to set active tab index to tabIndex										#		log myurl					#set myurl to "https://roamresearch.com/#/app/" &amp; dbname &amp; "/page/" &amp; arg					tell w to set URL of active tab to myurl				end tell				#this delay seems to be needed to remove timing voodo				delay 0.1				tell application "System Events"					tell application process "Google Chrome"						tell window 1							perform action "AXRaise"						end tell					end tell				end tell			else								tell application "Safari"					activate					set w to item windowIndex of allWindowsList					set index of w to 1					tell w to set current tab to tab tabIndex					set URL of document 1 to myurl				end tell				#this delay seems to be needed to remove timing voodo				delay 0.1				tell application "System Events"					tell application process "Safari"						tell window 1							perform action "AXRaise"						end tell					end tell				end tell							end if			set found to true						exit repeat		end if		#TODO Backward		if (direction = "forward") then			set tabIndex to tabIndex + 1		else			set tabIndex to tabIndex - 1		end if	end repeat		if found then exit repeat		if (direction = "forward") then		set tabIndex to 1		set windowIndex to windowIndex + 1		if windowIndex &gt; length of allWindowsTabURLList then			set windowIndex to 1		end if			else		set windowIndex to windowIndex - 1		if windowIndex &lt; 1 then			set windowIndex to length of allWindowsTabURLList		end if		set tabIndex to length of item windowIndex of allWindowsTabURLList			end if	set windowsSearched to windowsSearched + 1	if windowsSearched &gt; length of allWindowsList then		exit repeat	end ifend repeatif not found then	log "not found"end ifreturn foundend runscript GetTick --&gt; for more precise timer calculations	use framework "Foundation"	on Now()		return (current application's NSDate's timeIntervalSinceReferenceDate) as real	end Nowend script</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>targetPage.sh</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>EE341FD2-38E2-440A-9072-1AA4B9DF1A25</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>Roam</string>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>11</integer>
+				<key>hotmod</key>
+				<integer>1179648</integer>
+				<key>hotstring</key>
+				<string>B</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>3D04A873-9014-4A2A-BA23-1A7D1AF25369</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>2</integer>
+				<key>hotmod</key>
+				<integer>1179648</integer>
+				<key>hotstring</key>
+				<string>D</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>E1042330-8DA6-4CA6-9F67-89733B706456</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>on run argv
+#@osa-lang:AppleScript#Roam Reuse 1.0###current window being scannedset dbname to (system attribute "DBName")if (dbname is "") then	display dialog "Please set DBName in workflow environment variables"	returnend ifset windowIndex to 1#current tab being scannedset tabIndex to 0set lastTargetSearchString to ""#list of list of tab urls from all windowsset allWindowsTabURLList to ""#list of list of tab titles from all windowsset allWindowsTabTitlesList to ""#list of all windows, chrome first, then safariglobal allWindowsList, tabIndex, windowIndexset allWindowsList to ""#number of chrome windows in list aboveset chromeWindowCount to 0global dbname, blockset myurl to item 1 of argv
+#log "Time since last run in seconds:" &amp; timeSinceLastRun#search chrome, then safari tabs for a string and activate it#windowIndex (current windows being searched)#tabIndex (how far through current window we are)# Inputs:set searchString to "roamresearch.com"set direction to "forward"set lastTargetSearchString to searchStringlog "Fetching titles from chrome"tell application "Google Chrome"	#store windows so we keep the same order	#if we don't store them the windows get out of order when we being stuff to front	set allWindowsList to windows	set allWindowsTabURLList to URL of tabs of every window	set allWindowsTabTitlesList to title of tabs of every windowend tellset chromeWindowCount to length of allWindowsListlog "Fetching titles from safari"tell application "Safari"	#store windows so we keep the same order	#if we don't store them the windows get out of order when we being stuff to front	set allWindowsList to allWindowsList &amp; windows	set allWindowsTabURLList to allWindowsTabURLList &amp; (URL of tabs of every window)	set allWindowsTabTitlesList to allWindowsTabTitlesList &amp; (name of tabs of every window)end tellset windowIndex to 1set tabIndex to 0#log "tabIndex start: " &amp; tabIndex#TODO do we need this?set found to falselog "Total windows: " &amp; length of allWindowsListlog "Chrome windows: " &amp; chromeWindowCount#stop looping when we get back to where we started, to handle cast where no tabs foundset startWindowIndex to windowIndexif direction = "forward" then	set tabIndex to tabIndex + 1else	set tabIndex to tabIndex - 1end ifset windowsSearched to 0#iterate through all windowsrepeat while windowIndex ≤ length of allWindowsTabURLList and windowIndex &gt; 0		#log "WindowIndex: " &amp; windowIndex	#log "tabIndex: " &amp; tabIndex	set thisWindowsTabsURLs to item windowIndex of allWindowsTabURLList	set thisWindowsTabsTitles to item windowIndex of allWindowsTabTitlesList	#log thisWindowsTabsURLs	#iterate through all tabs in each window	repeat while tabIndex ≤ length of thisWindowsTabsURLs and tabIndex &gt; 0		#log "tabIndex : " &amp; tabIndex		set TabURL to item tabIndex of thisWindowsTabsURLs		set Tabtitle to item tabIndex of thisWindowsTabsTitles		if ((TabURL as text) contains searchString) or (Tabtitle contains searchString) then						#chrome windows are first in array			if windowIndex ≤ chromeWindowCount then				tell application "Google Chrome"					activate					set w to item windowIndex of allWindowsList					set index of w to 1					tell w to set active tab index to tabIndex										#		log myurl					#set myurl to "https://roamresearch.com/#/app/" &amp; dbname &amp; "/page/" &amp; arg					tell w to set URL of active tab to myurl				end tell				#this delay seems to be needed to remove timing voodo				delay 0.1				tell application "System Events"					tell application process "Google Chrome"						tell window 1							perform action "AXRaise"						end tell					end tell				end tell			else								tell application "Safari"					activate					set w to item windowIndex of allWindowsList					set index of w to 1					tell w to set current tab to tab tabIndex					set URL of document 1 to myurl				end tell				#this delay seems to be needed to remove timing voodo				delay 0.1				tell application "System Events"					tell application process "Safari"						tell window 1							perform action "AXRaise"						end tell					end tell				end tell							end if			set found to true						exit repeat		end if		#TODO Backward		if (direction = "forward") then			set tabIndex to tabIndex + 1		else			set tabIndex to tabIndex - 1		end if	end repeat		if found then exit repeat		if (direction = "forward") then		set tabIndex to 1		set windowIndex to windowIndex + 1		if windowIndex &gt; length of allWindowsTabURLList then			set windowIndex to 1		end if			else		set windowIndex to windowIndex - 1		if windowIndex &lt; 1 then			set windowIndex to length of allWindowsTabURLList		end if		set tabIndex to length of item windowIndex of allWindowsTabURLList			end if	set windowsSearched to windowsSearched + 1	if windowsSearched &gt; length of allWindowsList then		exit repeat	end ifend repeatif not found then	log "not found"end ifreturn foundend runscript GetTick --&gt; for more precise timer calculations	use framework "Foundation"	on Now()		return (current application's NSDate's timeIntervalSinceReferenceDate) as real	end Nowend script</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>gotoDaily.sh</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>C98D1012-5979-49E9-A758-F78A5EE0118F</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Searches all roam pages using roam alpha api.
+
+Requires a roam tab to be open pointing to your database before it will work (script will open one on first run if not already open).
+
+Has three environment variables:
+DBName: the name of your roam db. It's in the url of your roam pages: https://roamresearch.com/#/app/YOURDBNAME . This MUST be set before running.
+cacheTimeInSeconds: after running once, all page names will be cached for this number of seconds. Makes workflow slightly faster, but when you add pages they may not be there immediately.
+preferredBrowser: must be Chrome or Safari
+
+
+When run, the workflow will query roam dynamically- type characters of page names to filter. 
+Once a page is selected, one of two things will happen:
+1) If your preferred browser has a roam tab open and active, that tab will go to that page
+2) If you do not have an active roam tab open, the first roam tab you have open will be navigated to that page.
+
+Currently supports:
+1) Go to daily page by hotkey/keyword
+2) Search and jump to page by filter
+3) Go to named page by hotkey/keyword
+
+Note that for this workflow to work, you need to enable AppleScript-&gt;Javascript in your browser of choice. 
+
+To enable AppleScript-&gt;javascript in Chrome:
+
+View&gt;Developer&gt;Allow Javascript from Apple Events
+
+To enable AppleScript-&gt;javascript in Safari:
+
+Safari Preference&gt;Advanced&gt;Show Developer Menu in menu bar Then Develop&gt;Allow Javascript from Apple Events</string>
+	<key>uidata</key>
+	<dict>
+		<key>3D04A873-9014-4A2A-BA23-1A7D1AF25369</key>
+		<dict>
+			<key>xpos</key>
+			<integer>425</integer>
+			<key>ypos</key>
+			<integer>400</integer>
+		</dict>
+		<key>4574976C-551F-4B76-882C-B407599C2842</key>
+		<dict>
+			<key>xpos</key>
+			<integer>25</integer>
+			<key>ypos</key>
+			<integer>165</integer>
+		</dict>
+		<key>9B1204F4-C451-4A32-B3EF-D6592EDE88F1</key>
+		<dict>
+			<key>note</key>
+			<string>Filter page names dynamically, emid page id</string>
+			<key>xpos</key>
+			<integer>260</integer>
+			<key>ypos</key>
+			<integer>165</integer>
+		</dict>
+		<key>C98D1012-5979-49E9-A758-F78A5EE0118F</key>
+		<dict>
+			<key>note</key>
+			<string>Go to daily note</string>
+			<key>xpos</key>
+			<integer>230</integer>
+			<key>ypos</key>
+			<integer>430</integer>
+		</dict>
+		<key>DB1B6FB8-7CB0-47B4-B5E8-71D471B6F4D5</key>
+		<dict>
+			<key>note</key>
+			<string>Go to page id</string>
+			<key>xpos</key>
+			<integer>460</integer>
+			<key>ypos</key>
+			<integer>170</integer>
+		</dict>
+		<key>E1042330-8DA6-4CA6-9F67-89733B706456</key>
+		<dict>
+			<key>xpos</key>
+			<integer>25</integer>
+			<key>ypos</key>
+			<integer>430</integer>
+		</dict>
+		<key>EE341FD2-38E2-440A-9072-1AA4B9DF1A25</key>
+		<dict>
+			<key>note</key>
+			<string>Go to named page with hotkey- pass arg on hotkey</string>
+			<key>xpos</key>
+			<integer>615</integer>
+			<key>ypos</key>
+			<integer>400</integer>
+		</dict>
+	</dict>
+	<key>variables</key>
+	<dict>
+		<key>DBName</key>
+		<string>JCThoughts</string>
+		<key>cacheTimeInSeconds</key>
+		<string>60</string>
+		<key>preferredBrowser</key>
+		<string>Chrome</string>
+	</dict>
+	<key>version</key>
+	<string>1.1.1</string>
+	<key>webaddress</key>
+	<string>https://roamresearch.com/</string>
+</dict>
+</plist>
