@@ -86,6 +86,39 @@
 				<false/>
 			</dict>
 		</array>
+		<key>1C60E887-DAF1-4A80-AEAB-65824E657643</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8ABF6748-C5F1-4BAF-8B66-4B1845F3C12F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>23ADB478-09CF-414E-A699-70CEAFA081C0</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>show what this links to</string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>E5AA3C97-9A7C-43F3-8B63-CA5B074D1ABF</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>show pages that reference this</string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+		</array>
 		<key>1DF1ACEA-3AD8-468C-8677-0D70D8158D57</key>
 		<array>
 			<dict>
@@ -200,11 +233,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>5CEBBE94-29E6-4AAA-9B30-492D6DF9D985</key>
+		<key>56939936-AEDC-4349-9572-41DEFBDB0379</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>2D6448F3-A55C-411C-B8BB-426570C809DC</string>
+				<string>C5A87E8B-7396-4272-B149-2DEA1087C8F1</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -213,11 +246,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>653B6D94-038D-4010-93F1-B3828E0420D3</key>
+		<key>5CEBBE94-29E6-4AAA-9B30-492D6DF9D985</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>DB1B6FB8-7CB0-47B4-B5E8-71D471B6F4D5</string>
+				<string>2D6448F3-A55C-411C-B8BB-426570C809DC</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -282,6 +315,16 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
+				<string>C8C15BD3-3EB9-4D6F-8180-ECDDB8173258</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>show what this links to</string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>12DA6087-FED7-4587-B7E6-BBB1E3C4DF2B</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -289,6 +332,16 @@
 				<string></string>
 				<key>vitoclose</key>
 				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>2222C20F-B62E-4E6F-B86C-13088E8C132A</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>show pages that reference this</string>
+				<key>vitoclose</key>
+				<true/>
 			</dict>
 		</array>
 		<key>7F661539-269A-4BE1-8C85-0CE9BE095EA4</key>
@@ -330,6 +383,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>83D39038-AB3A-4F47-8AA7-59FF56AC1C9A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F3494981-8358-4610-9C8F-96B8DBEBB47D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>899922AB-B531-4389-BA0B-117C7AD8F23E</key>
 		<array>
 			<dict>
@@ -356,11 +422,90 @@
 				<false/>
 			</dict>
 		</array>
+		<key>8ABF6748-C5F1-4BAF-8B66-4B1845F3C12F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B0B5D83C-21CF-43B3-8698-480FF5018C2D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>9616EF40-89B7-42CB-B7A7-4DFCDAAF840F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8ABF6748-C5F1-4BAF-8B66-4B1845F3C12F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>23ADB478-09CF-414E-A699-70CEAFA081C0</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>show what this links to</string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>E5AA3C97-9A7C-43F3-8B63-CA5B074D1ABF</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>show pages that reference this</string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+		</array>
 		<key>9B1204F4-C451-4A32-B3EF-D6592EDE88F1</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>653B6D94-038D-4010-93F1-B3828E0420D3</string>
+				<string>8ABF6748-C5F1-4BAF-8B66-4B1845F3C12F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>F3494981-8358-4610-9C8F-96B8DBEBB47D</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>show pages that reference this</string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>D0EFFBD2-DC88-4DB5-9B1D-23290D33375D</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>show what this links to</string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+		</array>
+		<key>9B35F0CE-E573-4E25-9780-792E253B1CC8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D0EFFBD2-DC88-4DB5-9B1D-23290D33375D</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -434,11 +579,37 @@
 				<false/>
 			</dict>
 		</array>
+		<key>C5A87E8B-7396-4272-B149-2DEA1087C8F1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1C60E887-DAF1-4A80-AEAB-65824E657643</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>C9DB5FE2-8090-439A-8A18-DD74E04A84C1</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>ED366AEF-3B13-423A-91C8-883E9CE05D55</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>D0EFFBD2-DC88-4DB5-9B1D-23290D33375D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E3B8A694-6F69-4B70-BA3F-4A15E8BE1172</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -465,6 +636,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>7F661539-269A-4BE1-8C85-0CE9BE095EA4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E3B8A694-6F69-4B70-BA3F-4A15E8BE1172</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F385EF13-01CA-482D-B519-3B8312C43C8C</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -512,6 +696,32 @@
 				<false/>
 			</dict>
 		</array>
+		<key>F3494981-8358-4610-9C8F-96B8DBEBB47D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>56939936-AEDC-4349-9572-41DEFBDB0379</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F385EF13-01CA-482D-B519-3B8312C43C8C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9616EF40-89B7-42CB-B7A7-4DFCDAAF840F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>John Cranney</string>
@@ -526,6 +736,51 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>on run argv
+#@osa-lang:AppleScript#Roam Reuse 1.0###current window being scannedset dbname to (system attribute "DBName")if (dbname is "") then	display dialog "Please set DBName in workflow environment variables"	returnend ifset windowIndex to 1#current tab being scannedset tabIndex to 0set lastTargetSearchString to ""#list of list of tab urls from all windowsset allWindowsTabURLList to ""#list of list of tab titles from all windowsset allWindowsTabTitlesList to ""#list of all windows, chrome first, then safariglobal allWindowsList, tabIndex, windowIndexset allWindowsList to ""#number of chrome windows in list aboveset chromeWindowCount to 0global dbname, blockset myurl to item 1 of argv
+#log "Time since last run in seconds:" &amp; timeSinceLastRun#search chrome, then safari tabs for a string and activate it#windowIndex (current windows being searched)#tabIndex (how far through current window we are)# Inputs:set searchString to "roamresearch.com"set direction to "forward"set lastTargetSearchString to searchStringlog "Fetching titles from chrome"tell application "Google Chrome"	#store windows so we keep the same order	#if we don't store them the windows get out of order when we being stuff to front	set allWindowsList to windows	set allWindowsTabURLList to URL of tabs of every window	set allWindowsTabTitlesList to title of tabs of every windowend tellset chromeWindowCount to length of allWindowsListlog "Fetching titles from safari"tell application "Safari"	#store windows so we keep the same order	#if we don't store them the windows get out of order when we being stuff to front	set allWindowsList to allWindowsList &amp; windows	set allWindowsTabURLList to allWindowsTabURLList &amp; (URL of tabs of every window)	set allWindowsTabTitlesList to allWindowsTabTitlesList &amp; (name of tabs of every window)end tellset windowIndex to 1set tabIndex to 0#log "tabIndex start: " &amp; tabIndex#TODO do we need this?set found to falselog "Total windows: " &amp; length of allWindowsListlog "Chrome windows: " &amp; chromeWindowCount#stop looping when we get back to where we started, to handle cast where no tabs foundset startWindowIndex to windowIndexif direction = "forward" then	set tabIndex to tabIndex + 1else	set tabIndex to tabIndex - 1end ifset windowsSearched to 0#iterate through all windowsrepeat while windowIndex ≤ length of allWindowsTabURLList and windowIndex &gt; 0		#log "WindowIndex: " &amp; windowIndex	#log "tabIndex: " &amp; tabIndex	set thisWindowsTabsURLs to item windowIndex of allWindowsTabURLList	set thisWindowsTabsTitles to item windowIndex of allWindowsTabTitlesList	#log thisWindowsTabsURLs	#iterate through all tabs in each window	repeat while tabIndex ≤ length of thisWindowsTabsURLs and tabIndex &gt; 0		#log "tabIndex : " &amp; tabIndex		set TabURL to item tabIndex of thisWindowsTabsURLs		set Tabtitle to item tabIndex of thisWindowsTabsTitles		if ((TabURL as text) contains searchString) or (Tabtitle contains searchString) then						#chrome windows are first in array			if windowIndex ≤ chromeWindowCount then				tell application "Google Chrome"					activate					set w to item windowIndex of allWindowsList					set index of w to 1					tell w to set active tab index to tabIndex										#		log myurl					#set myurl to "https://roamresearch.com/#/app/" &amp; dbname &amp; "/page/" &amp; arg					tell w to set URL of active tab to myurl				end tell				#this delay seems to be needed to remove timing voodo				delay 0.1				tell application "System Events"					tell application process "Google Chrome"						tell window 1							perform action "AXRaise"						end tell					end tell				end tell			else								tell application "Safari"					activate					set w to item windowIndex of allWindowsList					set index of w to 1					tell w to set current tab to tab tabIndex					set URL of document 1 to myurl				end tell				#this delay seems to be needed to remove timing voodo				delay 0.1				tell application "System Events"					tell application process "Safari"						tell window 1							perform action "AXRaise"						end tell					end tell				end tell							end if			set found to true						exit repeat		end if		#TODO Backward		if (direction = "forward") then			set tabIndex to tabIndex + 1		else			set tabIndex to tabIndex - 1		end if	end repeat		if found then exit repeat		if (direction = "forward") then		set tabIndex to 1		set windowIndex to windowIndex + 1		if windowIndex &gt; length of allWindowsTabURLList then			set windowIndex to 1		end if			else		set windowIndex to windowIndex - 1		if windowIndex &lt; 1 then			set windowIndex to length of allWindowsTabURLList		end if		set tabIndex to length of item windowIndex of allWindowsTabURLList			end if	set windowsSearched to windowsSearched + 1	if windowsSearched &gt; length of allWindowsList then		exit repeat	end ifend repeatif not found then	log "not found"end ifreturn foundend runscript GetTick --&gt; for more precise timer calculations	use framework "Foundation"	on Now()		return (current application's NSDate's timeIntervalSinceReferenceDate) as real	end Nowend script</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>runAppleScript.sh</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>B0B5D83C-21CF-43B3-8698-480FF5018C2D</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>passthroughargument</key>
+				<true/>
+				<key>variables</key>
+				<dict>
+					<key>mode</key>
+					<string>goToPageByName</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>8ABF6748-C5F1-4BAF-8B66-4B1845F3C12F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<true/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -535,7 +790,7 @@
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>keyword</key>
@@ -571,31 +826,6 @@
 			<string>9B1204F4-C451-4A32-B3EF-D6592EDE88F1</string>
 			<key>version</key>
 			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>on run argv
-#@osa-lang:AppleScript#Roam Reuse 1.0###current window being scannedset dbname to (system attribute "DBName")if (dbname is "") then	display dialog "Please set DBName in workflow environment variables"	returnend ifset windowIndex to 1#current tab being scannedset tabIndex to 0set lastTargetSearchString to ""#list of list of tab urls from all windowsset allWindowsTabURLList to ""#list of list of tab titles from all windowsset allWindowsTabTitlesList to ""#list of all windows, chrome first, then safariglobal allWindowsList, tabIndex, windowIndexset allWindowsList to ""#number of chrome windows in list aboveset chromeWindowCount to 0global dbname, blockset myurl to item 1 of argv
-#log "Time since last run in seconds:" &amp; timeSinceLastRun#search chrome, then safari tabs for a string and activate it#windowIndex (current windows being searched)#tabIndex (how far through current window we are)# Inputs:set searchString to "roamresearch.com"set direction to "forward"set lastTargetSearchString to searchStringlog "Fetching titles from chrome"tell application "Google Chrome"	#store windows so we keep the same order	#if we don't store them the windows get out of order when we being stuff to front	set allWindowsList to windows	set allWindowsTabURLList to URL of tabs of every window	set allWindowsTabTitlesList to title of tabs of every windowend tellset chromeWindowCount to length of allWindowsListlog "Fetching titles from safari"tell application "Safari"	#store windows so we keep the same order	#if we don't store them the windows get out of order when we being stuff to front	set allWindowsList to allWindowsList &amp; windows	set allWindowsTabURLList to allWindowsTabURLList &amp; (URL of tabs of every window)	set allWindowsTabTitlesList to allWindowsTabTitlesList &amp; (name of tabs of every window)end tellset windowIndex to 1set tabIndex to 0#log "tabIndex start: " &amp; tabIndex#TODO do we need this?set found to falselog "Total windows: " &amp; length of allWindowsListlog "Chrome windows: " &amp; chromeWindowCount#stop looping when we get back to where we started, to handle cast where no tabs foundset startWindowIndex to windowIndexif direction = "forward" then	set tabIndex to tabIndex + 1else	set tabIndex to tabIndex - 1end ifset windowsSearched to 0#iterate through all windowsrepeat while windowIndex ≤ length of allWindowsTabURLList and windowIndex &gt; 0		#log "WindowIndex: " &amp; windowIndex	#log "tabIndex: " &amp; tabIndex	set thisWindowsTabsURLs to item windowIndex of allWindowsTabURLList	set thisWindowsTabsTitles to item windowIndex of allWindowsTabTitlesList	#log thisWindowsTabsURLs	#iterate through all tabs in each window	repeat while tabIndex ≤ length of thisWindowsTabsURLs and tabIndex &gt; 0		#log "tabIndex : " &amp; tabIndex		set TabURL to item tabIndex of thisWindowsTabsURLs		set Tabtitle to item tabIndex of thisWindowsTabsTitles		if ((TabURL as text) contains searchString) or (Tabtitle contains searchString) then						#chrome windows are first in array			if windowIndex ≤ chromeWindowCount then				tell application "Google Chrome"					activate					set w to item windowIndex of allWindowsList					set index of w to 1					tell w to set active tab index to tabIndex										#		log myurl					#set myurl to "https://roamresearch.com/#/app/" &amp; dbname &amp; "/page/" &amp; arg					tell w to set URL of active tab to myurl				end tell				#this delay seems to be needed to remove timing voodo				delay 0.1				tell application "System Events"					tell application process "Google Chrome"						tell window 1							perform action "AXRaise"						end tell					end tell				end tell			else								tell application "Safari"					activate					set w to item windowIndex of allWindowsList					set index of w to 1					tell w to set current tab to tab tabIndex					set URL of document 1 to myurl				end tell				#this delay seems to be needed to remove timing voodo				delay 0.1				tell application "System Events"					tell application process "Safari"						tell window 1							perform action "AXRaise"						end tell					end tell				end tell							end if			set found to true						exit repeat		end if		#TODO Backward		if (direction = "forward") then			set tabIndex to tabIndex + 1		else			set tabIndex to tabIndex - 1		end if	end repeat		if found then exit repeat		if (direction = "forward") then		set tabIndex to 1		set windowIndex to windowIndex + 1		if windowIndex &gt; length of allWindowsTabURLList then			set windowIndex to 1		end if			else		set windowIndex to windowIndex - 1		if windowIndex &lt; 1 then			set windowIndex to length of allWindowsTabURLList		end if		set tabIndex to length of item windowIndex of allWindowsTabURLList			end if	set windowsSearched to windowsSearched + 1	if windowsSearched &gt; length of allWindowsList then		exit repeat	end ifend repeatif not found then	log "not found"end ifreturn foundend runscript GetTick --&gt; for more precise timer calculations	use framework "Foundation"	on Now()		return (current application's NSDate's timeIntervalSinceReferenceDate) as real	end Nowend script</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>runAppleScript.sh</string>
-				<key>type</key>
-				<integer>8</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>DB1B6FB8-7CB0-47B4-B5E8-71D471B6F4D5</string>
-			<key>version</key>
-			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -651,20 +881,144 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Choose tag to jump to</string>
+				<key>script</key>
+				<string>#query="{query}"
+
+echo -n $out</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string>echo.sh</string>
+				<key>subtext</key>
+				<string>Choose tag to jump to</string>
+				<key>title</key>
+				<string>Choose tag to jump to</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>1C60E887-DAF1-4A80-AEAB-65824E657643</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>runAppleScript.sh</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>56939936-AEDC-4349-9572-41DEFBDB0379</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argument</key>
-				<string>{query}</string>
+				<string></string>
 				<key>passthroughargument</key>
 				<true/>
 				<key>variables</key>
 				<dict>
 					<key>mode</key>
-					<string>goToPageByID</string>
+					<string>getPagesWithTag</string>
 				</dict>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>653B6D94-038D-4010-93F1-B3828E0420D3</string>
+			<string>F3494981-8358-4610-9C8F-96B8DBEBB47D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>out</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>C5A87E8B-7396-4272-B149-2DEA1087C8F1</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>triggerid</key>
+				<string>getPagesWithTag</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>83D39038-AB3A-4F47-8AA7-59FF56AC1C9A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>getTagsOfPage</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>23ADB478-09CF-414E-A699-70CEAFA081C0</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -747,6 +1101,118 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>runAppleScript.sh</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>E3B8A694-6F69-4B70-BA3F-4A15E8BE1172</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>out</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>F385EF13-01CA-482D-B519-3B8312C43C8C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Choose tag to jump to</string>
+				<key>script</key>
+				<string>#query="{query}"
+
+echo -n $out</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string>echo.sh</string>
+				<key>subtext</key>
+				<string>Choose tag to jump to</string>
+				<key>title</key>
+				<string>Choose tag to jump to</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>9616EF40-89B7-42CB-B7A7-4DFCDAAF840F</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<true/>
+				<key>variables</key>
+				<dict>
+					<key>mode</key>
+					<string>getTagsOfPage</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>D0EFFBD2-DC88-4DB5-9B1D-23290D33375D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
@@ -762,6 +1228,38 @@
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>899922AB-B531-4389-BA0B-117C7AD8F23E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>getPagesWithTag</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>E5AA3C97-9A7C-43F3-8B63-CA5B074D1ABF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>triggerid</key>
+				<string>getTagsOfPage</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>9B35F0CE-E573-4E25-9780-792E253B1CC8</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1559,6 +2057,25 @@ echo -n $out</string>
 			<key>config</key>
 			<dict>
 				<key>externaltriggerid</key>
+				<string>getTagsOfPage</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>C8C15BD3-3EB9-4D6F-8180-ECDDB8173258</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
 				<string>jump to named page</string>
 				<key>passinputasargument</key>
 				<true/>
@@ -1753,6 +2270,25 @@ echo -n $out</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>getPagesWithTag</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>2222C20F-B62E-4E6F-B86C-13088E8C132A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>See https://www.putyourleftfoot.in/roampagesearch</string>
@@ -1868,6 +2404,15 @@ paste : "true" if you want to paste</string>
 			<key>ypos</key>
 			<integer>1430</integer>
 		</dict>
+		<key>1C60E887-DAF1-4A80-AEAB-65824E657643</key>
+		<dict>
+			<key>note</key>
+			<string>Ask user to select a block from dynamically generated config page. Script will the jump to this block on dialy page, creating it if it does not exist</string>
+			<key>xpos</key>
+			<integer>1115</integer>
+			<key>ypos</key>
+			<integer>150</integer>
+		</dict>
 		<key>1DF1ACEA-3AD8-468C-8677-0D70D8158D57</key>
 		<dict>
 			<key>colorindex</key>
@@ -1879,6 +2424,24 @@ Example that grabs selection and sends to tag under roam daily page, as a TODO</
 			<integer>70</integer>
 			<key>ypos</key>
 			<integer>1245</integer>
+		</dict>
+		<key>2222C20F-B62E-4E6F-B86C-13088E8C132A</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>10</integer>
+			<key>xpos</key>
+			<integer>1400</integer>
+			<key>ypos</key>
+			<integer>2605</integer>
+		</dict>
+		<key>23ADB478-09CF-414E-A699-70CEAFA081C0</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>12</integer>
+			<key>xpos</key>
+			<integer>1435</integer>
+			<key>ypos</key>
+			<integer>295</integer>
 		</dict>
 		<key>2D6448F3-A55C-411C-B8BB-426570C809DC</key>
 		<dict>
@@ -1974,6 +2537,15 @@ Passes "Favourite Pages" as arg. Options show in menu are children of "Favourite
 			<key>ypos</key>
 			<integer>2475</integer>
 		</dict>
+		<key>56939936-AEDC-4349-9572-41DEFBDB0379</key>
+		<dict>
+			<key>note</key>
+			<string>Load config page "RoamSearchConfig", find block whose name matched the block passed, and return sublocks as page names that can be jumped to</string>
+			<key>xpos</key>
+			<integer>815</integer>
+			<key>ypos</key>
+			<integer>150</integer>
+		</dict>
 		<key>5CEBBE94-29E6-4AAA-9B30-492D6DF9D985</key>
 		<dict>
 			<key>note</key>
@@ -1982,15 +2554,6 @@ Passes "Favourite Pages" as arg. Options show in menu are children of "Favourite
 			<integer>970</integer>
 			<key>ypos</key>
 			<integer>1415</integer>
-		</dict>
-		<key>653B6D94-038D-4010-93F1-B3828E0420D3</key>
-		<dict>
-			<key>note</key>
-			<string>set mode to goToPageByID</string>
-			<key>xpos</key>
-			<integer>485</integer>
-			<key>ypos</key>
-			<integer>100</integer>
 		</dict>
 		<key>6602F097-AAF8-43AB-8E44-8FEB832EF626</key>
 		<dict>
@@ -2070,6 +2633,15 @@ Passes "Favourite Pages" as arg. Options show in menu are children of "Favourite
 			<key>ypos</key>
 			<integer>2445</integer>
 		</dict>
+		<key>83D39038-AB3A-4F47-8AA7-59FF56AC1C9A</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>10</integer>
+			<key>xpos</key>
+			<integer>570</integer>
+			<key>ypos</key>
+			<integer>200</integer>
+		</dict>
 		<key>899922AB-B531-4389-BA0B-117C7AD8F23E</key>
 		<dict>
 			<key>xpos</key>
@@ -2087,6 +2659,15 @@ getConfigPageData</string>
 			<key>ypos</key>
 			<integer>2030</integer>
 		</dict>
+		<key>8ABF6748-C5F1-4BAF-8B66-4B1845F3C12F</key>
+		<dict>
+			<key>note</key>
+			<string>set mode to goToPageByName</string>
+			<key>xpos</key>
+			<integer>1335</integer>
+			<key>ypos</key>
+			<integer>40</integer>
+		</dict>
 		<key>90A68901-DE22-4D39-9177-0BB8318870B2</key>
 		<dict>
 			<key>colorindex</key>
@@ -2098,6 +2679,15 @@ getConfigPageData</string>
 			<key>ypos</key>
 			<integer>2085</integer>
 		</dict>
+		<key>9616EF40-89B7-42CB-B7A7-4DFCDAAF840F</key>
+		<dict>
+			<key>note</key>
+			<string>Ask user to select a block from dynamically generated config page. Script will the jump to this block on dialy page, creating it if it does not exist</string>
+			<key>xpos</key>
+			<integer>1115</integer>
+			<key>ypos</key>
+			<integer>480</integer>
+		</dict>
 		<key>9B1204F4-C451-4A32-B3EF-D6592EDE88F1</key>
 		<dict>
 			<key>note</key>
@@ -2108,6 +2698,15 @@ Can be run by keyword "roam" or by hotkey</string>
 			<integer>300</integer>
 			<key>ypos</key>
 			<integer>70</integer>
+		</dict>
+		<key>9B35F0CE-E573-4E25-9780-792E253B1CC8</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>12</integer>
+			<key>xpos</key>
+			<integer>495</integer>
+			<key>ypos</key>
+			<integer>535</integer>
 		</dict>
 		<key>9EBBFBC0-7CD0-4962-A6CA-21A0B2077F29</key>
 		<dict>
@@ -2147,6 +2746,15 @@ Can be run by keyword "roam" or by hotkey</string>
 			<key>ypos</key>
 			<integer>100</integer>
 		</dict>
+		<key>B0B5D83C-21CF-43B3-8698-480FF5018C2D</key>
+		<dict>
+			<key>note</key>
+			<string>Go to named page with hotkey- pass named page as arg</string>
+			<key>xpos</key>
+			<integer>1445</integer>
+			<key>ypos</key>
+			<integer>10</integer>
+		</dict>
 		<key>B39F7A8C-0519-4209-9545-8929037CC5FB</key>
 		<dict>
 			<key>colorindex</key>
@@ -2181,14 +2789,32 @@ Passes "Quick Capture Categories" as arg</string>
 			<key>ypos</key>
 			<integer>2010</integer>
 		</dict>
+		<key>C5A87E8B-7396-4272-B149-2DEA1087C8F1</key>
+		<dict>
+			<key>note</key>
+			<string>Clear query, but stash result in variable</string>
+			<key>xpos</key>
+			<integer>1000</integer>
+			<key>ypos</key>
+			<integer>185</integer>
+		</dict>
+		<key>C8C15BD3-3EB9-4D6F-8180-ECDDB8173258</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>12</integer>
+			<key>xpos</key>
+			<integer>1390</integer>
+			<key>ypos</key>
+			<integer>2310</integer>
+		</dict>
 		<key>C98D1012-5979-49E9-A758-F78A5EE0118F</key>
 		<dict>
 			<key>note</key>
 			<string>Go to daily page</string>
 			<key>xpos</key>
-			<integer>525</integer>
+			<integer>410</integer>
 			<key>ypos</key>
-			<integer>390</integer>
+			<integer>385</integer>
 		</dict>
 		<key>C9DB5FE2-8090-439A-8A18-DD74E04A84C1</key>
 		<dict>
@@ -2200,6 +2826,15 @@ Passes "Quick Capture Categories" as arg</string>
 			<integer>270</integer>
 			<key>ypos</key>
 			<integer>1020</integer>
+		</dict>
+		<key>D0EFFBD2-DC88-4DB5-9B1D-23290D33375D</key>
+		<dict>
+			<key>note</key>
+			<string>set mode to getTagsOfPage</string>
+			<key>xpos</key>
+			<integer>680</integer>
+			<key>ypos</key>
+			<integer>490</integer>
 		</dict>
 		<key>DA7C5E48-923E-4F00-ABD8-482FB61DBEDA</key>
 		<dict>
@@ -2213,15 +2848,6 @@ Example using Hook to grab markdown link to documents, files, etc, and sending t
 			<key>ypos</key>
 			<integer>1430</integer>
 		</dict>
-		<key>DB1B6FB8-7CB0-47B4-B5E8-71D471B6F4D5</key>
-		<dict>
-			<key>note</key>
-			<string>Go to page id</string>
-			<key>xpos</key>
-			<integer>585</integer>
-			<key>ypos</key>
-			<integer>70</integer>
-		</dict>
 		<key>E1042330-8DA6-4CA6-9F67-89733B706456</key>
 		<dict>
 			<key>note</key>
@@ -2232,6 +2858,24 @@ I set this to ⇧⌘D same as Roam</string>
 			<integer>25</integer>
 			<key>ypos</key>
 			<integer>305</integer>
+		</dict>
+		<key>E3B8A694-6F69-4B70-BA3F-4A15E8BE1172</key>
+		<dict>
+			<key>note</key>
+			<string>Load config page "RoamSearchConfig", find block whose name matched the block passed, and return sublocks as page names that can be jumped to</string>
+			<key>xpos</key>
+			<integer>825</integer>
+			<key>ypos</key>
+			<integer>445</integer>
+		</dict>
+		<key>E5AA3C97-9A7C-43F3-8B63-CA5B074D1ABF</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>10</integer>
+			<key>xpos</key>
+			<integer>1365</integer>
+			<key>ypos</key>
+			<integer>520</integer>
 		</dict>
 		<key>E5DE65F1-C320-47AF-8241-CA9CFE420449</key>
 		<dict>
@@ -2284,6 +2928,24 @@ Example that grabs screenshot, and prompts for where to paste it based on dynami
 			<integer>60</integer>
 			<key>ypos</key>
 			<integer>1740</integer>
+		</dict>
+		<key>F3494981-8358-4610-9C8F-96B8DBEBB47D</key>
+		<dict>
+			<key>note</key>
+			<string>set mode to getPagesWithTag</string>
+			<key>xpos</key>
+			<integer>740</integer>
+			<key>ypos</key>
+			<integer>165</integer>
+		</dict>
+		<key>F385EF13-01CA-482D-B519-3B8312C43C8C</key>
+		<dict>
+			<key>note</key>
+			<string>Clear query, but stash result in variable</string>
+			<key>xpos</key>
+			<integer>995</integer>
+			<key>ypos</key>
+			<integer>475</integer>
 		</dict>
 		<key>F43CB827-BF0F-45E1-B9FE-C476BF02EEF2</key>
 		<dict>

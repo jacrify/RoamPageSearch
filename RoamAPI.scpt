@@ -18,6 +18,21 @@ property response : ""
 ###################################################################
 # Utility functions
 ###################################################################
+
+on replace_chars(this_text, search_string, replacement_string)
+	set AppleScript's text item delimiters to the search_string
+	set the item_list to every text item of this_text
+	set AppleScript's text item delimiters to the replacement_string
+	set this_text to the item_list as string
+	set AppleScript's text item delimiters to ""
+	return this_text
+end replace_chars
+
+on oneline(s)
+	return replace_chars(replace_chars(s, "
+	", ""), "	", "")
+end oneline
+
 to getTimeInHoursAndMinutes()
 
 	-- Get the "hour"
@@ -337,10 +352,98 @@ on run argv
 		#Build json from title, pageid. We hack the full url we want to navigate to into the url. It's crappy but best do it here rather than in the applescript that sends the browser to the url
 		#Square braces seem to throw Alfred filtering out, so we strip them out.
 
+		set getallpagesjavascript to oneline("
+			jsreturn =JSON.stringify(
+			{items:
+				window.roamAlphaAPI
+				.q('[
+					:find (pull ?e [
+						[:node/title]
+						[:block/children]
+						[:block/refs]
+						[:block/uid]
+					])
+					:where [?e :node/title]]')
+				.map(n=>
+					{return {
+						title:n[0]['title']" & bracestrip & "+'	(⏎ or ⌘ or ⌥ )',
+						uid:n[0]['uid'],
+						arg:n[0]['title'],
+						mods:{
+							opt: {
+								valid:!(n[0]['childen']==undefined),
+								subtitle: 'show what this links to'
+								}
+							}
+					}}
+					)
+			})")
+		log "get all pages javascript: " & getallpagesjavascript
+	else if mode is "getPagesWithTag" then
 
-		set getallpagesjavascript to "jsreturn =JSON.stringify({items:window.roamAlphaAPI.q('[:find (pull ?e [[:node/title] [:block/children] [:block/refs][:block/uid] ])  :where [?e :node/title]]').map(n=>{return {title:n[0]['title']" & bracestrip & ",uid:n[0]['uid'],arg:n[0]['uid']}})})"
+		set targetPage to ""
+		set targetTag to item 1 of argv
 
+		set getallpagesjavascript to oneline("
+			jsreturn =JSON.stringify(
+				{items:
+					window.roamAlphaAPI
+					.q('[
+						:find (pull ?targetpage [
+							[:node/title]
+							[:block/uid]] )
+						:in $
+							?searchstring
+							%
+						:where
+							[?tagpage :node/title ?searchstring]
+							[?anyblock :block/refs ?tagpage]
+							[?targetpage :node/title]
+							(ancestor ?anyblock ?targetpage)
+							]','
+						" & targetTag & "'," & ancestorrule & ")
+					.map(n=>{
+						return {
+							title:n[0]['title']" & bracestrip & ",
+							uid:n[0]['uid'],arg:n[0]['title']
+							}})
+				})")
 
+		log "getPagesWithTag javascript: " & getallpagesjavascript
+
+	else if mode is "getTagsOfPage" then
+
+		set targetPage to ""
+		set targetTag to item 1 of argv
+
+		set getallpagesjavascript to oneline("
+			jsreturn =JSON.stringify(
+				{items:
+					window.roamAlphaAPI
+						.q('[
+							:find (pull ?targetpage [
+								[:node/title]
+								[:block/uid]
+							] )
+							:in
+								$
+								?searchstring
+								%
+							:where
+								[?containingpage :node/title ?searchstring]
+								[?anyblock :block/refs ?targetpage]
+								[?targetpage :node/title]
+								(ancestor ?anyblock ?containingpage)]','
+							" & targetTag & "'," & ancestorrule & ")
+						.map(n=>{
+							return {
+								title:n[0]['title']" & bracestrip & ",
+								uid:n[0]['uid'],
+								arg:n[0]['title']
+								}})
+				})")
+
+		log "getTagsOfPage javascript: " & getallpagesjavascript
 
 	else if mode is "getConfigPageData" then
 
@@ -357,7 +460,32 @@ on run argv
 		#note the random bullshit to string [] out of the string title so alfred will filter it.
 		#note also that we add an indicator to show you can drill down through children if present
 		#arg passed to alfred is the full string tag
-		set getconfigpagejavascript to "jsreturn =JSON.stringify({items:window.roamAlphaAPI .q('[:find (pull ?optionblock [[:block/string] [:block/children]]) :in $ ?configpagetitle ?menublockstring % :where [?configpage :node/title ?configpagetitle]  [?menublock :block/string ?menublockstring] (ancestor ?menublock ?configpage) [?menublock :block/children ?optionblock]  ]', '" & configPageName & "','" & targetblock & "', " & ancestorrule & " ).map(n=> {return {title: n[0].string" & bracestrip & " + (n[0].children?' (⌥ to see children)':''),arg:n[0].string}})})"
+		set getconfigpagejavascript to oneline("
+			jsreturn =JSON.stringify(
+				{items:
+					window.roamAlphaAPI
+						.q('[
+							:find (pull ?optionblock [
+								[:block/string]
+								[:block/children]])
+							:in
+								$
+								?configpagetitle
+								?menublockstring
+								%
+							:where
+								[?configpage :node/title ?configpagetitle]
+								[?menublock :block/string ?menublockstring]
+								(ancestor ?menublock ?configpage)
+								[?menublock :block/children ?optionblock]
+							  ]', '" & configPageName & "','" & targetblock & "', " & ancestorrule & " )
+							.map(n=> {
+								return {
+									title: n[0].string" & bracestrip & " + (n[0].children?' (⌥ to see children)':''),
+									arg:n[0].string
+									}})
+					})")
+
 		log "Javscript to inject: " & getconfigpagejavascript
 
 
@@ -375,7 +503,7 @@ on run argv
 		# return contents of all children of that block to build a menu
 		#arg passed to alfred is the full string tag
 		set getconfigpagejavascript to "jsreturn =JSON.stringify({items:window.roamAlphaAPI .q('[:find (pull ?optionblock [[:block/string] [:block/children] [:block/refs]]) :in $ ?menutag  :where [?configpage :node/title ?menutag]  [?menublock :block/refs ?configpage] [?menublock :block/children ?optionblock] ]', '" & targetblock & "').filter(b=>b[0].refs).map(n=> {return {title: n[0].string" & bracestrip & " + (n[0].children?' (⌥ to see children)':''),arg:n[0].string}})})"
-		log "Javscript to inject: " & getconfigpagejavascript
+		log "Javascript to inject: " & getconfigpagejavascript
 
 	else if mode is "getConfigPageNames" then
 
@@ -390,8 +518,40 @@ on run argv
 		# only one reference is returned per child (the oldest). This means [[[[foo]][[bar]]]] should return [[foo]][[[bar]]
 
 		#arg passed to alfred is the full string tag
-		set getconfigpagejavascript to "jsreturn =JSON.stringify({items:window.roamAlphaAPI .q('[:find (pull ?optionblock [[:block/string] [:block/children] [:block/refs]]) :in $ ?configpagetitle ?menublockstring % :where [?configpage :node/title ?configpagetitle]  [?menublock :block/string ?menublockstring]  [?menublock :block/children ?optionblock] (ancestor ?menublock ?configpage) ]', '" & configPageName & "','" & targetblock & "', " & ancestorrule & ").filter(b=>b[0].refs).map(b=>b[0].refs.slice(-1)[0]).map(r=>window.roamAlphaAPI.pull('[:node/title]',r.id)).map(r=>{return {title:r[':node/title']" & bracestrip & ",arg:r[':node/title']}})})"
-		log "Javscript to inject: " & getconfigpagejavascript
+		set getconfigpagejavascript to oneline("
+			jsreturn =JSON.stringify(
+				{items:
+					window.roamAlphaAPI
+						.q('[
+							:find (pull ?optionblock [
+								[:block/string]
+								[:block/children]
+								{:block/refs [:node/title]})
+							:in
+								$
+								?configpagetitle
+								?menublockstring
+								%
+							:where
+								[?configpage :node/title ?configpagetitle]
+								[?menublock :block/string ?menublockstring]
+								[?menublock :block/children ?optionblock]
+								(ancestor ?menublock ?configpage)
+							]', '" & configPageName & "','" & targetblock & "', " & ancestorrule & ")
+						.filter(b=>b[0].refs)
+						.map(b=>
+							b[0].refs.slice(-1)[0])
+						.map(r=>
+							window.roamAlphaAPI.pull(
+								'[:node/title]',
+								r.id))
+							.map(r=>{
+								return {
+									title:r[':node/title']" & bracestrip & ",
+									arg:r[':node/title']}
+									})
+					})")
+		log "Javascript to inject: " & getconfigpagejavascript
 
 
 
@@ -419,7 +579,28 @@ on run argv
 
 
 		#clojure query to get block id of block on daily page which links to tag. Uses ancestor rule to recursively pull blocks.
-		set quickentryjavascript to "{let tempout=window.roamAlphaAPI.q('[:find (pull ?dailypageblock [:block/uid]) :in $ ?dailypagetitle ?tagtitle % :where [?dailypageblock :block/string ?tagtitle]  [?dailypage :block/uid ?dailypagetitle]  (ancestor ?dailypageblock ?dailypage) ]','" & dailyDate & "','" & targetTag & "'," & ancestorrule & ");if (tempout.length>0) {jsreturn=tempout[0][0].uid} else {jsreturn ='notfound'}}"
+		set quickentryjavascript to oneline("
+			{let tempout=
+				window.roamAlphaAPI
+					.q('[
+						:find (pull ?dailypageblock
+							 [:block/uid])
+						:in
+							$
+							?dailypagetitle
+							?tagtitle
+							%
+						:where
+							[?dailypageblock :block/string ?tagtitle]
+							[?dailypage :block/uid ?dailypagetitle]
+							(ancestor ?dailypageblock ?dailypage)
+					]','" & dailyDate & "','" & targetTag & "'," & ancestorrule & "
+					);
+					if (tempout.length>0) {
+						jsreturn=tempout[0][0].uid
+					} else {
+						jsreturn ='notfound'
+					}}")
 
 	else
 		display dialog "Unknown mode selector passed"
@@ -577,7 +758,7 @@ on run argv
 				log "Config loaded from roam. Resp :" & resp
 				return resp
 
-			else if mode is "getAllPages" then
+			else if mode is "getAllPages" or mode is "getPagesWithTag" or mode is "getTagsOfPage" then
 				return injectChromeJavascript(foundWindow, getallpagesjavascript)
 			end if
 		end if
