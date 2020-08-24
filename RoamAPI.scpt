@@ -6,20 +6,7 @@
 #Copying and distribution of this file, with or without modification, are permitted in any medium without royalty, provided the copyright notice and this notice are preserved. This file is offered as-is, without any warranty.
 
 
-# Finds a Roam tab in the selected browser, pointing to the selected database.
-# Checks first to see if current tab in selected broswer is pointing at roam
-# If not iterates through all windows and all tabs
-# If no tab is found, asks user to open one.
-#
-# Once window is found, there are three modes, signified by the first arg passed:
-# getAllPages : operates in query mode: injects javascript to call roam API and get list of all pages, with page ids. Designed to be used with Alfred filter
-# goToPageByName : goes to a names page. Useful for pages you jump to often.
-# gotoDaily: go to today's daily page
-# goToPageByID: jump to page by id
-
-# If no argument was passed, then
-# If argument was passed, then assumes argument is a pageid, and sets roam tab to go to that page.
-#TODO if url of page is already there don't do anything
+#See https://www.putyourleftfoot.in/roampagesearch
 
 global browsername
 global keydelay
@@ -324,6 +311,10 @@ on run argv
 	#this clojure rule finds any ancestor of block ?block
 	set ancestorrule to "'[ [ (ancestor ?block ?ancestor) [?ancestor :block/children ?block] ] [ (ancestor ?block ?ancestor) [?parent :block/children ?block ] (ancestor ?parent ?ancestor) ] ] ]'"
 
+	if mode is "" then
+		set mode to "getAllPages"
+	end if
+
 	if mode is "goToPageByID" then
 		#target page is a page id
 		set targetPage to item 1 of argv
@@ -333,9 +324,10 @@ on run argv
 		#targetPageName is a page name
 		set targetPageName to item 1 of argv
 
-		#this javascript searchs for a page matching a string, and returns the block uid. It's really horrid and should be destroyed and then burned.
-		#todo rewrite with pull parameter
-		set searchjavascript to "jsreturn=window.roamAlphaAPI.q('[:find ?e :in $ ?a :where [?e :node/title ?a]]','" & targetPageName & "').length==0 ? '':window.roamAlphaAPI.pull('[*]',window.roamAlphaAPI.q('[:find ?e :in $ ?a :where [?e :node/title ?a]]','" & targetPageName & "')[0][0])[':block/uid']"
+		#this javascript searchs for a page matching a string, and returns the block uid..
+
+		set searchjavascript to "jsreturn=window.roamAlphaAPI.q('[:find (pull ?e [[:node/title] [:block/uid]] )  :in $ ?a :where [?e :node/title ?a]]','" & targetPageName & "').map(n=>n.map(n=>n['uid'])).join('')"
+
 	else if mode is "getAllPages" then
 		#get all page titles
 		set targetPage to ""
@@ -344,9 +336,10 @@ on run argv
 		#Iterate through each id and pull page details: window.roamAlphaAPI.pull('[*]', n[0])
 		#Build json from title, pageid. We hack the full url we want to navigate to into the url. It's crappy but best do it here rather than in the applescript that sends the browser to the url
 		#Square braces seem to throw Alfred filtering out, so we strip them out.
-		#todo rewrite with pull parameter
 
-		set getallpagesjavascript to "jsreturn =JSON.stringify({items:window.roamAlphaAPI.q('[:find ?e :where [?e :node/title]]').map(n=>{let o=window.roamAlphaAPI.pull('[*]', n[0]);return {title:o[':node/title']" & bracestrip & ",uid:o[':block/uid'],arg:o[':block/uid']}})})"
+
+		set getallpagesjavascript to "jsreturn =JSON.stringify({items:window.roamAlphaAPI.q('[:find (pull ?e [[:node/title] [:block/children] [:block/refs][:block/uid] ])  :where [?e :node/title]]').map(n=>{return {title:n[0]['title']" & bracestrip & ",uid:n[0]['uid'],arg:n[0]['uid']}})})"
+
 
 
 	else if mode is "getConfigPageData" then

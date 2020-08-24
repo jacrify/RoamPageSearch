@@ -34,6 +34,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>0B1CB30C-4EED-4F3B-B1C7-EA370A79E0CD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F43CB827-BF0F-45E1-B9FE-C476BF02EEF2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>0D19AAEB-6160-4A33-A00E-97C42DBA7215</key>
 		<array>
 			<dict>
@@ -103,7 +116,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>F43CB827-BF0F-45E1-B9FE-C476BF02EEF2</string>
+				<string>0B1CB30C-4EED-4F3B-B1C7-EA370A79E0CD</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -252,6 +265,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>74EA125C-81A7-4BA8-B114-1CE76B121C25</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0B1CB30C-4EED-4F3B-B1C7-EA370A79E0CD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>75F03C06-4EF2-45AB-A5E3-7C09626CFDDF</key>
 		<array>
 			<dict>
@@ -296,6 +322,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>A31CB604-DE0E-4AC5-9636-E37ADC507414</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>899922AB-B531-4389-BA0B-117C7AD8F23E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7F661539-269A-4BE1-8C85-0CE9BE095EA4</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -632,31 +671,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>on run argv
-#@osa-lang:AppleScript#Roam Reuse 1.0###current window being scannedset dbname to (system attribute "DBName")if (dbname is "") then	display dialog "Please set DBName in workflow environment variables"	returnend ifset windowIndex to 1#current tab being scannedset tabIndex to 0set lastTargetSearchString to ""#list of list of tab urls from all windowsset allWindowsTabURLList to ""#list of list of tab titles from all windowsset allWindowsTabTitlesList to ""#list of all windows, chrome first, then safariglobal allWindowsList, tabIndex, windowIndexset allWindowsList to ""#number of chrome windows in list aboveset chromeWindowCount to 0global dbname, blockset myurl to item 1 of argv
-#log "Time since last run in seconds:" &amp; timeSinceLastRun#search chrome, then safari tabs for a string and activate it#windowIndex (current windows being searched)#tabIndex (how far through current window we are)# Inputs:set searchString to "roamresearch.com"set direction to "forward"set lastTargetSearchString to searchStringlog "Fetching titles from chrome"tell application "Google Chrome"	#store windows so we keep the same order	#if we don't store them the windows get out of order when we being stuff to front	set allWindowsList to windows	set allWindowsTabURLList to URL of tabs of every window	set allWindowsTabTitlesList to title of tabs of every windowend tellset chromeWindowCount to length of allWindowsListlog "Fetching titles from safari"tell application "Safari"	#store windows so we keep the same order	#if we don't store them the windows get out of order when we being stuff to front	set allWindowsList to allWindowsList &amp; windows	set allWindowsTabURLList to allWindowsTabURLList &amp; (URL of tabs of every window)	set allWindowsTabTitlesList to allWindowsTabTitlesList &amp; (name of tabs of every window)end tellset windowIndex to 1set tabIndex to 0#log "tabIndex start: " &amp; tabIndex#TODO do we need this?set found to falselog "Total windows: " &amp; length of allWindowsListlog "Chrome windows: " &amp; chromeWindowCount#stop looping when we get back to where we started, to handle cast where no tabs foundset startWindowIndex to windowIndexif direction = "forward" then	set tabIndex to tabIndex + 1else	set tabIndex to tabIndex - 1end ifset windowsSearched to 0#iterate through all windowsrepeat while windowIndex ≤ length of allWindowsTabURLList and windowIndex &gt; 0		#log "WindowIndex: " &amp; windowIndex	#log "tabIndex: " &amp; tabIndex	set thisWindowsTabsURLs to item windowIndex of allWindowsTabURLList	set thisWindowsTabsTitles to item windowIndex of allWindowsTabTitlesList	#log thisWindowsTabsURLs	#iterate through all tabs in each window	repeat while tabIndex ≤ length of thisWindowsTabsURLs and tabIndex &gt; 0		#log "tabIndex : " &amp; tabIndex		set TabURL to item tabIndex of thisWindowsTabsURLs		set Tabtitle to item tabIndex of thisWindowsTabsTitles		if ((TabURL as text) contains searchString) or (Tabtitle contains searchString) then						#chrome windows are first in array			if windowIndex ≤ chromeWindowCount then				tell application "Google Chrome"					activate					set w to item windowIndex of allWindowsList					set index of w to 1					tell w to set active tab index to tabIndex										#		log myurl					#set myurl to "https://roamresearch.com/#/app/" &amp; dbname &amp; "/page/" &amp; arg					tell w to set URL of active tab to myurl				end tell				#this delay seems to be needed to remove timing voodo				delay 0.1				tell application "System Events"					tell application process "Google Chrome"						tell window 1							perform action "AXRaise"						end tell					end tell				end tell			else								tell application "Safari"					activate					set w to item windowIndex of allWindowsList					set index of w to 1					tell w to set current tab to tab tabIndex					set URL of document 1 to myurl				end tell				#this delay seems to be needed to remove timing voodo				delay 0.1				tell application "System Events"					tell application process "Safari"						tell window 1							perform action "AXRaise"						end tell					end tell				end tell							end if			set found to true						exit repeat		end if		#TODO Backward		if (direction = "forward") then			set tabIndex to tabIndex + 1		else			set tabIndex to tabIndex - 1		end if	end repeat		if found then exit repeat		if (direction = "forward") then		set tabIndex to 1		set windowIndex to windowIndex + 1		if windowIndex &gt; length of allWindowsTabURLList then			set windowIndex to 1		end if			else		set windowIndex to windowIndex - 1		if windowIndex &lt; 1 then			set windowIndex to length of allWindowsTabURLList		end if		set tabIndex to length of item windowIndex of allWindowsTabURLList			end if	set windowsSearched to windowsSearched + 1	if windowsSearched &gt; length of allWindowsList then		exit repeat	end ifend repeatif not found then	log "not found"end ifreturn foundend runscript GetTick --&gt; for more precise timer calculations	use framework "Foundation"	on Now()		return (current application's NSDate's timeIntervalSinceReferenceDate) as real	end Nowend script</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>runAppleScript.sh</string>
-				<key>type</key>
-				<integer>8</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>C98D1012-5979-49E9-A758-F78A5EE0118F</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -688,6 +702,31 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>on run argv
+#@osa-lang:AppleScript#Roam Reuse 1.0###current window being scannedset dbname to (system attribute "DBName")if (dbname is "") then	display dialog "Please set DBName in workflow environment variables"	returnend ifset windowIndex to 1#current tab being scannedset tabIndex to 0set lastTargetSearchString to ""#list of list of tab urls from all windowsset allWindowsTabURLList to ""#list of list of tab titles from all windowsset allWindowsTabTitlesList to ""#list of all windows, chrome first, then safariglobal allWindowsList, tabIndex, windowIndexset allWindowsList to ""#number of chrome windows in list aboveset chromeWindowCount to 0global dbname, blockset myurl to item 1 of argv
+#log "Time since last run in seconds:" &amp; timeSinceLastRun#search chrome, then safari tabs for a string and activate it#windowIndex (current windows being searched)#tabIndex (how far through current window we are)# Inputs:set searchString to "roamresearch.com"set direction to "forward"set lastTargetSearchString to searchStringlog "Fetching titles from chrome"tell application "Google Chrome"	#store windows so we keep the same order	#if we don't store them the windows get out of order when we being stuff to front	set allWindowsList to windows	set allWindowsTabURLList to URL of tabs of every window	set allWindowsTabTitlesList to title of tabs of every windowend tellset chromeWindowCount to length of allWindowsListlog "Fetching titles from safari"tell application "Safari"	#store windows so we keep the same order	#if we don't store them the windows get out of order when we being stuff to front	set allWindowsList to allWindowsList &amp; windows	set allWindowsTabURLList to allWindowsTabURLList &amp; (URL of tabs of every window)	set allWindowsTabTitlesList to allWindowsTabTitlesList &amp; (name of tabs of every window)end tellset windowIndex to 1set tabIndex to 0#log "tabIndex start: " &amp; tabIndex#TODO do we need this?set found to falselog "Total windows: " &amp; length of allWindowsListlog "Chrome windows: " &amp; chromeWindowCount#stop looping when we get back to where we started, to handle cast where no tabs foundset startWindowIndex to windowIndexif direction = "forward" then	set tabIndex to tabIndex + 1else	set tabIndex to tabIndex - 1end ifset windowsSearched to 0#iterate through all windowsrepeat while windowIndex ≤ length of allWindowsTabURLList and windowIndex &gt; 0		#log "WindowIndex: " &amp; windowIndex	#log "tabIndex: " &amp; tabIndex	set thisWindowsTabsURLs to item windowIndex of allWindowsTabURLList	set thisWindowsTabsTitles to item windowIndex of allWindowsTabTitlesList	#log thisWindowsTabsURLs	#iterate through all tabs in each window	repeat while tabIndex ≤ length of thisWindowsTabsURLs and tabIndex &gt; 0		#log "tabIndex : " &amp; tabIndex		set TabURL to item tabIndex of thisWindowsTabsURLs		set Tabtitle to item tabIndex of thisWindowsTabsTitles		if ((TabURL as text) contains searchString) or (Tabtitle contains searchString) then						#chrome windows are first in array			if windowIndex ≤ chromeWindowCount then				tell application "Google Chrome"					activate					set w to item windowIndex of allWindowsList					set index of w to 1					tell w to set active tab index to tabIndex										#		log myurl					#set myurl to "https://roamresearch.com/#/app/" &amp; dbname &amp; "/page/" &amp; arg					tell w to set URL of active tab to myurl				end tell				#this delay seems to be needed to remove timing voodo				delay 0.1				tell application "System Events"					tell application process "Google Chrome"						tell window 1							perform action "AXRaise"						end tell					end tell				end tell			else								tell application "Safari"					activate					set w to item windowIndex of allWindowsList					set index of w to 1					tell w to set current tab to tab tabIndex					set URL of document 1 to myurl				end tell				#this delay seems to be needed to remove timing voodo				delay 0.1				tell application "System Events"					tell application process "Safari"						tell window 1							perform action "AXRaise"						end tell					end tell				end tell							end if			set found to true						exit repeat		end if		#TODO Backward		if (direction = "forward") then			set tabIndex to tabIndex + 1		else			set tabIndex to tabIndex - 1		end if	end repeat		if found then exit repeat		if (direction = "forward") then		set tabIndex to 1		set windowIndex to windowIndex + 1		if windowIndex &gt; length of allWindowsTabURLList then			set windowIndex to 1		end if			else		set windowIndex to windowIndex - 1		if windowIndex &lt; 1 then			set windowIndex to length of allWindowsTabURLList		end if		set tabIndex to length of item windowIndex of allWindowsTabURLList			end if	set windowsSearched to windowsSearched + 1	if windowsSearched &gt; length of allWindowsList then		exit repeat	end ifend repeatif not found then	log "not found"end ifreturn foundend runscript GetTick --&gt; for more precise timer calculations	use framework "Foundation"	on Now()		return (current application's NSDate's timeIntervalSinceReferenceDate) as real	end Nowend script</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>runAppleScript.sh</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>C98D1012-5979-49E9-A758-F78A5EE0118F</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argument</key>
 				<string>{query}</string>
 				<key>passthroughargument</key>
@@ -708,12 +747,31 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>roamdaily</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Go to Roam Daily Page</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>899922AB-B531-4389-BA0B-117C7AD8F23E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
-				<integer>3</integer>
-				<key>argumenttext</key>
-				<string>Roam</string>
+				<integer>0</integer>
 				<key>focusedappvariable</key>
 				<false/>
 				<key>focusedappvariablename</key>
@@ -737,6 +795,25 @@
 			<string>3D04A873-9014-4A2A-BA23-1A7D1AF25369</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>jump to named page</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>com.jc.roampagesearch</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>F43CB827-BF0F-45E1-B9FE-C476BF02EEF2</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -779,19 +856,20 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>externaltriggerid</key>
-				<string>jump to named page</string>
-				<key>passinputasargument</key>
-				<true/>
-				<key>passvariables</key>
-				<true/>
-				<key>workflowbundleid</key>
-				<string>com.jc.roampagesearch</string>
+				<key>argument</key>
+				<string>Roam</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>mode</key>
+					<string>gotoDaily</string>
+				</dict>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
+			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>F43CB827-BF0F-45E1-B9FE-C476BF02EEF2</string>
+			<string>0B1CB30C-4EED-4F3B-B1C7-EA370A79E0CD</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -812,6 +890,27 @@
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>6FD03D07-5C84-4D66-B81B-95562E336F93</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>roamjumptoroampage</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Go to page called "Roam"</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>74EA125C-81A7-4BA8-B114-1CE76B121C25</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -846,11 +945,11 @@
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
-				<integer>35</integer>
+				<integer>0</integer>
 				<key>hotmod</key>
-				<integer>1835008</integer>
+				<integer>0</integer>
 				<key>hotstring</key>
-				<string>P</string>
+				<string></string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -936,11 +1035,11 @@ end alfred_script</string>
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
-				<integer>17</integer>
+				<integer>0</integer>
 				<key>hotmod</key>
-				<integer>1179648</integer>
+				<integer>0</integer>
 				<key>hotstring</key>
-				<string>T</string>
+				<string></string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -1085,11 +1184,11 @@ end alfred_script</string>
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
-				<integer>4</integer>
+				<integer>0</integer>
 				<key>hotmod</key>
-				<integer>1835008</integer>
+				<integer>0</integer>
 				<key>hotstring</key>
-				<string>H</string>
+				<string></string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -1112,7 +1211,6 @@ end alfred_script</string>
 tell application "Hook"
 	set bm to bookmark from active window
 	set the clipboard to  "[" &amp; title of bm &amp; "](" &amp; address of bm &amp; ")"
-	return {query}
 end tell
 end alfred_script</string>
 				<key>cachescript</key>
@@ -1157,11 +1255,11 @@ end alfred_script</string>
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
-				<integer>1</integer>
+				<integer>0</integer>
 				<key>hotmod</key>
-				<integer>1179648</integer>
+				<integer>0</integer>
 				<key>hotstring</key>
-				<string>S</string>
+				<string></string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -1360,11 +1458,11 @@ echo -n $out</string>
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
-				<integer>8</integer>
+				<integer>0</integer>
 				<key>hotmod</key>
-				<integer>1835008</integer>
+				<integer>0</integer>
 				<key>hotstring</key>
-				<string>C</string>
+				<string></string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -1667,9 +1765,9 @@ echo -n $out</string>
 			<key>note</key>
 			<string>Jump to daily page block</string>
 			<key>xpos</key>
-			<integer>570</integer>
+			<integer>575</integer>
 			<key>ypos</key>
-			<integer>1060</integer>
+			<integer>1245</integer>
 		</dict>
 		<key>0145BD8E-631A-4396-BAED-38A26C64FFE6</key>
 		<dict>
@@ -1689,9 +1787,9 @@ echo -n $out</string>
 			<key>note</key>
 			<string>Jump to daily page block</string>
 			<key>xpos</key>
-			<integer>570</integer>
+			<integer>575</integer>
 			<key>ypos</key>
-			<integer>835</integer>
+			<integer>1020</integer>
 		</dict>
 		<key>0AAE0185-4588-4C32-B094-7CDB68C31F7A</key>
 		<dict>
@@ -1703,9 +1801,18 @@ todo to true,
 paste to true, 
 and addtimestamp to true</string>
 			<key>xpos</key>
-			<integer>445</integer>
+			<integer>450</integer>
 			<key>ypos</key>
-			<integer>1090</integer>
+			<integer>1275</integer>
+		</dict>
+		<key>0B1CB30C-4EED-4F3B-B1C7-EA370A79E0CD</key>
+		<dict>
+			<key>note</key>
+			<string>set arg to "Roam"</string>
+			<key>xpos</key>
+			<integer>230</integer>
+			<key>ypos</key>
+			<integer>735</integer>
 		</dict>
 		<key>0D19AAEB-6160-4A33-A00E-97C42DBA7215</key>
 		<dict>
@@ -1719,9 +1826,9 @@ Pass (as argument) the string contents of the block on daily page you want to ju
 Pass vars as follows
 paste : "true" if you want to paste</string>
 			<key>xpos</key>
-			<integer>790</integer>
+			<integer>795</integer>
 			<key>ypos</key>
-			<integer>1200</integer>
+			<integer>1385</integer>
 		</dict>
 		<key>11746A23-1882-4878-AC9E-85F4AC69F8AA</key>
 		<dict>
@@ -1757,9 +1864,9 @@ paste : "true" if you want to paste</string>
 			<key>note</key>
 			<string>Jump to daily page block</string>
 			<key>xpos</key>
-			<integer>560</integer>
+			<integer>565</integer>
 			<key>ypos</key>
-			<integer>1245</integer>
+			<integer>1430</integer>
 		</dict>
 		<key>1DF1ACEA-3AD8-468C-8677-0D70D8158D57</key>
 		<dict>
@@ -1769,18 +1876,18 @@ paste : "true" if you want to paste</string>
 			<string>TODO EXAMPLE
 Example that grabs selection and sends to tag under roam daily page, as a TODO</string>
 			<key>xpos</key>
-			<integer>65</integer>
+			<integer>70</integer>
 			<key>ypos</key>
-			<integer>1060</integer>
+			<integer>1245</integer>
 		</dict>
 		<key>2D6448F3-A55C-411C-B8BB-426570C809DC</key>
 		<dict>
 			<key>note</key>
 			<string>Go to tag under daily note. Create tag if not present. Do not paste text</string>
 			<key>xpos</key>
-			<integer>1060</integer>
+			<integer>1065</integer>
 			<key>ypos</key>
-			<integer>1200</integer>
+			<integer>1385</integer>
 		</dict>
 		<key>30E87419-E57D-42EF-823F-B21DCB1ADC89</key>
 		<dict>
@@ -1790,9 +1897,9 @@ Example that grabs selection and sends to tag under roam daily page, as a TODO</
 			<string>BOOKMARK EXAMPLE
 Example of one key bookmarking- grabs url of current browser tab and sends to tag under daily page. Hook is better :)</string>
 			<key>xpos</key>
-			<integer>65</integer>
+			<integer>70</integer>
 			<key>ypos</key>
-			<integer>835</integer>
+			<integer>1020</integer>
 		</dict>
 		<key>3C9855AA-5086-453B-8C9C-A54DC4863E56</key>
 		<dict>
@@ -1811,9 +1918,9 @@ Example of one key bookmarking- grabs url of current browser tab and sends to ta
 			<string>GO TO NAMED PAGE EXAMPLE
 In this case go to page named "Roam"</string>
 			<key>xpos</key>
-			<integer>20</integer>
+			<integer>30</integer>
 			<key>ypos</key>
-			<integer>520</integer>
+			<integer>620</integer>
 		</dict>
 		<key>3D9531CF-8153-4753-9D07-49637AD18343</key>
 		<dict>
@@ -1834,7 +1941,7 @@ Passes "Favourite Pages" as arg. Options show in menu are children of "Favourite
 			<key>note</key>
 			<string>Filter all pages example</string>
 			<key>xpos</key>
-			<integer>25</integer>
+			<integer>20</integer>
 			<key>ypos</key>
 			<integer>70</integer>
 		</dict>
@@ -1872,9 +1979,9 @@ Passes "Favourite Pages" as arg. Options show in menu are children of "Favourite
 			<key>note</key>
 			<string>set mode to quickEntryDaily</string>
 			<key>xpos</key>
-			<integer>965</integer>
+			<integer>970</integer>
 			<key>ypos</key>
-			<integer>1230</integer>
+			<integer>1415</integer>
 		</dict>
 		<key>653B6D94-038D-4010-93F1-B3828E0420D3</key>
 		<dict>
@@ -1903,18 +2010,27 @@ Passes "Favourite Pages" as arg. Options show in menu are children of "Favourite
 			<key>note</key>
 			<string>set paste to true, and set target tag on daily page</string>
 			<key>xpos</key>
-			<integer>440</integer>
+			<integer>445</integer>
 			<key>ypos</key>
-			<integer>1275</integer>
+			<integer>1460</integer>
 		</dict>
 		<key>6FD03D07-5C84-4D66-B81B-95562E336F93</key>
 		<dict>
 			<key>note</key>
 			<string>set mode to goToPageByName</string>
 			<key>xpos</key>
-			<integer>530</integer>
+			<integer>765</integer>
 			<key>ypos</key>
-			<integer>550</integer>
+			<integer>740</integer>
+		</dict>
+		<key>74EA125C-81A7-4BA8-B114-1CE76B121C25</key>
+		<dict>
+			<key>note</key>
+			<string>Example of using a keyword to jump straight to a page</string>
+			<key>xpos</key>
+			<integer>25</integer>
+			<key>ypos</key>
+			<integer>815</integer>
 		</dict>
 		<key>75F03C06-4EF2-45AB-A5E3-7C09626CFDDF</key>
 		<dict>
@@ -1930,9 +2046,9 @@ Passes "Favourite Pages" as arg. Options show in menu are children of "Favourite
 			<key>note</key>
 			<string>set mode to gotoDaily</string>
 			<key>xpos</key>
-			<integer>210</integer>
+			<integer>280</integer>
 			<key>ypos</key>
-			<integer>340</integer>
+			<integer>415</integer>
 		</dict>
 		<key>80D4A5FD-ABB0-4927-B93A-46185D01EBA5</key>
 		<dict>
@@ -1941,9 +2057,9 @@ Passes "Favourite Pages" as arg. Options show in menu are children of "Favourite
 			<key>note</key>
 			<string>Get url and title of front chrome or safari windows as markdown in clipboard</string>
 			<key>xpos</key>
-			<integer>245</integer>
+			<integer>250</integer>
 			<key>ypos</key>
-			<integer>1245</integer>
+			<integer>1430</integer>
 		</dict>
 		<key>83ACD212-8384-4AEA-9BEA-67934CF93DC3</key>
 		<dict>
@@ -1953,6 +2069,13 @@ Passes "Favourite Pages" as arg. Options show in menu are children of "Favourite
 			<integer>930</integer>
 			<key>ypos</key>
 			<integer>2445</integer>
+		</dict>
+		<key>899922AB-B531-4389-BA0B-117C7AD8F23E</key>
+		<dict>
+			<key>xpos</key>
+			<integer>25</integer>
+			<key>ypos</key>
+			<integer>495</integer>
 		</dict>
 		<key>89C6E2F3-D6B9-456F-903F-A5F51C467554</key>
 		<dict>
@@ -1978,7 +2101,9 @@ getConfigPageData</string>
 		<key>9B1204F4-C451-4A32-B3EF-D6592EDE88F1</key>
 		<dict>
 			<key>note</key>
-			<string>Filter page names dynamically, emit page id</string>
+			<string>Filter page names dynamically, emit page id
+
+Can be run by keyword "roam" or by hotkey</string>
 			<key>xpos</key>
 			<integer>300</integer>
 			<key>ypos</key>
@@ -1991,9 +2116,9 @@ getConfigPageData</string>
 			<key>note</key>
 			<string>Jump to a named page within roam. Expects on argument to be passed, which is the name of the page</string>
 			<key>xpos</key>
-			<integer>365</integer>
+			<integer>600</integer>
 			<key>ypos</key>
-			<integer>520</integer>
+			<integer>710</integer>
 		</dict>
 		<key>A31CB604-DE0E-4AC5-9636-E37ADC507414</key>
 		<dict>
@@ -2018,7 +2143,7 @@ getConfigPageData</string>
 			<key>note</key>
 			<string>set mode to getAllPages</string>
 			<key>xpos</key>
-			<integer>190</integer>
+			<integer>195</integer>
 			<key>ypos</key>
 			<integer>100</integer>
 		</dict>
@@ -2061,9 +2186,9 @@ Passes "Quick Capture Categories" as arg</string>
 			<key>note</key>
 			<string>Go to daily page</string>
 			<key>xpos</key>
-			<integer>315</integer>
+			<integer>525</integer>
 			<key>ypos</key>
-			<integer>310</integer>
+			<integer>390</integer>
 		</dict>
 		<key>C9DB5FE2-8090-439A-8A18-DD74E04A84C1</key>
 		<dict>
@@ -2072,9 +2197,9 @@ Passes "Quick Capture Categories" as arg</string>
 			<key>note</key>
 			<string>Get url and title of front chrome or safari windows as markdown</string>
 			<key>xpos</key>
-			<integer>265</integer>
+			<integer>270</integer>
 			<key>ypos</key>
-			<integer>835</integer>
+			<integer>1020</integer>
 		</dict>
 		<key>DA7C5E48-923E-4F00-ABD8-482FB61DBEDA</key>
 		<dict>
@@ -2084,9 +2209,9 @@ Passes "Quick Capture Categories" as arg</string>
 			<string>HOOK EXAMPLE
 Example using Hook to grab markdown link to documents, files, etc, and sending to a named tag in Roam</string>
 			<key>xpos</key>
-			<integer>65</integer>
+			<integer>70</integer>
 			<key>ypos</key>
-			<integer>1245</integer>
+			<integer>1430</integer>
 		</dict>
 		<key>DB1B6FB8-7CB0-47B4-B5E8-71D471B6F4D5</key>
 		<dict>
@@ -2104,9 +2229,9 @@ Example using Hook to grab markdown link to documents, files, etc, and sending t
 
 I set this to ⇧⌘D same as Roam</string>
 			<key>xpos</key>
-			<integer>30</integer>
+			<integer>25</integer>
 			<key>ypos</key>
-			<integer>310</integer>
+			<integer>305</integer>
 		</dict>
 		<key>E5DE65F1-C320-47AF-8241-CA9CFE420449</key>
 		<dict>
@@ -2124,18 +2249,18 @@ I set this to ⇧⌘D same as Roam</string>
 			<key>note</key>
 			<string>set paste to true, and set target tag on daily page</string>
 			<key>xpos</key>
-			<integer>455</integer>
+			<integer>460</integer>
 			<key>ypos</key>
-			<integer>865</integer>
+			<integer>1050</integer>
 		</dict>
 		<key>EE341FD2-38E2-440A-9072-1AA4B9DF1A25</key>
 		<dict>
 			<key>note</key>
 			<string>Go to named page with hotkey- pass named page as arg</string>
 			<key>xpos</key>
-			<integer>645</integer>
+			<integer>880</integer>
 			<key>ypos</key>
-			<integer>520</integer>
+			<integer>710</integer>
 		</dict>
 		<key>F2D81D94-2F17-4307-97B6-A20C21D68D57</key>
 		<dict>
@@ -2144,9 +2269,9 @@ I set this to ⇧⌘D same as Roam</string>
 			<key>note</key>
 			<string>Copy selected text to clipboard</string>
 			<key>xpos</key>
-			<integer>245</integer>
+			<integer>250</integer>
 			<key>ypos</key>
-			<integer>1060</integer>
+			<integer>1245</integer>
 		</dict>
 		<key>F2F339A7-A90B-4FA2-95EE-E8B1F96ADEA7</key>
 		<dict>
@@ -2165,9 +2290,9 @@ Example that grabs screenshot, and prompts for where to paste it based on dynami
 			<key>colorindex</key>
 			<integer>5</integer>
 			<key>xpos</key>
-			<integer>200</integer>
+			<integer>340</integer>
 			<key>ypos</key>
-			<integer>520</integer>
+			<integer>705</integer>
 		</dict>
 	</dict>
 	<key>variables</key>
@@ -2175,21 +2300,21 @@ Example that grabs screenshot, and prompts for where to paste it based on dynami
 		<key>DBName</key>
 		<string>JCThoughts</string>
 		<key>cacheTimeInSeconds</key>
-		<string>600</string>
+		<string>0</string>
 		<key>configPageName</key>
 		<string>RoamSearchConfig</string>
 		<key>keydelay</key>
 		<string>0.3</string>
 		<key>preferredBrowser</key>
-		<string>Safari</string>
+		<string>Chrome</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
 		<string>DBName</string>
 	</array>
 	<key>version</key>
-	<string>2.0</string>
+	<string>2.2</string>
 	<key>webaddress</key>
-	<string>https://roamresearch.com/</string>
+	<string>https://www.putyourleftfoot.in/roampagesearch</string>
 </dict>
 </plist>
