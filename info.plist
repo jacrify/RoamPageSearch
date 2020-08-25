@@ -496,7 +496,7 @@
 				<key>modifiers</key>
 				<integer>524288</integer>
 				<key>modifiersubtext</key>
-				<string>show what this links to</string>
+				<string></string>
 				<key>vitoclose</key>
 				<true/>
 			</dict>

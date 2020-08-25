@@ -352,7 +352,9 @@ on run argv
 		#Build json from title, pageid. We hack the full url we want to navigate to into the url. It's crappy but best do it here rather than in the applescript that sends the browser to the url
 		#Square braces seem to throw Alfred filtering out, so we strip them out.
 
+		#pulls backlinks using :block_ref expression !
 		set getallpagesjavascript to oneline("
+			{let flatfunc=function flatten(a,r) {if (r['refs']!=undefined) {return true;}if (r['children']==undefined) {return false;}return flatten(a,r['children']);};
 			jsreturn =JSON.stringify(
 			{items:
 				window.roamAlphaAPI
@@ -362,22 +364,33 @@ on run argv
 						[:block/children]
 						[:block/refs]
 						[:block/uid]
+						{:block/_refs [:db/id :block/uid]}
+						{:block/children  ...}
 					])
-					:where [?e :node/title]]')
+					:in 	$
+						%
+					:where [?e :node/title]]'
+					," & ancestorrule & ")
 				.map(n=>
-					{return {
+					{let hasrefs=false;if (n[0]['children']!=undefined) {hasrefs=n[0]['children'].reduce(flatfunc,false);}return {
 						title:n[0]['title']" & bracestrip & "+'	(⏎ or ⌘ or ⌥ )',
 						uid:n[0]['uid'],
 						arg:n[0]['title'],
 						mods:{
-							opt: {
-								valid:!(n[0]['childen']==undefined),
-								subtitle: 'show what this links to'
+							alt: {
+								valid:(n[0]['_refs']!=undefined),
+								subtitle: (n[0]['_refs']!=undefined)?'Show pages that link here':'Nothing links to this page'
+								}
+							,
+							cmd: {
+								valid:hasrefs,
+								subtitle: hasrefs?'Show pages linked from here':'Nothing links from this page'
 								}
 							}
 					}}
 					)
-			})")
+			})}")
+
 		log "get all pages javascript: " & getallpagesjavascript
 	else if mode is "getPagesWithTag" then
 
@@ -526,7 +539,7 @@ on run argv
 							:find (pull ?optionblock [
 								[:block/string]
 								[:block/children]
-								{:block/refs [:node/title]})
+								{:block/refs [:node/title]}])
 							:in
 								$
 								?configpagetitle
@@ -538,18 +551,14 @@ on run argv
 								[?menublock :block/children ?optionblock]
 								(ancestor ?menublock ?configpage)
 							]', '" & configPageName & "','" & targetblock & "', " & ancestorrule & ")
-						.filter(b=>b[0].refs)
+						.filter(b=>b[0].refs!=undefined)
 						.map(b=>
 							b[0].refs.slice(-1)[0])
 						.map(r=>
-							window.roamAlphaAPI.pull(
-								'[:node/title]',
-								r.id))
-							.map(r=>{
-								return {
-									title:r[':node/title']" & bracestrip & ",
-									arg:r[':node/title']}
-									})
+							{return {
+								title:r['title']" & bracestrip & ",
+									arg:r['title']}
+								})
 					})")
 		log "Javascript to inject: " & getconfigpagejavascript
 
