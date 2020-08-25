@@ -2968,7 +2968,7 @@ Example that grabs screenshot, and prompts for where to paste it based on dynami
 		<key>keydelay</key>
 		<string>0.3</string>
 		<key>preferredBrowser</key>
-		<string>Chrome</string>
+		<string>Safari</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>

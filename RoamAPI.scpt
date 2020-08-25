@@ -353,9 +353,9 @@ on run argv
 		#Square braces seem to throw Alfred filtering out, so we strip them out.
 
 		#pulls backlinks using :block_ref expression !
+		#would be nice to pull count of outbound links, but it's too slow.
 		set getallpagesjavascript to oneline("
-			{let flatfunc=function flatten(a,r) {if (r['refs']!=undefined) {return true;}if (r['children']==undefined) {return false;}return flatten(a,r['children']);};
-			jsreturn =JSON.stringify(
+			{jsreturn =JSON.stringify(
 			{items:
 				window.roamAlphaAPI
 				.q('[
@@ -365,26 +365,27 @@ on run argv
 						[:block/refs]
 						[:block/uid]
 						{:block/_refs [:db/id :block/uid]}
-						{:block/children  ...}
 					])
 					:in 	$
 						%
 					:where [?e :node/title]]'
 					," & ancestorrule & ")
 				.map(n=>
-					{let hasrefs=false;if (n[0]['children']!=undefined) {hasrefs=n[0]['children'].reduce(flatfunc,false);}return {
-						title:n[0]['title']" & bracestrip & "+'	(⏎ or ⌘ or ⌥ )',
+					{return {
+						title:n[0]['title']+'	(⏎ or ⌘ or ⌥ )',
+						match:n[0]['title']" & bracestrip & ",
 						uid:n[0]['uid'],
 						arg:n[0]['title'],
+						text:{copy:'[['+n[0]['title']+']]'},
 						mods:{
-							alt: {
+							cmd: {
 								valid:(n[0]['_refs']!=undefined),
 								subtitle: (n[0]['_refs']!=undefined)?'Show pages that link here':'Nothing links to this page'
 								}
 							,
-							cmd: {
-								valid:hasrefs,
-								subtitle: hasrefs?'Show pages linked from here':'Nothing links from this page'
+							alt: {
+								valid:true,
+								subtitle: 'Show pages linked from here'
 								}
 							}
 					}}
@@ -404,6 +405,8 @@ on run argv
 					.q('[
 						:find (pull ?targetpage [
 							[:node/title]
+							[:block/refs]
+							{:block/_refs [:db/id :block/uid]}
 							[:block/uid]] )
 						:in $
 							?searchstring
@@ -415,11 +418,26 @@ on run argv
 							(ancestor ?anyblock ?targetpage)
 							]','
 						" & targetTag & "'," & ancestorrule & ")
-					.map(n=>{
-						return {
-							title:n[0]['title']" & bracestrip & ",
-							uid:n[0]['uid'],arg:n[0]['title']
-							}})
+					.map(n=>
+					{return {
+						title:n[0]['title']+'	(⏎ or ⌘ or ⌥ )',
+						match:n[0]['title']" & bracestrip & ",
+						uid:n[0]['uid'],
+						arg:n[0]['title'],
+						text:{copy:'[['+n[0]['title']+']]'},
+						mods:{
+							cmd: {
+								valid:(n[0]['_refs']!=undefined),
+								subtitle: (n[0]['_refs']!=undefined)?'Show pages that link here':'Nothing links to this page'
+								}
+							,
+							alt: {
+								valid:true,
+								subtitle: 'Show pages linked from here'
+								}
+							}
+					}}
+					)
 				})")
 
 		log "getPagesWithTag javascript: " & getallpagesjavascript
@@ -448,12 +466,26 @@ on run argv
 								[?targetpage :node/title]
 								(ancestor ?anyblock ?containingpage)]','
 							" & targetTag & "'," & ancestorrule & ")
-						.map(n=>{
-							return {
-								title:n[0]['title']" & bracestrip & ",
+						.map(n=>
+							{return {
+								title:n[0]['title']+'	(⏎ or ⌘ or ⌥ )',
+								match:n[0]['title']" & bracestrip & ",
 								uid:n[0]['uid'],
-								arg:n[0]['title']
-								}})
+								arg:n[0]['title'],
+								text:{copy:'[['+n[0]['title']+']]'},
+								mods:{
+									cmd: {
+										valid:(n[0]['_refs']!=undefined),
+										subtitle: (n[0]['_refs']!=undefined)?'Show pages that link here':'Nothing links to this page'
+										}
+									,
+									alt: {
+										valid:true,
+										subtitle: 'Show pages linked from here'
+										}
+									}
+							}}
+							)
 				})")
 
 		log "getTagsOfPage javascript: " & getallpagesjavascript
@@ -886,7 +918,7 @@ on run argv
 				end if
 				return resp
 
-			else if mode is "getAllPages" then
+			else if mode is "getAllPages" or mode is "getPagesWithTag" or mode is "getTagsOfPage" then
 				# Inject Javascript mode
 				log "Injecting javascript into safari"
 				tell application "Safari"
