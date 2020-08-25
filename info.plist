@@ -319,7 +319,7 @@
 				<key>modifiers</key>
 				<integer>524288</integer>
 				<key>modifiersubtext</key>
-				<string>show what this links to</string>
+				<string></string>
 				<key>vitoclose</key>
 				<true/>
 			</dict>
@@ -339,7 +339,7 @@
 				<key>modifiers</key>
 				<integer>1048576</integer>
 				<key>modifiersubtext</key>
-				<string>show pages that reference this</string>
+				<string></string>
 				<key>vitoclose</key>
 				<true/>
 			</dict>
@@ -793,8 +793,6 @@
 				<integer>1</integer>
 				<key>escaping</key>
 				<integer>127</integer>
-				<key>keyword</key>
-				<string>roam</string>
 				<key>queuedelaycustom</key>
 				<integer>1</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -2968,14 +2966,14 @@ Example that grabs screenshot, and prompts for where to paste it based on dynami
 		<key>keydelay</key>
 		<string>0.3</string>
 		<key>preferredBrowser</key>
-		<string>Safari</string>
+		<string>Chrome</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
 		<string>DBName</string>
 	</array>
 	<key>version</key>
-	<string>2.2</string>
+	<string>3.0</string>
 	<key>webaddress</key>
 	<string>https://www.putyourleftfoot.in/roampagesearch</string>
 </dict>

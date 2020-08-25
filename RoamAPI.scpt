@@ -372,7 +372,8 @@ on run argv
 					," & ancestorrule & ")
 				.map(n=>
 					{return {
-						title:n[0]['title']+'	(⏎ or ⌘ or ⌥ )',
+						title:n[0]['title'],
+						subtitle:'(⏎ goto, ⌘ inbound links, ⌥ outbound links )',
 						match:n[0]['title']" & bracestrip & ",
 						uid:n[0]['uid'],
 						arg:n[0]['title'],
@@ -420,7 +421,8 @@ on run argv
 						" & targetTag & "'," & ancestorrule & ")
 					.map(n=>
 					{return {
-						title:n[0]['title']+'	(⏎ or ⌘ or ⌥ )',
+						title:n[0]['title'],
+						subtitle:'(⏎ goto, ⌘ inbound links, ⌥ outbound links )',
 						match:n[0]['title']" & bracestrip & ",
 						uid:n[0]['uid'],
 						arg:n[0]['title'],
@@ -455,6 +457,8 @@ on run argv
 							:find (pull ?targetpage [
 								[:node/title]
 								[:block/uid]
+								[:block/refs]
+								{:block/_refs [:db/id :block/uid]}
 							] )
 							:in
 								$
@@ -468,7 +472,8 @@ on run argv
 							" & targetTag & "'," & ancestorrule & ")
 						.map(n=>
 							{return {
-								title:n[0]['title']+'	(⏎ or ⌘ or ⌥ )',
+								title:n[0]['title'],
+								subtitle:'(⏎ goto, ⌘ inbound links, ⌥ outbound links )',
 								match:n[0]['title']" & bracestrip & ",
 								uid:n[0]['uid'],
 								arg:n[0]['title'],
@@ -571,6 +576,8 @@ on run argv
 							:find (pull ?optionblock [
 								[:block/string]
 								[:block/children]
+								[:block/refs]
+								[:block/uid]
 								{:block/refs [:node/title]}])
 							:in
 								$
@@ -586,11 +593,27 @@ on run argv
 						.filter(b=>b[0].refs!=undefined)
 						.map(b=>
 							b[0].refs.slice(-1)[0])
-						.map(r=>
+						.map(n=>
 							{return {
-								title:r['title']" & bracestrip & ",
-									arg:r['title']}
-								})
+								title:n['title'],
+								subtitle:'(⏎ goto, ⌘ inbound links, ⌥ outbound links )',
+								match:n['title']" & bracestrip & ",
+								uid:n['uid'],
+								arg:n['title'],
+								text:{copy:'[['+n['title']+']]'},
+								mods:{
+									cmd: {
+										valid:(n['_refs']!=undefined),
+										subtitle: (n['_refs']!=undefined)?'Show pages that link here':'Nothing links to this page'
+										}
+									,
+									alt: {
+										valid:true,
+										subtitle: 'Show pages linked from here'
+										}
+									}
+							}}
+							)
 					})")
 		log "Javascript to inject: " & getconfigpagejavascript
 
