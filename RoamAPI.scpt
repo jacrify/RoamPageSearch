@@ -10,10 +10,13 @@
 
 global browsername
 global keydelay
+
 #time of last run.
 property lastRunTime : 0
 #cached response
 property response : ""
+
+#remove this later and pass around
 
 ###################################################################
 # Utility functions
@@ -101,12 +104,13 @@ on injectSafariJavascript(w, j)
 	end tell
 end injectSafariJavascript
 
-on injectChromeJavascript(w, j)
-	# Inject Javascript mode
+on injectChromeJavascript(w, j, t)
+	# Inject Javascript mode'
+
 	log "Injecting javascript into chrome"
 	using terms from application "Google Chrome"
 		tell application browsername
-			set index of w to 1
+			#set index of w to 1
 
 			#So this is nuts.
 			#Google chrome lets you execute javascript through applescript
@@ -117,20 +121,26 @@ on injectChromeJavascript(w, j)
 			#So instead, we run javascript to set the location of the current tab to be a javascript that queries roamAlphaAPI and dumps into session
 			#And amazingly that works
 			#set js to "window.location.href = \"javascript:sessionStorage.setItem('roamapihackery', " & j & ")\""
+			#set mytab to tab t of the front window
 			set js to "window.location.href = \"javascript:" & j & ";sessionStorage.setItem('roamapihackery', jsreturn)\""
-			execute front window's active tab javascript js
-			set response to {execute front window's active tab javascript "sessionStorage.getItem('roamapihackery')"}
+			#execute mytab javascript js
+			log "TITLE:" & title of t
+			#execute t javascript "sessionStorage.setItem('roamapihackery','')"
+			#execute mytab javascript "javascript:alert('here')"
+			execute t javascript js
+			set response to {execute t javascript "sessionStorage.getItem('roamapihackery')"}
 		end tell
 	end using terms from
 end injectChromeJavascript
 
-on goToChromePage(w, u)
+on goToChromePage(w, u, tabindex)
 	#Set URL mode.
 	#activate chrome window, set url
 	log "Setting url of chrome"
 	using terms from application "Google Chrome"
 		tell application browsername
 			activate
+			tell w to set active tab index to tabindex
 			set index of w to 1
 			if URL of active tab of w is not u then
 				tell w to set URL of active tab to u
@@ -264,6 +274,12 @@ on run argv
 	set configPageName to (system attribute "configPageName")
 	set keydelay to (system attribute "keydelay") as number
 	set mode to (system attribute "mode")
+
+	if ((system attribute "addtimestamp") is "true") then
+		set addtimestamp to true
+	else
+		set addtimestamp to false
+	end if
 
 	set paste to (system attribute "paste")
 	if paste is "true" then
@@ -510,6 +526,22 @@ on run argv
 		#note the random bullshit to string [] out of the string title so alfred will filter it.
 		#note also that we add an indicator to show you can drill down through children if present
 		#arg passed to alfred is the full string tag
+
+		#dynamically generate subtitle
+		set enterstring to "⏎"
+		if pastemode then
+			set enterstring to enterstring & "paste to block on daily page"
+		else
+			set enterstring to enterstring & "jump to block on daily page"
+		end if
+
+		if addtodo then
+			set enterstring to enterstring & ", making todo"
+		end if
+		if addtimestamp then
+			set enterstring to enterstring & ", adding timestamp"
+		end if
+
 		set getconfigpagejavascript to oneline("
 			jsreturn =JSON.stringify(
 				{items:
@@ -531,8 +563,16 @@ on run argv
 							  ]', '" & configPageName & "','" & targetblock & "', " & ancestorrule & " )
 							.map(n=> {
 								return {
-									title: n[0].string" & bracestrip & " + (n[0].children?' (⌥ to see children)':''),
-									arg:n[0].string
+									title: n[0].string" & bracestrip & ",
+									subtitle:  (n[0].children!=undefined)?'" & enterstring & " or ⌥ show children':'" & enterstring & "',
+									arg:n[0].string,
+									text:{copy:'[['+n[0].string+']]'},
+										mods:{
+											alt: {
+													valid:(n[0].children!=undefined),
+													subtitle: (n[0].children!=undefined)?'Show children blocks':'No child blocks on config page'
+												}
+											}
 									}})
 					})")
 
@@ -690,7 +730,7 @@ on run argv
 
 	set windowIndex to 1
 	#current tab being scanned
-	set tabIndex to 0
+	set tabindex to 0
 
 
 	set searchString to "roamresearch.com/#/app/" & dbname
@@ -706,10 +746,11 @@ on run argv
 	set found to false
 
 	#stop looping when we get back to where we started, to handle cast where no tabs found
-	set tabIndex to 1
+	set tabindex to 1
 	set windowsSearched to 0
 
 	set foundWindow to ""
+	set foundtab to 0
 
 
 	if preferredBrowser is "Chrome" then
@@ -726,6 +767,7 @@ on run argv
 				if ((activeURL as text) contains searchString) then
 					set found to true
 					set foundWindow to first window
+					set foundtab to active tab of first window
 
 				end if
 			end tell
@@ -737,33 +779,35 @@ on run argv
 					set allWindowsList to windows
 					set allWindowsTabURLList to URL of tabs of every window
 					set allWindowsTabTitlesList to title of tabs of every window
+					set allWindowsTabs to tabs of every window
 				end tell
 			end using terms from
 			#iterate through all windows
 			repeat while windowIndex ≤ length of allWindowsTabURLList and windowIndex > 0
 				set thisWindowsTabsURLs to item windowIndex of allWindowsTabURLList
 				set thisWindowsTabsTitles to item windowIndex of allWindowsTabTitlesList
+				set thisWindowsTabs to item windowIndex of allWindowsTabs
 				#iterate through all tabs in each window
-				repeat while tabIndex ≤ length of thisWindowsTabsURLs and tabIndex > 0
-					set TabURL to item tabIndex of thisWindowsTabsURLs
+				repeat while tabindex ≤ length of thisWindowsTabsURLs and tabindex > 0
+					set TabURL to item tabindex of thisWindowsTabsURLs
 					if ((TabURL as text) contains searchString) then
 						using terms from application "Google Chrome"
 							tell application browsername
-
+								set foundtab to item tabindex of thisWindowsTabs
 								set foundWindow to item windowIndex of allWindowsList
-								#activate this tab
-								tell foundWindow to set active tab index to tabIndex
+								#activate this tab. This brings window to front which is annoying.
+								# tell foundWindow to set active tab index to tabindex
 							end tell
 						end using terms from
 						set found to true
 						exit repeat
 					end if
-					set tabIndex to tabIndex + 1
+					set tabindex to tabindex + 1
 				end repeat
 
 				if found then exit repeat
 
-				set tabIndex to 1
+				set tabindex to 1
 				set windowIndex to windowIndex + 1
 				if windowIndex > length of allWindowsTabURLList then
 					set windowIndex to 1
@@ -784,37 +828,38 @@ on run argv
 		if found then
 			if mode is "goToPageByName" then
 				#find the page uid
-				set pageID to injectChromeJavascript(foundWindow, searchjavascript)
+				set pageID to injectChromeJavascript(foundWindow, searchjavascript, foundtab)
 				#TODO we should really check if this is not found
 				set pageURL to "https://roamresearch.com/#/app/" & dbname & "/page/" & pageID
-				goToChromePage(foundWindow, pageURL)
+
+				goToChromePage(foundWindow, pageURL, tabindex)
 				#end if
 
 			else if mode is "gotoDaily" then
 				set targetURL to "https://roamresearch.com/#/app/" & dbname
-				goToChromePage(foundWindow, targetURL)
+				goToChromePage(foundWindow, targetURL, tabindex)
 
 			else if mode is "goToPageByID" then
 				set targetURL to "https://roamresearch.com/#/app/" & dbname & "/page/" & targetPage
-				goToChromePage(foundWindow, targetURL)
+				goToChromePage(foundWindow, targetURL, tabindex)
 
 			else if mode is "quickEntryDaily" then
 				set targetURL to "https://roamresearch.com/#/app/" & dbname
 
-				set pageID to injectChromeJavascript(foundWindow, quickentryjavascript)
+				set pageID to injectChromeJavascript(foundWindow, quickentryjavascript, foundtab)
 
 				if (pageID as string) is equal to "notfound" then
 					#add tag to daily notes page
-					goToChromePage(foundWindow, targetURL)
+					goToChromePage(foundWindow, targetURL, tabindex)
 					addToTopOfPage(targetTag, textToEnter, pastemode, addtodo)
 				else
 					set pageURL to "https://roamresearch.com/#/app/" & dbname & "/page/" & pageID
-					goToChromePage(foundWindow, pageURL)
+					goToChromePage(foundWindow, pageURL, tabindex)
 					focusBottomOfPage(textToEnter, pastemode, addtodo)
 				end if
 
 			else if mode is "getConfigPageData" or mode is "getConfigPageNames" then
-				set resp to injectChromeJavascript(foundWindow, getconfigpagejavascript)
+				set resp to injectChromeJavascript(foundWindow, getconfigpagejavascript, foundtab)
 
 				if resp is "{\"items\":[]}" then
 					display dialog "Menu configuration tag not found on RoamSearchConfig page. Read the docs :)"
@@ -823,7 +868,7 @@ on run argv
 				return resp
 
 			else if mode is "getAllPages" or mode is "getPagesWithTag" or mode is "getTagsOfPage" then
-				return injectChromeJavascript(foundWindow, getallpagesjavascript)
+				return injectChromeJavascript(foundWindow, getallpagesjavascript, foundtab)
 			end if
 		end if
 		if not found then
@@ -867,23 +912,23 @@ on run argv
 				set thisWindowsTabsURLs to item windowIndex of allWindowsTabURLList
 				set thisWindowsTabsTitles to item windowIndex of allWindowsTabTitlesList
 				#iterate through all tabs in each window
-				repeat while tabIndex ≤ length of thisWindowsTabsURLs and tabIndex > 0
-					set TabURL to item tabIndex of thisWindowsTabsURLs
+				repeat while tabindex ≤ length of thisWindowsTabsURLs and tabindex > 0
+					set TabURL to item tabindex of thisWindowsTabsURLs
 					if ((TabURL as text) contains searchString) then
 						tell application "Safari"
 							set foundWindow to item windowIndex of allWindowsList
 							#activate this tab
-							tell foundWindow to set current tab to tab tabIndex
+							tell foundWindow to set current tab to tab tabindex
 						end tell
 						set found to true
 						exit repeat
 					end if
-					set tabIndex to tabIndex + 1
+					set tabindex to tabindex + 1
 				end repeat
 
 				if found then exit repeat
 
-				set tabIndex to 1
+				set tabindex to 1
 				set windowIndex to windowIndex + 1
 				if windowIndex > length of allWindowsTabURLList then
 					set windowIndex to 1

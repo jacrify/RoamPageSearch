@@ -132,6 +132,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>248FF69E-5CDD-4AF7-9BA7-5B47619E2ECC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1D35B0BA-99BA-468A-BE80-EF97AD6D52FC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>30E87419-E57D-42EF-823F-B21DCB1ADC89</key>
 		<array>
 			<dict>
@@ -618,6 +631,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>D7EE3996-0A63-4301-BD29-32D985B66C35</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>248FF69E-5CDD-4AF7-9BA7-5B47619E2ECC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>DA7C5E48-923E-4F00-ABD8-482FB61DBEDA</key>
 		<array>
 			<dict>
@@ -761,26 +787,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
-				<string>{query}</string>
-				<key>passthroughargument</key>
-				<true/>
-				<key>variables</key>
-				<dict>
-					<key>mode</key>
-					<string>goToPageByName</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>8ABF6748-C5F1-4BAF-8B66-4B1845F3C12F</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>alfredfiltersresults</key>
 				<true/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -793,6 +799,8 @@
 				<integer>1</integer>
 				<key>escaping</key>
 				<integer>127</integer>
+				<key>keyword</key>
+				<string>roam</string>
 				<key>queuedelaycustom</key>
 				<integer>1</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -855,6 +863,26 @@
 			<string>4574976C-551F-4B76-882C-B407599C2842</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>passthroughargument</key>
+				<true/>
+				<key>variables</key>
+				<dict>
+					<key>mode</key>
+					<string>goToPageByName</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>8ABF6748-C5F1-4BAF-8B66-4B1845F3C12F</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1023,6 +1051,150 @@ echo -n $out</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>triggerid</key>
+				<string>getTagsOfPage</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>9B35F0CE-E573-4E25-9780-792E253B1CC8</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Choose tag to jump to</string>
+				<key>script</key>
+				<string>#query="{query}"
+
+echo -n $out</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string>echo.sh</string>
+				<key>subtext</key>
+				<string>Choose tag to jump to</string>
+				<key>title</key>
+				<string>Choose tag to jump to</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>9616EF40-89B7-42CB-B7A7-4DFCDAAF840F</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>runAppleScript.sh</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>E3B8A694-6F69-4B70-BA3F-4A15E8BE1172</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<true/>
+				<key>variables</key>
+				<dict>
+					<key>mode</key>
+					<string>getTagsOfPage</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>D0EFFBD2-DC88-4DB5-9B1D-23290D33375D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>out</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>F385EF13-01CA-482D-B519-3B8312C43C8C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>getPagesWithTag</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>E5AA3C97-9A7C-43F3-8B63-CA5B074D1ABF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -1099,118 +1271,6 @@ echo -n $out</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string></string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>runAppleScript.sh</string>
-				<key>type</key>
-				<integer>8</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>E3B8A694-6F69-4B70-BA3F-4A15E8BE1172</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string></string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>out</key>
-					<string>{query}</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>F385EF13-01CA-482D-B519-3B8312C43C8C</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alfredfiltersresults</key>
-				<true/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<false/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string>Choose tag to jump to</string>
-				<key>script</key>
-				<string>#query="{query}"
-
-echo -n $out</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string>echo.sh</string>
-				<key>subtext</key>
-				<string>Choose tag to jump to</string>
-				<key>title</key>
-				<string>Choose tag to jump to</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>9616EF40-89B7-42CB-B7A7-4DFCDAAF840F</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string></string>
-				<key>passthroughargument</key>
-				<true/>
-				<key>variables</key>
-				<dict>
-					<key>mode</key>
-					<string>getTagsOfPage</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>D0EFFBD2-DC88-4DB5-9B1D-23290D33375D</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
@@ -1226,38 +1286,6 @@ echo -n $out</string>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>899922AB-B531-4389-BA0B-117C7AD8F23E</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>externaltriggerid</key>
-				<string>getPagesWithTag</string>
-				<key>passinputasargument</key>
-				<true/>
-				<key>passvariables</key>
-				<true/>
-				<key>workflowbundleid</key>
-				<string>self</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
-			<key>uid</key>
-			<string>E5AA3C97-9A7C-43F3-8B63-CA5B074D1ABF</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>triggerid</key>
-				<string>getTagsOfPage</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>9B35F0CE-E573-4E25-9780-792E253B1CC8</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1395,7 +1423,7 @@ echo -n $out</string>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
-				<string>roamjumptoroampage</string>
+				<string>roamjumptoroampagedemo</string>
 				<key>subtext</key>
 				<string></string>
 				<key>text</key>
@@ -2287,6 +2315,70 @@ echo -n $out</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>roamjumptoblockdemo</string>
+				<key>subtext</key>
+				<string>Needs RoamSearchConfig page in to target</string>
+				<key>text</key>
+				<string>Choose a block on daily page to jump to</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>D7EE3996-0A63-4301-BD29-32D985B66C35</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>dailyPageConfig</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>com.jc.roampagesearch</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>1D35B0BA-99BA-468A-BE80-EF97AD6D52FC</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>Screenshot Categories</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>addtimestamp</key>
+					<string>true</string>
+					<key>paste</key>
+					<string>true</string>
+					<key>todo</key>
+					<string>true</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>248FF69E-5CDD-4AF7-9BA7-5B47619E2ECC</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>See https://www.putyourleftfoot.in/roampagesearch</string>
@@ -2299,9 +2391,9 @@ echo -n $out</string>
 			<key>note</key>
 			<string>Jump to daily page block</string>
 			<key>xpos</key>
-			<integer>575</integer>
+			<integer>590</integer>
 			<key>ypos</key>
-			<integer>1245</integer>
+			<integer>1570</integer>
 		</dict>
 		<key>0145BD8E-631A-4396-BAED-38A26C64FFE6</key>
 		<dict>
@@ -2310,9 +2402,9 @@ echo -n $out</string>
 			<key>note</key>
 			<string>External trigger to load dynamic list of favorite pages from config page. These will be displayed in the menu, and the selected page will be jumped to. Input is an arg containing contents of a block on config page use as base for menu. Each child block is expected to contain a reference to one and only one page.</string>
 			<key>xpos</key>
-			<integer>635</integer>
+			<integer>650</integer>
 			<key>ypos</key>
-			<integer>2445</integer>
+			<integer>2770</integer>
 		</dict>
 		<key>07129A05-5D47-4FC7-89EE-702238F6EB2D</key>
 		<dict>
@@ -2321,9 +2413,9 @@ echo -n $out</string>
 			<key>note</key>
 			<string>Jump to daily page block</string>
 			<key>xpos</key>
-			<integer>575</integer>
+			<integer>590</integer>
 			<key>ypos</key>
-			<integer>1020</integer>
+			<integer>1345</integer>
 		</dict>
 		<key>0AAE0185-4588-4C32-B094-7CDB68C31F7A</key>
 		<dict>
@@ -2335,18 +2427,18 @@ todo to true,
 paste to true, 
 and addtimestamp to true</string>
 			<key>xpos</key>
-			<integer>450</integer>
+			<integer>465</integer>
 			<key>ypos</key>
-			<integer>1275</integer>
+			<integer>1600</integer>
 		</dict>
 		<key>0B1CB30C-4EED-4F3B-B1C7-EA370A79E0CD</key>
 		<dict>
 			<key>note</key>
 			<string>set arg to "Roam"</string>
 			<key>xpos</key>
-			<integer>230</integer>
+			<integer>245</integer>
 			<key>ypos</key>
-			<integer>735</integer>
+			<integer>1060</integer>
 		</dict>
 		<key>0D19AAEB-6160-4A33-A00E-97C42DBA7215</key>
 		<dict>
@@ -2360,36 +2452,36 @@ Pass (as argument) the string contents of the block on daily page you want to ju
 Pass vars as follows
 paste : "true" if you want to paste</string>
 			<key>xpos</key>
-			<integer>795</integer>
+			<integer>810</integer>
 			<key>ypos</key>
-			<integer>1385</integer>
+			<integer>1710</integer>
 		</dict>
 		<key>11746A23-1882-4878-AC9E-85F4AC69F8AA</key>
 		<dict>
 			<key>note</key>
 			<string>Load config page "RoamSearchConfig", find block whose name matched the block passed, and return sublocks as menu items that can then be jumped to or pasted under on daily page</string>
 			<key>xpos</key>
-			<integer>780</integer>
+			<integer>795</integer>
 			<key>ypos</key>
-			<integer>2000</integer>
+			<integer>2325</integer>
 		</dict>
 		<key>12DA6087-FED7-4587-B7E6-BBB1E3C4DF2B</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>5</integer>
 			<key>xpos</key>
-			<integer>1390</integer>
+			<integer>1405</integer>
 			<key>ypos</key>
-			<integer>2445</integer>
+			<integer>2770</integer>
 		</dict>
 		<key>182A072B-FAC0-4016-B647-FDCB140B65C2</key>
 		<dict>
 			<key>note</key>
 			<string>Clear query, but stash result in variable</string>
 			<key>xpos</key>
-			<integer>960</integer>
+			<integer>975</integer>
 			<key>ypos</key>
-			<integer>2030</integer>
+			<integer>2355</integer>
 		</dict>
 		<key>191379D7-CFA6-4E8A-98DD-0028AED95DF6</key>
 		<dict>
@@ -2398,18 +2490,27 @@ paste : "true" if you want to paste</string>
 			<key>note</key>
 			<string>Jump to daily page block</string>
 			<key>xpos</key>
-			<integer>565</integer>
+			<integer>580</integer>
 			<key>ypos</key>
-			<integer>1430</integer>
+			<integer>1755</integer>
 		</dict>
 		<key>1C60E887-DAF1-4A80-AEAB-65824E657643</key>
 		<dict>
 			<key>note</key>
 			<string>Ask user to select a block from dynamically generated config page. Script will the jump to this block on dialy page, creating it if it does not exist</string>
 			<key>xpos</key>
-			<integer>1115</integer>
+			<integer>1170</integer>
 			<key>ypos</key>
 			<integer>150</integer>
+		</dict>
+		<key>1D35B0BA-99BA-468A-BE80-EF97AD6D52FC</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>1</integer>
+			<key>xpos</key>
+			<integer>490</integer>
+			<key>ypos</key>
+			<integer>3125</integer>
 		</dict>
 		<key>1DF1ACEA-3AD8-468C-8677-0D70D8158D57</key>
 		<dict>
@@ -2419,36 +2520,49 @@ paste : "true" if you want to paste</string>
 			<string>TODO EXAMPLE
 Example that grabs selection and sends to tag under roam daily page, as a TODO</string>
 			<key>xpos</key>
-			<integer>70</integer>
+			<integer>85</integer>
 			<key>ypos</key>
-			<integer>1245</integer>
+			<integer>1570</integer>
 		</dict>
 		<key>2222C20F-B62E-4E6F-B86C-13088E8C132A</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>10</integer>
 			<key>xpos</key>
-			<integer>1400</integer>
+			<integer>1415</integer>
 			<key>ypos</key>
-			<integer>2605</integer>
+			<integer>2930</integer>
 		</dict>
 		<key>23ADB478-09CF-414E-A699-70CEAFA081C0</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>12</integer>
 			<key>xpos</key>
-			<integer>1435</integer>
+			<integer>1520</integer>
 			<key>ypos</key>
 			<integer>295</integer>
+		</dict>
+		<key>248FF69E-5CDD-4AF7-9BA7-5B47619E2ECC</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>note</key>
+			<string>set paste to true
+set addtimestamp to true
+add todo to true</string>
+			<key>xpos</key>
+			<integer>360</integer>
+			<key>ypos</key>
+			<integer>3155</integer>
 		</dict>
 		<key>2D6448F3-A55C-411C-B8BB-426570C809DC</key>
 		<dict>
 			<key>note</key>
 			<string>Go to tag under daily note. Create tag if not present. Do not paste text</string>
 			<key>xpos</key>
-			<integer>1065</integer>
+			<integer>1080</integer>
 			<key>ypos</key>
-			<integer>1385</integer>
+			<integer>1710</integer>
 		</dict>
 		<key>30E87419-E57D-42EF-823F-B21DCB1ADC89</key>
 		<dict>
@@ -2458,18 +2572,18 @@ Example that grabs selection and sends to tag under roam daily page, as a TODO</
 			<string>BOOKMARK EXAMPLE
 Example of one key bookmarking- grabs url of current browser tab and sends to tag under daily page. Hook is better :)</string>
 			<key>xpos</key>
-			<integer>70</integer>
+			<integer>85</integer>
 			<key>ypos</key>
-			<integer>1020</integer>
+			<integer>1345</integer>
 		</dict>
 		<key>3C9855AA-5086-453B-8C9C-A54DC4863E56</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<integer>1265</integer>
+			<integer>1280</integer>
 			<key>ypos</key>
-			<integer>1895</integer>
+			<integer>2220</integer>
 		</dict>
 		<key>3D04A873-9014-4A2A-BA23-1A7D1AF25369</key>
 		<dict>
@@ -2479,9 +2593,9 @@ Example of one key bookmarking- grabs url of current browser tab and sends to ta
 			<string>GO TO NAMED PAGE EXAMPLE
 In this case go to page named "Roam"</string>
 			<key>xpos</key>
-			<integer>30</integer>
+			<integer>45</integer>
 			<key>ypos</key>
-			<integer>620</integer>
+			<integer>945</integer>
 		</dict>
 		<key>3D9531CF-8153-4753-9D07-49637AD18343</key>
 		<dict>
@@ -2493,27 +2607,27 @@ Example showing list of favorite pages with dynamic configuration, driven out of
 
 Passes "Favourite Pages" as arg. Options show in menu are children of "Favourite pages" block on "RoamResearchConfig" page</string>
 			<key>xpos</key>
-			<integer>80</integer>
+			<integer>95</integer>
 			<key>ypos</key>
-			<integer>2460</integer>
+			<integer>2785</integer>
 		</dict>
 		<key>4574976C-551F-4B76-882C-B407599C2842</key>
 		<dict>
 			<key>note</key>
 			<string>Filter all pages example</string>
 			<key>xpos</key>
-			<integer>20</integer>
+			<integer>10</integer>
 			<key>ypos</key>
-			<integer>70</integer>
+			<integer>20</integer>
 		</dict>
 		<key>486D1D2F-9797-45A4-B7A0-06B43C72FBF1</key>
 		<dict>
 			<key>note</key>
 			<string>Ask user to select a block from dynamically generated config page. Script will the jump to this block on dialy page, creating it if it does not exist</string>
 			<key>xpos</key>
-			<integer>1080</integer>
+			<integer>1095</integer>
 			<key>ypos</key>
-			<integer>2000</integer>
+			<integer>2325</integer>
 		</dict>
 		<key>53A8F508-C3C7-44C0-BFEB-68469018DE59</key>
 		<dict>
@@ -2522,25 +2636,25 @@ Passes "Favourite Pages" as arg. Options show in menu are children of "Favourite
 			<key>note</key>
 			<string>External trigger to load dynamic config menu from Roam. Expects the contents of a block on the config page to be passed in the arg. Children of this block will then be shown in the menu. The selected block will be jumped to on daily page (added if not present), with optional paste, todo, timestamp etc.</string>
 			<key>xpos</key>
-			<integer>485</integer>
+			<integer>500</integer>
 			<key>ypos</key>
-			<integer>2000</integer>
+			<integer>2325</integer>
 		</dict>
 		<key>53BCF28B-1549-4403-9660-F7E11EC759DA</key>
 		<dict>
 			<key>note</key>
 			<string>set mode to getConfigPageNames</string>
 			<key>xpos</key>
-			<integer>830</integer>
+			<integer>845</integer>
 			<key>ypos</key>
-			<integer>2475</integer>
+			<integer>2800</integer>
 		</dict>
 		<key>56939936-AEDC-4349-9572-41DEFBDB0379</key>
 		<dict>
 			<key>note</key>
 			<string>Load config page "RoamSearchConfig", find block whose name matched the block passed, and return sublocks as page names that can be jumped to</string>
 			<key>xpos</key>
-			<integer>815</integer>
+			<integer>860</integer>
 			<key>ypos</key>
 			<integer>150</integer>
 		</dict>
@@ -2549,9 +2663,9 @@ Passes "Favourite Pages" as arg. Options show in menu are children of "Favourite
 			<key>note</key>
 			<string>set mode to quickEntryDaily</string>
 			<key>xpos</key>
-			<integer>970</integer>
+			<integer>985</integer>
 			<key>ypos</key>
-			<integer>1415</integer>
+			<integer>1740</integer>
 		</dict>
 		<key>6602F097-AAF8-43AB-8E44-8FEB832EF626</key>
 		<dict>
@@ -2560,9 +2674,9 @@ Passes "Favourite Pages" as arg. Options show in menu are children of "Favourite
 			<key>note</key>
 			<string>grabs a sceenshot and puts into clipboard. Alfred needs screen recording permissions</string>
 			<key>xpos</key>
-			<integer>255</integer>
+			<integer>270</integer>
 			<key>ypos</key>
-			<integer>1740</integer>
+			<integer>2065</integer>
 		</dict>
 		<key>6761B0AF-825E-46C6-B70E-03EA1A755652</key>
 		<dict>
@@ -2571,45 +2685,47 @@ Passes "Favourite Pages" as arg. Options show in menu are children of "Favourite
 			<key>note</key>
 			<string>set paste to true, and set target tag on daily page</string>
 			<key>xpos</key>
-			<integer>445</integer>
+			<integer>460</integer>
 			<key>ypos</key>
-			<integer>1460</integer>
+			<integer>1785</integer>
 		</dict>
 		<key>6FD03D07-5C84-4D66-B81B-95562E336F93</key>
 		<dict>
 			<key>note</key>
 			<string>set mode to goToPageByName</string>
 			<key>xpos</key>
-			<integer>765</integer>
+			<integer>780</integer>
 			<key>ypos</key>
-			<integer>740</integer>
+			<integer>1065</integer>
 		</dict>
 		<key>74EA125C-81A7-4BA8-B114-1CE76B121C25</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
 			<key>note</key>
 			<string>Example of using a keyword to jump straight to a page</string>
 			<key>xpos</key>
-			<integer>25</integer>
+			<integer>40</integer>
 			<key>ypos</key>
-			<integer>815</integer>
+			<integer>1140</integer>
 		</dict>
 		<key>75F03C06-4EF2-45AB-A5E3-7C09626CFDDF</key>
 		<dict>
 			<key>note</key>
 			<string>Ask user to select a block from dynamically generated config page. Script will the jump to this block on dialy page, creating it if it does not exist</string>
 			<key>xpos</key>
-			<integer>1220</integer>
+			<integer>1235</integer>
 			<key>ypos</key>
-			<integer>2445</integer>
+			<integer>2770</integer>
 		</dict>
 		<key>7F661539-269A-4BE1-8C85-0CE9BE095EA4</key>
 		<dict>
 			<key>note</key>
 			<string>set mode to gotoDaily</string>
 			<key>xpos</key>
-			<integer>280</integer>
+			<integer>310</integer>
 			<key>ypos</key>
-			<integer>415</integer>
+			<integer>720</integer>
 		</dict>
 		<key>80D4A5FD-ABB0-4927-B93A-46185D01EBA5</key>
 		<dict>
@@ -2618,34 +2734,34 @@ Passes "Favourite Pages" as arg. Options show in menu are children of "Favourite
 			<key>note</key>
 			<string>Get url and title of front chrome or safari windows as markdown in clipboard</string>
 			<key>xpos</key>
-			<integer>250</integer>
+			<integer>265</integer>
 			<key>ypos</key>
-			<integer>1430</integer>
+			<integer>1755</integer>
 		</dict>
 		<key>83ACD212-8384-4AEA-9BEA-67934CF93DC3</key>
 		<dict>
 			<key>note</key>
 			<string>Load config page "RoamSearchConfig", find block whose name matched the block passed, and return sublocks as page names that can be jumped to</string>
 			<key>xpos</key>
-			<integer>930</integer>
+			<integer>945</integer>
 			<key>ypos</key>
-			<integer>2445</integer>
+			<integer>2770</integer>
 		</dict>
 		<key>83D39038-AB3A-4F47-8AA7-59FF56AC1C9A</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>10</integer>
 			<key>xpos</key>
-			<integer>570</integer>
+			<integer>580</integer>
 			<key>ypos</key>
-			<integer>200</integer>
+			<integer>235</integer>
 		</dict>
 		<key>899922AB-B531-4389-BA0B-117C7AD8F23E</key>
 		<dict>
 			<key>xpos</key>
-			<integer>25</integer>
+			<integer>55</integer>
 			<key>ypos</key>
-			<integer>495</integer>
+			<integer>800</integer>
 		</dict>
 		<key>89C6E2F3-D6B9-456F-903F-A5F51C467554</key>
 		<dict>
@@ -2653,16 +2769,16 @@ Passes "Favourite Pages" as arg. Options show in menu are children of "Favourite
 			<string>set mode to 
 getConfigPageData</string>
 			<key>xpos</key>
-			<integer>665</integer>
+			<integer>680</integer>
 			<key>ypos</key>
-			<integer>2030</integer>
+			<integer>2355</integer>
 		</dict>
 		<key>8ABF6748-C5F1-4BAF-8B66-4B1845F3C12F</key>
 		<dict>
 			<key>note</key>
 			<string>set mode to goToPageByName</string>
 			<key>xpos</key>
-			<integer>1335</integer>
+			<integer>1410</integer>
 			<key>ypos</key>
 			<integer>40</integer>
 		</dict>
@@ -2673,18 +2789,18 @@ getConfigPageData</string>
 			<key>note</key>
 			<string>Jump to daily page block</string>
 			<key>xpos</key>
-			<integer>1270</integer>
+			<integer>1285</integer>
 			<key>ypos</key>
-			<integer>2085</integer>
+			<integer>2410</integer>
 		</dict>
 		<key>9616EF40-89B7-42CB-B7A7-4DFCDAAF840F</key>
 		<dict>
 			<key>note</key>
 			<string>Ask user to select a block from dynamically generated config page. Script will the jump to this block on dialy page, creating it if it does not exist</string>
 			<key>xpos</key>
-			<integer>1115</integer>
+			<integer>1160</integer>
 			<key>ypos</key>
-			<integer>480</integer>
+			<integer>465</integer>
 		</dict>
 		<key>9B1204F4-C451-4A32-B3EF-D6592EDE88F1</key>
 		<dict>
@@ -2695,16 +2811,16 @@ Can be run by keyword "roam" or by hotkey</string>
 			<key>xpos</key>
 			<integer>300</integer>
 			<key>ypos</key>
-			<integer>70</integer>
+			<integer>20</integer>
 		</dict>
 		<key>9B35F0CE-E573-4E25-9780-792E253B1CC8</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>12</integer>
 			<key>xpos</key>
-			<integer>495</integer>
+			<integer>440</integer>
 			<key>ypos</key>
-			<integer>535</integer>
+			<integer>455</integer>
 		</dict>
 		<key>9EBBFBC0-7CD0-4962-A6CA-21A0B2077F29</key>
 		<dict>
@@ -2713,27 +2829,27 @@ Can be run by keyword "roam" or by hotkey</string>
 			<key>note</key>
 			<string>Jump to a named page within roam. Expects on argument to be passed, which is the name of the page</string>
 			<key>xpos</key>
-			<integer>600</integer>
+			<integer>615</integer>
 			<key>ypos</key>
-			<integer>710</integer>
+			<integer>1035</integer>
 		</dict>
 		<key>A31CB604-DE0E-4AC5-9636-E37ADC507414</key>
 		<dict>
 			<key>note</key>
 			<string>Clear query, but stash result in variable</string>
 			<key>xpos</key>
-			<integer>1115</integer>
+			<integer>1130</integer>
 			<key>ypos</key>
-			<integer>2475</integer>
+			<integer>2800</integer>
 		</dict>
 		<key>A5EAD48D-7BDB-466B-8314-9866D8586C43</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<integer>585</integer>
+			<integer>600</integer>
 			<key>ypos</key>
-			<integer>1740</integer>
+			<integer>2065</integer>
 		</dict>
 		<key>A795CE93-18F3-440F-B223-30241E27459C</key>
 		<dict>
@@ -2742,14 +2858,14 @@ Can be run by keyword "roam" or by hotkey</string>
 			<key>xpos</key>
 			<integer>195</integer>
 			<key>ypos</key>
-			<integer>100</integer>
+			<integer>50</integer>
 		</dict>
 		<key>B0B5D83C-21CF-43B3-8698-480FF5018C2D</key>
 		<dict>
 			<key>note</key>
 			<string>Go to named page with hotkey- pass named page as arg</string>
 			<key>xpos</key>
-			<integer>1445</integer>
+			<integer>1520</integer>
 			<key>ypos</key>
 			<integer>10</integer>
 		</dict>
@@ -2760,18 +2876,18 @@ Can be run by keyword "roam" or by hotkey</string>
 			<key>note</key>
 			<string>set paste to true</string>
 			<key>xpos</key>
-			<integer>460</integer>
+			<integer>475</integer>
 			<key>ypos</key>
-			<integer>1770</integer>
+			<integer>2095</integer>
 		</dict>
 		<key>BCDAD50A-7BF0-4C94-A86E-F43D41F93035</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<integer>255</integer>
+			<integer>270</integer>
 			<key>ypos</key>
-			<integer>2010</integer>
+			<integer>2335</integer>
 		</dict>
 		<key>BECDCB00-E806-4033-B78A-F81BFFA8F9CC</key>
 		<dict>
@@ -2783,36 +2899,36 @@ Example showing jumping to tag on daily page with dynamic configuration, driven 
 
 Passes "Quick Capture Categories" as arg</string>
 			<key>xpos</key>
-			<integer>75</integer>
+			<integer>90</integer>
 			<key>ypos</key>
-			<integer>2010</integer>
+			<integer>2335</integer>
 		</dict>
 		<key>C5A87E8B-7396-4272-B149-2DEA1087C8F1</key>
 		<dict>
 			<key>note</key>
 			<string>Clear query, but stash result in variable</string>
 			<key>xpos</key>
-			<integer>1000</integer>
+			<integer>1045</integer>
 			<key>ypos</key>
-			<integer>185</integer>
+			<integer>180</integer>
 		</dict>
 		<key>C8C15BD3-3EB9-4D6F-8180-ECDDB8173258</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>12</integer>
 			<key>xpos</key>
-			<integer>1390</integer>
+			<integer>1405</integer>
 			<key>ypos</key>
-			<integer>2310</integer>
+			<integer>2635</integer>
 		</dict>
 		<key>C98D1012-5979-49E9-A758-F78A5EE0118F</key>
 		<dict>
 			<key>note</key>
 			<string>Go to daily page</string>
 			<key>xpos</key>
-			<integer>410</integer>
+			<integer>440</integer>
 			<key>ypos</key>
-			<integer>385</integer>
+			<integer>690</integer>
 		</dict>
 		<key>C9DB5FE2-8090-439A-8A18-DD74E04A84C1</key>
 		<dict>
@@ -2821,9 +2937,9 @@ Passes "Quick Capture Categories" as arg</string>
 			<key>note</key>
 			<string>Get url and title of front chrome or safari windows as markdown</string>
 			<key>xpos</key>
-			<integer>270</integer>
+			<integer>285</integer>
 			<key>ypos</key>
-			<integer>1020</integer>
+			<integer>1345</integer>
 		</dict>
 		<key>D0EFFBD2-DC88-4DB5-9B1D-23290D33375D</key>
 		<dict>
@@ -2834,6 +2950,15 @@ Passes "Quick Capture Categories" as arg</string>
 			<key>ypos</key>
 			<integer>490</integer>
 		</dict>
+		<key>D7EE3996-0A63-4301-BD29-32D985B66C35</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>xpos</key>
+			<integer>135</integer>
+			<key>ypos</key>
+			<integer>3125</integer>
+		</dict>
 		<key>DA7C5E48-923E-4F00-ABD8-482FB61DBEDA</key>
 		<dict>
 			<key>colorindex</key>
@@ -2842,9 +2967,9 @@ Passes "Quick Capture Categories" as arg</string>
 			<string>HOOK EXAMPLE
 Example using Hook to grab markdown link to documents, files, etc, and sending to a named tag in Roam</string>
 			<key>xpos</key>
-			<integer>70</integer>
+			<integer>85</integer>
 			<key>ypos</key>
-			<integer>1430</integer>
+			<integer>1755</integer>
 		</dict>
 		<key>E1042330-8DA6-4CA6-9F67-89733B706456</key>
 		<dict>
@@ -2853,25 +2978,25 @@ Example using Hook to grab markdown link to documents, files, etc, and sending t
 
 I set this to ⇧⌘D same as Roam</string>
 			<key>xpos</key>
-			<integer>25</integer>
+			<integer>55</integer>
 			<key>ypos</key>
-			<integer>305</integer>
+			<integer>610</integer>
 		</dict>
 		<key>E3B8A694-6F69-4B70-BA3F-4A15E8BE1172</key>
 		<dict>
 			<key>note</key>
 			<string>Load config page "RoamSearchConfig", find block whose name matched the block passed, and return sublocks as page names that can be jumped to</string>
 			<key>xpos</key>
-			<integer>825</integer>
+			<integer>860</integer>
 			<key>ypos</key>
-			<integer>445</integer>
+			<integer>465</integer>
 		</dict>
 		<key>E5AA3C97-9A7C-43F3-8B63-CA5B074D1ABF</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>10</integer>
 			<key>xpos</key>
-			<integer>1365</integer>
+			<integer>1525</integer>
 			<key>ypos</key>
 			<integer>520</integer>
 		</dict>
@@ -2880,9 +3005,9 @@ I set this to ⇧⌘D same as Roam</string>
 			<key>colorindex</key>
 			<integer>2</integer>
 			<key>xpos</key>
-			<integer>255</integer>
+			<integer>270</integer>
 			<key>ypos</key>
-			<integer>2460</integer>
+			<integer>2785</integer>
 		</dict>
 		<key>ED366AEF-3B13-423A-91C8-883E9CE05D55</key>
 		<dict>
@@ -2891,18 +3016,18 @@ I set this to ⇧⌘D same as Roam</string>
 			<key>note</key>
 			<string>set paste to true, and set target tag on daily page</string>
 			<key>xpos</key>
-			<integer>460</integer>
+			<integer>475</integer>
 			<key>ypos</key>
-			<integer>1050</integer>
+			<integer>1375</integer>
 		</dict>
 		<key>EE341FD2-38E2-440A-9072-1AA4B9DF1A25</key>
 		<dict>
 			<key>note</key>
 			<string>Go to named page with hotkey- pass named page as arg</string>
 			<key>xpos</key>
-			<integer>880</integer>
+			<integer>895</integer>
 			<key>ypos</key>
-			<integer>710</integer>
+			<integer>1035</integer>
 		</dict>
 		<key>F2D81D94-2F17-4307-97B6-A20C21D68D57</key>
 		<dict>
@@ -2911,9 +3036,9 @@ I set this to ⇧⌘D same as Roam</string>
 			<key>note</key>
 			<string>Copy selected text to clipboard</string>
 			<key>xpos</key>
-			<integer>250</integer>
+			<integer>265</integer>
 			<key>ypos</key>
-			<integer>1245</integer>
+			<integer>1570</integer>
 		</dict>
 		<key>F2F339A7-A90B-4FA2-95EE-E8B1F96ADEA7</key>
 		<dict>
@@ -2923,9 +3048,9 @@ I set this to ⇧⌘D same as Roam</string>
 			<string>GRAB SCREENSHOT EXAMPLE
 Example that grabs screenshot, and prompts for where to paste it based on dynamic config in Roam. Note that this hotkey sends name of menu node as an arg</string>
 			<key>xpos</key>
-			<integer>60</integer>
+			<integer>75</integer>
 			<key>ypos</key>
-			<integer>1740</integer>
+			<integer>2065</integer>
 		</dict>
 		<key>F3494981-8358-4610-9C8F-96B8DBEBB47D</key>
 		<dict>
@@ -2934,25 +3059,25 @@ Example that grabs screenshot, and prompts for where to paste it based on dynami
 			<key>xpos</key>
 			<integer>740</integer>
 			<key>ypos</key>
-			<integer>165</integer>
+			<integer>180</integer>
 		</dict>
 		<key>F385EF13-01CA-482D-B519-3B8312C43C8C</key>
 		<dict>
 			<key>note</key>
 			<string>Clear query, but stash result in variable</string>
 			<key>xpos</key>
-			<integer>995</integer>
+			<integer>1050</integer>
 			<key>ypos</key>
-			<integer>475</integer>
+			<integer>495</integer>
 		</dict>
 		<key>F43CB827-BF0F-45E1-B9FE-C476BF02EEF2</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>5</integer>
 			<key>xpos</key>
-			<integer>340</integer>
+			<integer>355</integer>
 			<key>ypos</key>
-			<integer>705</integer>
+			<integer>1030</integer>
 		</dict>
 	</dict>
 	<key>variables</key>
@@ -2973,7 +3098,7 @@ Example that grabs screenshot, and prompts for where to paste it based on dynami
 		<string>DBName</string>
 	</array>
 	<key>version</key>
-	<string>3.0</string>
+	<string>3.1</string>
 	<key>webaddress</key>
 	<string>https://www.putyourleftfoot.in/roampagesearch</string>
 </dict>
