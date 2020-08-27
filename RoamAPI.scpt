@@ -606,6 +606,7 @@ on run argv
 		#find block on page with contents = targetblock
 		#return names of pages each child of targetblock references
 		# only one reference is returned per child (the oldest). This means [[[[foo]][[bar]]]] should return [[foo]][[[bar]]
+		# we count rerences to each of the final refs to find whether there are inbound links or not.
 
 		#arg passed to alfred is the full string tag
 		set getconfigpagejavascript to oneline("
@@ -615,7 +616,6 @@ on run argv
 						.q('[
 							:find (pull ?optionblock [
 								[:block/string]
-								[:block/children]
 								[:block/refs]
 								[:block/uid]
 								{:block/refs [:node/title]}])
@@ -633,6 +633,7 @@ on run argv
 						.filter(b=>b[0].refs!=undefined)
 						.map(b=>
 							b[0].refs.slice(-1)[0])
+						.map(b=>{return {hasinboundlinks:window.roamAlphaAPI.q('[ :find (count ?b)  :with ?e :in $ ?myid  :where [?e :node/title ?myid] [?b :block/refs ?e] ] ',b.title)[0][0]>0,title:b.title,uid:b.uid}})
 						.map(n=>
 							{return {
 								title:n['title'],
@@ -643,8 +644,8 @@ on run argv
 								text:{copy:'[['+n['title']+']]'},
 								mods:{
 									cmd: {
-										valid:(n['_refs']!=undefined),
-										subtitle: (n['_refs']!=undefined)?'Show pages that link here':'Nothing links to this page'
+										valid:n.hasinboundlinks,
+										subtitle: n.hasinboundlinks?'Show pages that link here':'Nothing links to this page'
 										}
 									,
 									alt: {
