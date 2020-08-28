@@ -3619,7 +3619,7 @@ Example that grabs screenshot, and prompts for where to paste it based on dynami
 		<key>DBName</key>
 		<string>JCThoughts</string>
 		<key>cacheTimeInSeconds</key>
-		<string>300</string>
+		<string>0</string>
 		<key>configPageName</key>
 		<string>RoamSearchConfig</string>
 		<key>keydelay</key>

@@ -14,7 +14,7 @@ global keydelay
 #time of last run.
 property lastRunTime : 0
 #cached response
-property response : ""
+property allPagesResponse : ""
 
 #remove this later and pass around
 
@@ -126,9 +126,14 @@ on injectChromeJavascript(w, j, t)
 			#execute mytab javascript js
 			log "TITLE:" & title of t
 			#execute t javascript "sessionStorage.setItem('roamapihackery','')"
-			#execute mytab javascript "javascript:alert('here')"
+
+			#set js to "window.location.href = \"javascript:alert('here')\""
+			#set js to "window.location.href = \"javascript:sessionStorage.setItem('roamapihackery', 'boo')\""
+			log "Executing javascript in chrome as follows
+			" & js
 			execute t javascript js
-			set response to {execute t javascript "sessionStorage.getItem('roamapihackery')"}
+
+			return {execute t javascript "sessionStorage.getItem('roamapihackery')"}
 		end tell
 	end using terms from
 end injectChromeJavascript
@@ -412,7 +417,7 @@ on run argv
 					)
 			})}")
 
-		log "get all pages javascript: " & getallpagesjavascript
+
 	else if mode is "getPagesWithTag" then
 
 		set targetPage to ""
@@ -461,7 +466,7 @@ on run argv
 					)
 				})")
 
-		log "getPagesWithTag javascript: " & getallpagesjavascript
+
 
 	else if mode is "getTagsOfPage" then
 
@@ -512,7 +517,7 @@ on run argv
 							)
 				})")
 
-		log "getTagsOfPage javascript: " & getallpagesjavascript
+
 
 	else if mode is "getConfigPageData" then
 
@@ -579,7 +584,7 @@ on run argv
 									}})
 					})")
 
-		log "Javscript to inject: " & getconfigpagejavascript
+
 
 
 		#The following is not fully implemented yet and is not exposed to alfred. It works but dropping down through levels does not work
@@ -596,7 +601,7 @@ on run argv
 		# return contents of all children of that block to build a menu
 		#arg passed to alfred is the full string tag
 		set getconfigpagejavascript to "jsreturn =JSON.stringify({items:window.roamAlphaAPI .q('[:find (pull ?optionblock [[:block/string] [:block/children] [:block/refs]]) :in $ ?menutag  :where [?configpage :node/title ?menutag]  [?menublock :block/refs ?configpage] [?menublock :block/children ?optionblock] ]', '" & targetblock & "').filter(b=>b[0].refs).map(n=> {return {title: n[0].string" & bracestrip & " + (n[0].children?' (⌥ to see children)':''),arg:n[0].string}})})"
-		log "Javascript to inject: " & getconfigpagejavascript
+
 
 	else if mode is "getConfigPageNames" then
 
@@ -660,15 +665,15 @@ on run argv
 							}}
 							)
 					})")
-		log "Javascript to inject: " & getconfigpagejavascript
+
 
 	else if mode is "pastePageContent" then
 
 		set targetPage to item 1 of argv
-		set newline to "
-"
+
+		#the following from https://gist.github.com/thesved/79371d0c1dd34b6750c846368b323113 thanks to Viktor Tabori
 		set getPageContent to "function resolveNode(r,e,i,o,n,a){e=e||0,i=Object.assign({},i);var l=n?'':' '.repeat(2*Math.max(e-1,0))+'- ',t=n&&a?'':'@@@!!!@@@',d='';if(!i[r]){i[r]=!0;var c=window.roamAlphaAPI.pull('[*]',r),s=c[':block/order']||0;if(c[':block/heading']&&c[':block/heading']>0&&(l+='#'.repeat(c[':block/heading'])+' '),void 0!==c[':block/string']){var b=o?/!?{{\\[*embed\\]*\\s*:\\s*\\(\\(([^\\)]*)\\)\\)\\s*}}/gi:/!{{\\[*embed\\]*\\s*:\\s*\\(\\(([^\\)]*)\\)\\)\\s*}}/gi;c[':block/string']=c[':block/string'].replace(b,function(r,o){var n=o.trim(),a=window.roamAlphaAPI.q('[:find ?e :in $ ?a :where [?e :block/uid ?a]]',n);if(0==a.length)return r;var l=resolveNode(a[0][0],e,i,!0,!0);return void 0!==l?l:'LOOP:'+r});var v=o?/!?\\(\\(([^\\)]*)\\)\\)/gi:/!\\(\\(([^\\)]*)\\)\\)/gi;c[':block/string']=c[':block/string'].replace(v,function(r,o){var n=o.trim(),a=window.roamAlphaAPI.q('[:find ?e :in $ ?a :where [?e :block/uid ?a]]',n);if(0==a.length)return r;var l=resolveNode(a[0][0],e,i,!0,!0,!0);return void 0!==l?l:'LOOP:'+r}),d+=l+c[':block/string']+t}if(c[':block/children']&&!a){var g,u=[];for(var h in c[':block/children'])void 0!==(g=resolveNode(c[':block/children'][h][':db/id'],e+1,i))&&u.push(g);u.sort(function(r,e){return r.order-e.order}),d+=u.map(function(r){return r.txt}).join('')}return 0==e||n?d:{txt:d,order:s}}};var node = window.roamAlphaAPI.q('[ :find (pull ?e [*]) :in $ ?t :where [?e :node/title ?t]] ','" & targetPage & "'); if (node.length>0) { let id=node[0][0].id; jsreturn=resolveNode(id);}"
-		log "Javascript to inject: " & getPageContent
+
 	else if mode is "gotoDaily" then
 
 		#go straight to daily page
@@ -724,14 +729,14 @@ on run argv
 
 	#cache result if this is a query run
 	if mode is "getAllPages" then
-		if response is not "" then
+		if allPagesResponse is not "" then
 			set cacheTimeInSeconds to (system attribute "cacheTimeInSeconds") as number
 			#cache results for some time to make it faaaaast
 			set timeSinceLastRun to start - lastRunTime
 			set lastRunTime to start
 
 			if (lastRunTime is not 0) and (timeSinceLastRun < cacheTimeInSeconds) then
-				return response
+				return allPagesResponse
 			end if
 		end if
 	end if
@@ -884,7 +889,14 @@ on run argv
 				return resp
 
 			else if mode is "getAllPages" or mode is "getPagesWithTag" or mode is "getTagsOfPage" then
-				return injectChromeJavascript(foundWindow, getallpagesjavascript, foundtab)
+
+				set r to injectChromeJavascript(foundWindow, getallpagesjavascript, foundtab)
+
+				if mode is "getAllPages" then
+					set allPagesResponse to r
+				end if
+
+				return r
 			end if
 		end if
 		if not found then
@@ -1010,6 +1022,9 @@ on run argv
 				tell application "Safari"
 					set index of foundWindow to 1
 					set response to (do JavaScript getallpagesjavascript in document 1)
+					if mode is "getAllPages" then
+						set allPagesResponse to response
+					end if
 					return response
 				end tell
 			end if
