@@ -580,6 +580,16 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
+				<string>9BEF8B77-9290-4E5E-9848-AB965CB2085B</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string>paste contents of this page into frontmost app</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>8ABF6748-C5F1-4BAF-8B66-4B1845F3C12F</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -597,16 +607,6 @@
 				<string>show pages that reference this</string>
 				<key>vitoclose</key>
 				<true/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>9BEF8B77-9290-4E5E-9848-AB965CB2085B</string>
-				<key>modifiers</key>
-				<integer>131072</integer>
-				<key>modifiersubtext</key>
-				<string>paste contents of this page into frontmost app</string>
-				<key>vitoclose</key>
-				<false/>
 			</dict>
 			<dict>
 				<key>destinationuid</key>
@@ -906,6 +906,25 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>externaltriggerid</key>
+				<string>pasteContentsOfPage</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>9BEF8B77-9290-4E5E-9848-AB965CB2085B</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -1196,25 +1215,6 @@ echo -n $out</string>
 			<key>config</key>
 			<dict>
 				<key>externaltriggerid</key>
-				<string>pasteContentsOfPage</string>
-				<key>passinputasargument</key>
-				<true/>
-				<key>passvariables</key>
-				<true/>
-				<key>workflowbundleid</key>
-				<string>self</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
-			<key>uid</key>
-			<string>9BEF8B77-9290-4E5E-9848-AB965CB2085B</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>externaltriggerid</key>
 				<string>getTagsOfPage</string>
 				<key>passinputasargument</key>
 				<true/>
@@ -1453,6 +1453,29 @@ echo -n $out</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>runAppleScript.sh</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>9D34CEEC-8419-4A54-A3C0-6C285B6EBE7B</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>autopaste</key>
 				<true/>
 				<key>clipboardtext</key>
@@ -1479,29 +1502,6 @@ echo -n $out</string>
 			<string>4E778FC8-8A99-4279-A2EE-8190D3349558</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string></string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>runAppleScript.sh</string>
-				<key>type</key>
-				<integer>8</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>9D34CEEC-8419-4A54-A3C0-6C285B6EBE7B</string>
-			<key>version</key>
-			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2051,6 +2051,25 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>externaltriggerid</key>
+				<string>dailyPageConfig</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>3C9855AA-5086-453B-8C9C-A54DC4863E56</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -2142,25 +2161,6 @@ echo -n $query</string>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>B39F7A8C-0519-4209-9545-8929037CC5FB</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>externaltriggerid</key>
-				<string>dailyPageConfig</string>
-				<key>passinputasargument</key>
-				<true/>
-				<key>passvariables</key>
-				<true/>
-				<key>workflowbundleid</key>
-				<string>self</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
-			<key>uid</key>
-			<string>3C9855AA-5086-453B-8C9C-A54DC4863E56</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2811,9 +2811,9 @@ echo -n $out</string>
 			<key>note</key>
 			<string>Jump to daily page block</string>
 			<key>xpos</key>
-			<integer>590</integer>
+			<integer>600</integer>
 			<key>ypos</key>
-			<integer>1570</integer>
+			<integer>1785</integer>
 		</dict>
 		<key>0145BD8E-631A-4396-BAED-38A26C64FFE6</key>
 		<dict>
@@ -2833,9 +2833,9 @@ echo -n $out</string>
 			<key>note</key>
 			<string>Jump to daily page block</string>
 			<key>xpos</key>
-			<integer>590</integer>
+			<integer>600</integer>
 			<key>ypos</key>
-			<integer>1345</integer>
+			<integer>1560</integer>
 		</dict>
 		<key>0AAE0185-4588-4C32-B094-7CDB68C31F7A</key>
 		<dict>
@@ -2847,18 +2847,18 @@ todo to true,
 paste to true, 
 and addtimestamp to true</string>
 			<key>xpos</key>
-			<integer>465</integer>
+			<integer>475</integer>
 			<key>ypos</key>
-			<integer>1600</integer>
+			<integer>1815</integer>
 		</dict>
 		<key>0B1CB30C-4EED-4F3B-B1C7-EA370A79E0CD</key>
 		<dict>
 			<key>note</key>
 			<string>set arg to "Roam"</string>
 			<key>xpos</key>
-			<integer>245</integer>
+			<integer>255</integer>
 			<key>ypos</key>
-			<integer>1060</integer>
+			<integer>1275</integer>
 		</dict>
 		<key>0D19AAEB-6160-4A33-A00E-97C42DBA7215</key>
 		<dict>
@@ -2872,9 +2872,9 @@ Pass (as argument) the string contents of the block on daily page you want to ju
 Pass vars as follows
 paste : "true" if you want to paste</string>
 			<key>xpos</key>
-			<integer>810</integer>
+			<integer>820</integer>
 			<key>ypos</key>
-			<integer>1710</integer>
+			<integer>1925</integer>
 		</dict>
 		<key>11746A23-1882-4878-AC9E-85F4AC69F8AA</key>
 		<dict>
@@ -2910,27 +2910,27 @@ paste : "true" if you want to paste</string>
 			<key>note</key>
 			<string>Jump to daily page block</string>
 			<key>xpos</key>
-			<integer>580</integer>
+			<integer>590</integer>
 			<key>ypos</key>
-			<integer>1755</integer>
+			<integer>1970</integer>
 		</dict>
 		<key>1C60E887-DAF1-4A80-AEAB-65824E657643</key>
 		<dict>
 			<key>note</key>
 			<string>Ask user to select a block from dynamically generated config page. Script will the jump to this block on dialy page, creating it if it does not exist</string>
 			<key>xpos</key>
-			<integer>1165</integer>
+			<integer>1220</integer>
 			<key>ypos</key>
-			<integer>150</integer>
+			<integer>365</integer>
 		</dict>
 		<key>1D35B0BA-99BA-468A-BE80-EF97AD6D52FC</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<integer>730</integer>
+			<integer>455</integer>
 			<key>ypos</key>
-			<integer>3640</integer>
+			<integer>3255</integer>
 		</dict>
 		<key>1DF1ACEA-3AD8-468C-8677-0D70D8158D57</key>
 		<dict>
@@ -2940,9 +2940,9 @@ paste : "true" if you want to paste</string>
 			<string>TODO EXAMPLE
 Example that grabs selection and sends to tag under roam daily page, as a TODO</string>
 			<key>xpos</key>
-			<integer>85</integer>
+			<integer>95</integer>
 			<key>ypos</key>
-			<integer>1570</integer>
+			<integer>1785</integer>
 		</dict>
 		<key>2222C20F-B62E-4E6F-B86C-13088E8C132A</key>
 		<dict>
@@ -2956,25 +2956,27 @@ Example that grabs selection and sends to tag under roam daily page, as a TODO</
 		<key>22C6085D-117D-4658-819C-2BCA0B3DED29</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1270</integer>
+			<integer>1280</integer>
 			<key>ypos</key>
-			<integer>750</integer>
+			<integer>970</integer>
 		</dict>
 		<key>238DF9EE-407A-4B65-9C63-D5ED949448F2</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
 			<key>xpos</key>
-			<integer>355</integer>
+			<integer>80</integer>
 			<key>ypos</key>
-			<integer>3505</integer>
+			<integer>3120</integer>
 		</dict>
 		<key>23ADB478-09CF-414E-A699-70CEAFA081C0</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>12</integer>
 			<key>xpos</key>
-			<integer>1525</integer>
+			<integer>1580</integer>
 			<key>ypos</key>
-			<integer>345</integer>
+			<integer>560</integer>
 		</dict>
 		<key>248FF69E-5CDD-4AF7-9BA7-5B47619E2ECC</key>
 		<dict>
@@ -2985,18 +2987,18 @@ Example that grabs selection and sends to tag under roam daily page, as a TODO</
 set addtimestamp to true
 add todo to true</string>
 			<key>xpos</key>
-			<integer>555</integer>
+			<integer>280</integer>
 			<key>ypos</key>
-			<integer>3535</integer>
+			<integer>3150</integer>
 		</dict>
 		<key>2D6448F3-A55C-411C-B8BB-426570C809DC</key>
 		<dict>
 			<key>note</key>
 			<string>Go to tag under daily note. Create tag if not present. Do not paste text</string>
 			<key>xpos</key>
-			<integer>1080</integer>
+			<integer>1090</integer>
 			<key>ypos</key>
-			<integer>1710</integer>
+			<integer>1925</integer>
 		</dict>
 		<key>30E87419-E57D-42EF-823F-B21DCB1ADC89</key>
 		<dict>
@@ -3006,9 +3008,9 @@ add todo to true</string>
 			<string>BOOKMARK EXAMPLE
 Example of one key bookmarking- grabs url of current browser tab and sends to tag under daily page. Hook is better :)</string>
 			<key>xpos</key>
-			<integer>85</integer>
+			<integer>95</integer>
 			<key>ypos</key>
-			<integer>1345</integer>
+			<integer>1560</integer>
 		</dict>
 		<key>3C9855AA-5086-453B-8C9C-A54DC4863E56</key>
 		<dict>
@@ -3027,9 +3029,9 @@ Example of one key bookmarking- grabs url of current browser tab and sends to ta
 			<string>GO TO NAMED PAGE EXAMPLE
 In this case go to page named "Roam"</string>
 			<key>xpos</key>
-			<integer>45</integer>
+			<integer>55</integer>
 			<key>ypos</key>
-			<integer>945</integer>
+			<integer>1160</integer>
 		</dict>
 		<key>3D9531CF-8153-4753-9D07-49637AD18343</key>
 		<dict>
@@ -3052,7 +3054,7 @@ Passes "Favourite Pages" as arg. Options show in menu are children of "Favourite
 			<key>xpos</key>
 			<integer>10</integer>
 			<key>ypos</key>
-			<integer>20</integer>
+			<integer>255</integer>
 		</dict>
 		<key>486D1D2F-9797-45A4-B7A0-06B43C72FBF1</key>
 		<dict>
@@ -3068,9 +3070,9 @@ Passes "Favourite Pages" as arg. Options show in menu are children of "Favourite
 			<key>colorindex</key>
 			<integer>7</integer>
 			<key>xpos</key>
-			<integer>660</integer>
+			<integer>695</integer>
 			<key>ypos</key>
-			<integer>750</integer>
+			<integer>970</integer>
 		</dict>
 		<key>507BA1DE-5683-40E8-A8E9-7C9C048121B5</key>
 		<dict>
@@ -3081,9 +3083,9 @@ Passes "Favourite Pages" as arg. Options show in menu are children of "Favourite
 set addtimestamp to true
 add todo to true</string>
 			<key>xpos</key>
-			<integer>555</integer>
+			<integer>280</integer>
 			<key>ypos</key>
-			<integer>3670</integer>
+			<integer>3285</integer>
 		</dict>
 		<key>53A8F508-C3C7-44C0-BFEB-68469018DE59</key>
 		<dict>
@@ -3110,18 +3112,18 @@ add todo to true</string>
 			<key>note</key>
 			<string>Load config page "RoamSearchConfig", find block whose name matched the block passed, and return sublocks as page names that can be jumped to</string>
 			<key>xpos</key>
-			<integer>860</integer>
+			<integer>915</integer>
 			<key>ypos</key>
-			<integer>150</integer>
+			<integer>365</integer>
 		</dict>
 		<key>5CEBBE94-29E6-4AAA-9B30-492D6DF9D985</key>
 		<dict>
 			<key>note</key>
 			<string>set mode to quickEntryDaily</string>
 			<key>xpos</key>
-			<integer>985</integer>
+			<integer>995</integer>
 			<key>ypos</key>
-			<integer>1740</integer>
+			<integer>1955</integer>
 		</dict>
 		<key>6602F097-AAF8-43AB-8E44-8FEB832EF626</key>
 		<dict>
@@ -3130,9 +3132,9 @@ add todo to true</string>
 			<key>note</key>
 			<string>grabs a sceenshot and puts into clipboard. Alfred needs screen recording permissions</string>
 			<key>xpos</key>
-			<integer>270</integer>
+			<integer>280</integer>
 			<key>ypos</key>
-			<integer>2065</integer>
+			<integer>2280</integer>
 		</dict>
 		<key>6761B0AF-825E-46C6-B70E-03EA1A755652</key>
 		<dict>
@@ -3141,18 +3143,18 @@ add todo to true</string>
 			<key>note</key>
 			<string>set paste to true, and set target tag on daily page</string>
 			<key>xpos</key>
-			<integer>460</integer>
+			<integer>470</integer>
 			<key>ypos</key>
-			<integer>1785</integer>
+			<integer>2000</integer>
 		</dict>
 		<key>6FD03D07-5C84-4D66-B81B-95562E336F93</key>
 		<dict>
 			<key>note</key>
 			<string>set mode to goToPageByName</string>
 			<key>xpos</key>
-			<integer>780</integer>
+			<integer>790</integer>
 			<key>ypos</key>
-			<integer>1065</integer>
+			<integer>1280</integer>
 		</dict>
 		<key>74EA125C-81A7-4BA8-B114-1CE76B121C25</key>
 		<dict>
@@ -3161,9 +3163,9 @@ add todo to true</string>
 			<key>note</key>
 			<string>Example of using a keyword to jump straight to a page</string>
 			<key>xpos</key>
-			<integer>40</integer>
+			<integer>50</integer>
 			<key>ypos</key>
-			<integer>1140</integer>
+			<integer>1355</integer>
 		</dict>
 		<key>75F03C06-4EF2-45AB-A5E3-7C09626CFDDF</key>
 		<dict>
@@ -3179,9 +3181,9 @@ add todo to true</string>
 			<key>note</key>
 			<string>set mode to gotoDaily</string>
 			<key>xpos</key>
-			<integer>310</integer>
+			<integer>320</integer>
 			<key>ypos</key>
-			<integer>720</integer>
+			<integer>935</integer>
 		</dict>
 		<key>80D4A5FD-ABB0-4927-B93A-46185D01EBA5</key>
 		<dict>
@@ -3190,9 +3192,9 @@ add todo to true</string>
 			<key>note</key>
 			<string>Get url and title of front chrome or safari windows as markdown in clipboard</string>
 			<key>xpos</key>
-			<integer>265</integer>
+			<integer>275</integer>
 			<key>ypos</key>
-			<integer>1755</integer>
+			<integer>1970</integer>
 		</dict>
 		<key>83ACD212-8384-4AEA-9BEA-67934CF93DC3</key>
 		<dict>
@@ -3208,16 +3210,16 @@ add todo to true</string>
 			<key>colorindex</key>
 			<integer>10</integer>
 			<key>xpos</key>
-			<integer>580</integer>
+			<integer>635</integer>
 			<key>ypos</key>
-			<integer>235</integer>
+			<integer>450</integer>
 		</dict>
 		<key>899922AB-B531-4389-BA0B-117C7AD8F23E</key>
 		<dict>
 			<key>xpos</key>
-			<integer>55</integer>
+			<integer>65</integer>
 			<key>ypos</key>
-			<integer>800</integer>
+			<integer>1015</integer>
 		</dict>
 		<key>89C6E2F3-D6B9-456F-903F-A5F51C467554</key>
 		<dict>
@@ -3234,9 +3236,9 @@ getConfigPageData</string>
 			<key>note</key>
 			<string>set mode to goToPageByName</string>
 			<key>xpos</key>
-			<integer>1410</integer>
+			<integer>1425</integer>
 			<key>ypos</key>
-			<integer>40</integer>
+			<integer>270</integer>
 		</dict>
 		<key>90A68901-DE22-4D39-9177-0BB8318870B2</key>
 		<dict>
@@ -3251,19 +3253,21 @@ getConfigPageData</string>
 		</dict>
 		<key>9198E5F7-E1B4-4E5B-88D2-5AC7E1DD3511</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
 			<key>xpos</key>
-			<integer>365</integer>
+			<integer>90</integer>
 			<key>ypos</key>
-			<integer>3795</integer>
+			<integer>3410</integer>
 		</dict>
 		<key>9616EF40-89B7-42CB-B7A7-4DFCDAAF840F</key>
 		<dict>
 			<key>note</key>
 			<string>Ask user to select a block from dynamically generated config page. Script will the jump to this block on dialy page, creating it if it does not exist</string>
 			<key>xpos</key>
-			<integer>1160</integer>
+			<integer>1215</integer>
 			<key>ypos</key>
-			<integer>465</integer>
+			<integer>680</integer>
 		</dict>
 		<key>9A077982-30B0-4BED-9EC9-E924BFA05DCD</key>
 		<dict>
@@ -3274,9 +3278,9 @@ getConfigPageData</string>
 set addtimestamp to false
 add todo to true</string>
 			<key>xpos</key>
-			<integer>555</integer>
+			<integer>280</integer>
 			<key>ypos</key>
-			<integer>3825</integer>
+			<integer>3440</integer>
 		</dict>
 		<key>9B1204F4-C451-4A32-B3EF-D6592EDE88F1</key>
 		<dict>
@@ -3285,36 +3289,36 @@ add todo to true</string>
 
 Can be run by keyword "roam" or by hotkey</string>
 			<key>xpos</key>
-			<integer>300</integer>
+			<integer>275</integer>
 			<key>ypos</key>
-			<integer>20</integer>
+			<integer>255</integer>
 		</dict>
 		<key>9B35F0CE-E573-4E25-9780-792E253B1CC8</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>12</integer>
 			<key>xpos</key>
-			<integer>440</integer>
+			<integer>495</integer>
 			<key>ypos</key>
-			<integer>455</integer>
+			<integer>670</integer>
 		</dict>
 		<key>9BEF8B77-9290-4E5E-9848-AB965CB2085B</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>7</integer>
 			<key>xpos</key>
-			<integer>380</integer>
+			<integer>480</integer>
 			<key>ypos</key>
-			<integer>310</integer>
+			<integer>125</integer>
 		</dict>
 		<key>9D34CEEC-8419-4A54-A3C0-6C285B6EBE7B</key>
 		<dict>
 			<key>note</key>
 			<string>Find a page, grab it's content. Shitty linebreak hack</string>
 			<key>xpos</key>
-			<integer>970</integer>
+			<integer>980</integer>
 			<key>ypos</key>
-			<integer>755</integer>
+			<integer>970</integer>
 		</dict>
 		<key>9EBBFBC0-7CD0-4962-A6CA-21A0B2077F29</key>
 		<dict>
@@ -3323,9 +3327,9 @@ Can be run by keyword "roam" or by hotkey</string>
 			<key>note</key>
 			<string>Jump to a named page within roam. Expects on argument to be passed, which is the name of the page</string>
 			<key>xpos</key>
-			<integer>615</integer>
+			<integer>625</integer>
 			<key>ypos</key>
-			<integer>1035</integer>
+			<integer>1250</integer>
 		</dict>
 		<key>A31CB604-DE0E-4AC5-9636-E37ADC507414</key>
 		<dict>
@@ -3341,27 +3345,27 @@ Can be run by keyword "roam" or by hotkey</string>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<integer>600</integer>
+			<integer>610</integer>
 			<key>ypos</key>
-			<integer>2065</integer>
+			<integer>2280</integer>
 		</dict>
 		<key>A795CE93-18F3-440F-B223-30241E27459C</key>
 		<dict>
 			<key>note</key>
 			<string>set mode to getAllPages</string>
 			<key>xpos</key>
-			<integer>195</integer>
+			<integer>190</integer>
 			<key>ypos</key>
-			<integer>50</integer>
+			<integer>285</integer>
 		</dict>
 		<key>B0B5D83C-21CF-43B3-8698-480FF5018C2D</key>
 		<dict>
 			<key>note</key>
 			<string>Go to named page with hotkey- pass named page as arg</string>
 			<key>xpos</key>
-			<integer>1520</integer>
+			<integer>1565</integer>
 			<key>ypos</key>
-			<integer>10</integer>
+			<integer>240</integer>
 		</dict>
 		<key>B39F7A8C-0519-4209-9545-8929037CC5FB</key>
 		<dict>
@@ -3370,9 +3374,9 @@ Can be run by keyword "roam" or by hotkey</string>
 			<key>note</key>
 			<string>set paste to true</string>
 			<key>xpos</key>
-			<integer>475</integer>
+			<integer>485</integer>
 			<key>ypos</key>
-			<integer>2095</integer>
+			<integer>2310</integer>
 		</dict>
 		<key>BCDAD50A-7BF0-4C94-A86E-F43D41F93035</key>
 		<dict>
@@ -3402,18 +3406,18 @@ Passes "Quick Capture Categories" as arg</string>
 			<key>note</key>
 			<string>put linebreaks back</string>
 			<key>xpos</key>
-			<integer>1115</integer>
+			<integer>1130</integer>
 			<key>ypos</key>
-			<integer>755</integer>
+			<integer>970</integer>
 		</dict>
 		<key>C5A87E8B-7396-4272-B149-2DEA1087C8F1</key>
 		<dict>
 			<key>note</key>
 			<string>Clear query, but stash result in variable</string>
 			<key>xpos</key>
-			<integer>1045</integer>
+			<integer>1100</integer>
 			<key>ypos</key>
-			<integer>180</integer>
+			<integer>395</integer>
 		</dict>
 		<key>C8C15BD3-3EB9-4D6F-8180-ECDDB8173258</key>
 		<dict>
@@ -3429,9 +3433,9 @@ Passes "Quick Capture Categories" as arg</string>
 			<key>note</key>
 			<string>Go to daily page</string>
 			<key>xpos</key>
-			<integer>440</integer>
+			<integer>450</integer>
 			<key>ypos</key>
-			<integer>690</integer>
+			<integer>905</integer>
 		</dict>
 		<key>C9DB5FE2-8090-439A-8A18-DD74E04A84C1</key>
 		<dict>
@@ -3440,9 +3444,9 @@ Passes "Quick Capture Categories" as arg</string>
 			<key>note</key>
 			<string>Get url and title of front chrome or safari windows as markdown</string>
 			<key>xpos</key>
-			<integer>285</integer>
+			<integer>295</integer>
 			<key>ypos</key>
-			<integer>1345</integer>
+			<integer>1560</integer>
 		</dict>
 		<key>D086F33B-FB97-466F-BE2C-46D40C56BAEE</key>
 		<dict>
@@ -3458,9 +3462,9 @@ Passes "Quick Capture Categories" as arg</string>
 			<key>note</key>
 			<string>set mode to getTagsOfPage</string>
 			<key>xpos</key>
-			<integer>680</integer>
+			<integer>735</integer>
 			<key>ypos</key>
-			<integer>490</integer>
+			<integer>705</integer>
 		</dict>
 		<key>DA7C5E48-923E-4F00-ABD8-482FB61DBEDA</key>
 		<dict>
@@ -3470,16 +3474,18 @@ Passes "Quick Capture Categories" as arg</string>
 			<string>HOOK EXAMPLE
 Example using Hook to grab markdown link to documents, files, etc, and sending to a named tag in Roam</string>
 			<key>xpos</key>
-			<integer>85</integer>
+			<integer>95</integer>
 			<key>ypos</key>
-			<integer>1755</integer>
+			<integer>1970</integer>
 		</dict>
 		<key>DD054B9B-7D04-4241-B19B-30B4AE5D5C7A</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
 			<key>xpos</key>
-			<integer>360</integer>
+			<integer>85</integer>
 			<key>ypos</key>
-			<integer>3640</integer>
+			<integer>3255</integer>
 		</dict>
 		<key>E1042330-8DA6-4CA6-9F67-89733B706456</key>
 		<dict>
@@ -3488,27 +3494,27 @@ Example using Hook to grab markdown link to documents, files, etc, and sending t
 
 I set this to ⇧⌘D same as Roam</string>
 			<key>xpos</key>
-			<integer>55</integer>
+			<integer>65</integer>
 			<key>ypos</key>
-			<integer>610</integer>
+			<integer>825</integer>
 		</dict>
 		<key>E3B8A694-6F69-4B70-BA3F-4A15E8BE1172</key>
 		<dict>
 			<key>note</key>
 			<string>Load config page "RoamSearchConfig", find block whose name matched the block passed, and return sublocks as page names that can be jumped to</string>
 			<key>xpos</key>
-			<integer>860</integer>
+			<integer>915</integer>
 			<key>ypos</key>
-			<integer>465</integer>
+			<integer>680</integer>
 		</dict>
 		<key>E5AA3C97-9A7C-43F3-8B63-CA5B074D1ABF</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>10</integer>
 			<key>xpos</key>
-			<integer>1525</integer>
+			<integer>1580</integer>
 			<key>ypos</key>
-			<integer>520</integer>
+			<integer>735</integer>
 		</dict>
 		<key>E5DE65F1-C320-47AF-8241-CA9CFE420449</key>
 		<dict>
@@ -3526,36 +3532,36 @@ I set this to ⇧⌘D same as Roam</string>
 			<key>note</key>
 			<string>set paste to true, and set target tag on daily page</string>
 			<key>xpos</key>
-			<integer>475</integer>
+			<integer>485</integer>
 			<key>ypos</key>
-			<integer>1375</integer>
+			<integer>1590</integer>
 		</dict>
 		<key>EE341FD2-38E2-440A-9072-1AA4B9DF1A25</key>
 		<dict>
 			<key>note</key>
 			<string>Go to named page with hotkey- pass named page as arg</string>
 			<key>xpos</key>
-			<integer>895</integer>
+			<integer>905</integer>
 			<key>ypos</key>
-			<integer>1035</integer>
+			<integer>1250</integer>
 		</dict>
 		<key>EEF6D773-F048-4AAB-AE92-559DC365CAA4</key>
 		<dict>
 			<key>note</key>
 			<string>set mode to pastePageContent</string>
 			<key>xpos</key>
-			<integer>875</integer>
+			<integer>885</integer>
 			<key>ypos</key>
-			<integer>775</integer>
+			<integer>1000</integer>
 		</dict>
 		<key>F02DCDDD-15AC-464D-9E53-5A1DF567EFAD</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>7</integer>
 			<key>xpos</key>
-			<integer>1525</integer>
+			<integer>1580</integer>
 			<key>ypos</key>
-			<integer>190</integer>
+			<integer>405</integer>
 		</dict>
 		<key>F2D81D94-2F17-4307-97B6-A20C21D68D57</key>
 		<dict>
@@ -3564,9 +3570,9 @@ I set this to ⇧⌘D same as Roam</string>
 			<key>note</key>
 			<string>Copy selected text to clipboard</string>
 			<key>xpos</key>
-			<integer>265</integer>
+			<integer>275</integer>
 			<key>ypos</key>
-			<integer>1570</integer>
+			<integer>1785</integer>
 		</dict>
 		<key>F2F339A7-A90B-4FA2-95EE-E8B1F96ADEA7</key>
 		<dict>
@@ -3576,36 +3582,36 @@ I set this to ⇧⌘D same as Roam</string>
 			<string>GRAB SCREENSHOT EXAMPLE
 Example that grabs screenshot, and prompts for where to paste it based on dynamic config in Roam. Note that this hotkey sends name of menu node as an arg</string>
 			<key>xpos</key>
-			<integer>75</integer>
+			<integer>85</integer>
 			<key>ypos</key>
-			<integer>2065</integer>
+			<integer>2280</integer>
 		</dict>
 		<key>F3494981-8358-4610-9C8F-96B8DBEBB47D</key>
 		<dict>
 			<key>note</key>
 			<string>set mode to getPagesWithTag</string>
 			<key>xpos</key>
-			<integer>740</integer>
+			<integer>795</integer>
 			<key>ypos</key>
-			<integer>180</integer>
+			<integer>395</integer>
 		</dict>
 		<key>F385EF13-01CA-482D-B519-3B8312C43C8C</key>
 		<dict>
 			<key>note</key>
 			<string>Clear query, but stash result in variable</string>
 			<key>xpos</key>
-			<integer>1050</integer>
+			<integer>1105</integer>
 			<key>ypos</key>
-			<integer>495</integer>
+			<integer>710</integer>
 		</dict>
 		<key>F43CB827-BF0F-45E1-B9FE-C476BF02EEF2</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>5</integer>
 			<key>xpos</key>
-			<integer>355</integer>
+			<integer>365</integer>
 			<key>ypos</key>
-			<integer>1030</integer>
+			<integer>1245</integer>
 		</dict>
 	</dict>
 	<key>variables</key>
@@ -3613,20 +3619,20 @@ Example that grabs screenshot, and prompts for where to paste it based on dynami
 		<key>DBName</key>
 		<string>JCThoughts</string>
 		<key>cacheTimeInSeconds</key>
-		<string>0</string>
+		<string>300</string>
 		<key>configPageName</key>
 		<string>RoamSearchConfig</string>
 		<key>keydelay</key>
 		<string>0.3</string>
 		<key>preferredBrowser</key>
-		<string>Safari</string>
+		<string>Chrome</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
 		<string>DBName</string>
 	</array>
 	<key>version</key>
-	<string>3.3</string>
+	<string>4.0</string>
 	<key>webaddress</key>
 	<string>https://www.putyourleftfoot.in/roampagesearch</string>
 </dict>
