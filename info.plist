@@ -100,6 +100,16 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
+				<string>F02DCDDD-15AC-464D-9E53-5A1DF567EFAD</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string>paste contents of this page into frontmost app</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>23ADB478-09CF-414E-A699-70CEAFA081C0</string>
 				<key>modifiers</key>
 				<integer>524288</integer>
@@ -233,6 +243,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>4E778FC8-8A99-4279-A2EE-8190D3349558</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EEF6D773-F048-4AAB-AE92-559DC365CAA4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>507BA1DE-5683-40E8-A8E9-7C9C048121B5</key>
 		<array>
 			<dict>
@@ -352,6 +375,16 @@
 		</array>
 		<key>75F03C06-4EF2-45AB-A5E3-7C09626CFDDF</key>
 		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D086F33B-FB97-466F-BE2C-46D40C56BAEE</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string>paste contents of this page into frontmost app</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 			<dict>
 				<key>destinationuid</key>
 				<string>C8C15BD3-3EB9-4D6F-8180-ECDDB8173258</string>
@@ -501,6 +534,16 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
+				<string>F02DCDDD-15AC-464D-9E53-5A1DF567EFAD</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string>paste contents of this page into frontmost app</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>23ADB478-09CF-414E-A699-70CEAFA081C0</string>
 				<key>modifiers</key>
 				<integer>524288</integer>
@@ -557,6 +600,16 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
+				<string>9BEF8B77-9290-4E5E-9848-AB965CB2085B</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string>paste contents of this page into frontmost app</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>D0EFFBD2-DC88-4DB5-9B1D-23290D33375D</string>
 				<key>modifiers</key>
 				<integer>524288</integer>
@@ -571,6 +624,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>D0EFFBD2-DC88-4DB5-9B1D-23290D33375D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>9D34CEEC-8419-4A54-A3C0-6C285B6EBE7B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C00679E8-7344-4506-88A2-B8FE0A3872A7</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -636,6 +702,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>BCDAD50A-7BF0-4C94-A86E-F43D41F93035</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>C00679E8-7344-4506-88A2-B8FE0A3872A7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>22C6085D-117D-4658-819C-2BCA0B3DED29</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -740,6 +819,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>07129A05-5D47-4FC7-89EE-702238F6EB2D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>EEF6D773-F048-4AAB-AE92-559DC365CAA4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9D34CEEC-8419-4A54-A3C0-6C285B6EBE7B</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -1071,6 +1163,25 @@ echo -n $out</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>externaltriggerid</key>
+				<string>pasteContentsOfPage</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>F02DCDDD-15AC-464D-9E53-5A1DF567EFAD</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>triggerid</key>
 				<string>getPagesWithTag</string>
 			</dict>
@@ -1078,6 +1189,25 @@ echo -n $out</string>
 			<string>alfred.workflow.trigger.external</string>
 			<key>uid</key>
 			<string>83D39038-AB3A-4F47-8AA7-59FF56AC1C9A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>pasteContentsOfPage</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>9BEF8B77-9290-4E5E-9848-AB965CB2085B</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1317,6 +1447,105 @@ echo -n $out</string>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>7F661539-269A-4BE1-8C85-0CE9BE095EA4</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>22C6085D-117D-4658-819C-2BCA0B3DED29</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>triggerid</key>
+				<string>pasteContentsOfPage</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>4E778FC8-8A99-4279-A2EE-8190D3349558</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>runAppleScript.sh</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>9D34CEEC-8419-4A54-A3C0-6C285B6EBE7B</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>function run(argv) {
+  var query = argv[0];
+  return query.split("@@@!!!@@@").join("\n");
+}</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>7</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>C00679E8-7344-4506-88A2-B8FE0A3872A7</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<true/>
+				<key>variables</key>
+				<dict>
+					<key>mode</key>
+					<string>pastePageContent</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>EEF6D773-F048-4AAB-AE92-559DC365CAA4</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1853,6 +2082,25 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>externaltriggerid</key>
+				<string>dailyPageConfig</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>com.jc.roampagesearch</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>A5EAD48D-7BDB-466B-8314-9866D8586C43</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -1876,25 +2124,6 @@ echo -n $query</string>
 			<string>6602F097-AAF8-43AB-8E44-8FEB832EF626</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>externaltriggerid</key>
-				<string>dailyPageConfig</string>
-				<key>passinputasargument</key>
-				<true/>
-				<key>passvariables</key>
-				<true/>
-				<key>workflowbundleid</key>
-				<string>com.jc.roampagesearch</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
-			<key>uid</key>
-			<string>A5EAD48D-7BDB-466B-8314-9866D8586C43</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2135,6 +2364,25 @@ echo -n $out</string>
 			<key>config</key>
 			<dict>
 				<key>externaltriggerid</key>
+				<string>pasteContentsOfPage</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>D086F33B-FB97-466F-BE2C-46D40C56BAEE</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
 				<string>getTagsOfPage</string>
 				<key>passinputasargument</key>
 				<true/>
@@ -2147,25 +2395,6 @@ echo -n $out</string>
 			<string>alfred.workflow.output.callexternaltrigger</string>
 			<key>uid</key>
 			<string>C8C15BD3-3EB9-4D6F-8180-ECDDB8173258</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>externaltriggerid</key>
-				<string>jump to named page</string>
-				<key>passinputasargument</key>
-				<true/>
-				<key>passvariables</key>
-				<true/>
-				<key>workflowbundleid</key>
-				<string>self</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
-			<key>uid</key>
-			<string>12DA6087-FED7-4587-B7E6-BBB1E3C4DF2B</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2345,6 +2574,25 @@ echo -n $out</string>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>A31CB604-DE0E-4AC5-9636-E37ADC507414</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>jump to named page</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>12DA6087-FED7-4587-B7E6-BBB1E3C4DF2B</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2644,7 +2892,7 @@ paste : "true" if you want to paste</string>
 			<key>xpos</key>
 			<integer>1405</integer>
 			<key>ypos</key>
-			<integer>2770</integer>
+			<integer>2845</integer>
 		</dict>
 		<key>182A072B-FAC0-4016-B647-FDCB140B65C2</key>
 		<dict>
@@ -2671,7 +2919,7 @@ paste : "true" if you want to paste</string>
 			<key>note</key>
 			<string>Ask user to select a block from dynamically generated config page. Script will the jump to this block on dialy page, creating it if it does not exist</string>
 			<key>xpos</key>
-			<integer>1170</integer>
+			<integer>1165</integer>
 			<key>ypos</key>
 			<integer>150</integer>
 		</dict>
@@ -2703,7 +2951,14 @@ Example that grabs selection and sends to tag under roam daily page, as a TODO</
 			<key>xpos</key>
 			<integer>1415</integer>
 			<key>ypos</key>
-			<integer>2930</integer>
+			<integer>2990</integer>
+		</dict>
+		<key>22C6085D-117D-4658-819C-2BCA0B3DED29</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1270</integer>
+			<key>ypos</key>
+			<integer>750</integer>
 		</dict>
 		<key>238DF9EE-407A-4B65-9C63-D5ED949448F2</key>
 		<dict>
@@ -2717,9 +2972,9 @@ Example that grabs selection and sends to tag under roam daily page, as a TODO</
 			<key>colorindex</key>
 			<integer>12</integer>
 			<key>xpos</key>
-			<integer>1520</integer>
+			<integer>1525</integer>
 			<key>ypos</key>
-			<integer>295</integer>
+			<integer>345</integer>
 		</dict>
 		<key>248FF69E-5CDD-4AF7-9BA7-5B47619E2ECC</key>
 		<dict>
@@ -2807,6 +3062,15 @@ Passes "Favourite Pages" as arg. Options show in menu are children of "Favourite
 			<integer>1095</integer>
 			<key>ypos</key>
 			<integer>2325</integer>
+		</dict>
+		<key>4E778FC8-8A99-4279-A2EE-8190D3349558</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>7</integer>
+			<key>xpos</key>
+			<integer>660</integer>
+			<key>ypos</key>
+			<integer>750</integer>
 		</dict>
 		<key>507BA1DE-5683-40E8-A8E9-7C9C048121B5</key>
 		<dict>
@@ -3034,6 +3298,24 @@ Can be run by keyword "roam" or by hotkey</string>
 			<key>ypos</key>
 			<integer>455</integer>
 		</dict>
+		<key>9BEF8B77-9290-4E5E-9848-AB965CB2085B</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>7</integer>
+			<key>xpos</key>
+			<integer>380</integer>
+			<key>ypos</key>
+			<integer>310</integer>
+		</dict>
+		<key>9D34CEEC-8419-4A54-A3C0-6C285B6EBE7B</key>
+		<dict>
+			<key>note</key>
+			<string>Find a page, grab it's content. Shitty linebreak hack</string>
+			<key>xpos</key>
+			<integer>970</integer>
+			<key>ypos</key>
+			<integer>755</integer>
+		</dict>
 		<key>9EBBFBC0-7CD0-4962-A6CA-21A0B2077F29</key>
 		<dict>
 			<key>colorindex</key>
@@ -3115,6 +3397,15 @@ Passes "Quick Capture Categories" as arg</string>
 			<key>ypos</key>
 			<integer>2335</integer>
 		</dict>
+		<key>C00679E8-7344-4506-88A2-B8FE0A3872A7</key>
+		<dict>
+			<key>note</key>
+			<string>put linebreaks back</string>
+			<key>xpos</key>
+			<integer>1115</integer>
+			<key>ypos</key>
+			<integer>755</integer>
+		</dict>
 		<key>C5A87E8B-7396-4272-B149-2DEA1087C8F1</key>
 		<dict>
 			<key>note</key>
@@ -3131,7 +3422,7 @@ Passes "Quick Capture Categories" as arg</string>
 			<key>xpos</key>
 			<integer>1405</integer>
 			<key>ypos</key>
-			<integer>2635</integer>
+			<integer>2710</integer>
 		</dict>
 		<key>C98D1012-5979-49E9-A758-F78A5EE0118F</key>
 		<dict>
@@ -3152,6 +3443,15 @@ Passes "Quick Capture Categories" as arg</string>
 			<integer>285</integer>
 			<key>ypos</key>
 			<integer>1345</integer>
+		</dict>
+		<key>D086F33B-FB97-466F-BE2C-46D40C56BAEE</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>7</integer>
+			<key>xpos</key>
+			<integer>1415</integer>
+			<key>ypos</key>
+			<integer>2575</integer>
 		</dict>
 		<key>D0EFFBD2-DC88-4DB5-9B1D-23290D33375D</key>
 		<dict>
@@ -3239,6 +3539,24 @@ I set this to ⇧⌘D same as Roam</string>
 			<key>ypos</key>
 			<integer>1035</integer>
 		</dict>
+		<key>EEF6D773-F048-4AAB-AE92-559DC365CAA4</key>
+		<dict>
+			<key>note</key>
+			<string>set mode to pastePageContent</string>
+			<key>xpos</key>
+			<integer>875</integer>
+			<key>ypos</key>
+			<integer>775</integer>
+		</dict>
+		<key>F02DCDDD-15AC-464D-9E53-5A1DF567EFAD</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>7</integer>
+			<key>xpos</key>
+			<integer>1525</integer>
+			<key>ypos</key>
+			<integer>190</integer>
+		</dict>
 		<key>F2D81D94-2F17-4307-97B6-A20C21D68D57</key>
 		<dict>
 			<key>colorindex</key>
@@ -3301,7 +3619,7 @@ Example that grabs screenshot, and prompts for where to paste it based on dynami
 		<key>keydelay</key>
 		<string>0.3</string>
 		<key>preferredBrowser</key>
-		<string>Chrome</string>
+		<string>Safari</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>

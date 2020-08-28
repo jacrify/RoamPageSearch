@@ -133,14 +133,17 @@ on injectChromeJavascript(w, j, t)
 	end using terms from
 end injectChromeJavascript
 
-on goToChromePage(w, u, tabindex)
+on goToChromePage(w, u, t)
+
 	#Set URL mode.
 	#activate chrome window, set url
 	log "Setting url of chrome"
 	using terms from application "Google Chrome"
 		tell application browsername
 			activate
-			tell w to set active tab index to tabindex
+			if t is not -1 then
+				tell w to set active tab index to t
+			end if
 			set index of w to 1
 			if URL of active tab of w is not u then
 				tell w to set URL of active tab to u
@@ -389,7 +392,7 @@ on run argv
 				.map(n=>
 					{return {
 						title:n[0]['title'],
-						subtitle:'(⏎ goto, ⌘ inbound links, ⌥ outbound links )',
+						subtitle:'(⏎ goto, ⌘ inbound links, ⌥ outbound links, ⇧ paste content )',
 						match:n[0]['title']" & bracestrip & ",
 						uid:n[0]['uid'],
 						arg:n[0]['title'],
@@ -438,7 +441,7 @@ on run argv
 					.map(n=>
 					{return {
 						title:n[0]['title'],
-						subtitle:'(⏎ goto, ⌘ inbound links, ⌥ outbound links )',
+						subtitle:'(⏎ goto, ⌘ inbound links, ⌥ outbound links, ⇧ paste content )',
 						match:n[0]['title']" & bracestrip & ",
 						uid:n[0]['uid'],
 						arg:n[0]['title'],
@@ -489,7 +492,7 @@ on run argv
 						.map(n=>
 							{return {
 								title:n[0]['title'],
-								subtitle:'(⏎ goto, ⌘ inbound links, ⌥ outbound links )',
+								subtitle:'(⏎ goto, ⌘ inbound links, ⌥ outbound links, ⇧ paste content )',
 								match:n[0]['title']" & bracestrip & ",
 								uid:n[0]['uid'],
 								arg:n[0]['title'],
@@ -606,6 +609,7 @@ on run argv
 		#find block on page with contents = targetblock
 		#return names of pages each child of targetblock references
 		# only one reference is returned per child (the oldest). This means [[[[foo]][[bar]]]] should return [[foo]][[[bar]]
+		# it's assume the oldest is the last in the array of refs
 		# we count rerences to each of the final refs to find whether there are inbound links or not.
 
 		#arg passed to alfred is the full string tag
@@ -637,7 +641,7 @@ on run argv
 						.map(n=>
 							{return {
 								title:n['title'],
-								subtitle:'(⏎ goto, ⌘ inbound links, ⌥ outbound links )',
+								subtitle:'(⏎ goto, ⌘ inbound links, ⌥ outbound links, ⇧ paste content )',
 								match:n['title']" & bracestrip & ",
 								uid:n['uid'],
 								arg:n['title'],
@@ -658,8 +662,13 @@ on run argv
 					})")
 		log "Javascript to inject: " & getconfigpagejavascript
 
+	else if mode is "pastePageContent" then
 
-
+		set targetPage to item 1 of argv
+		set newline to "
+"
+		set getPageContent to "function resolveNode(r,e,i,o,n,a){e=e||0,i=Object.assign({},i);var l=n?'':' '.repeat(2*Math.max(e-1,0))+'- ',t=n&&a?'':'@@@!!!@@@',d='';if(!i[r]){i[r]=!0;var c=window.roamAlphaAPI.pull('[*]',r),s=c[':block/order']||0;if(c[':block/heading']&&c[':block/heading']>0&&(l+='#'.repeat(c[':block/heading'])+' '),void 0!==c[':block/string']){var b=o?/!?{{\\[*embed\\]*\\s*:\\s*\\(\\(([^\\)]*)\\)\\)\\s*}}/gi:/!{{\\[*embed\\]*\\s*:\\s*\\(\\(([^\\)]*)\\)\\)\\s*}}/gi;c[':block/string']=c[':block/string'].replace(b,function(r,o){var n=o.trim(),a=window.roamAlphaAPI.q('[:find ?e :in $ ?a :where [?e :block/uid ?a]]',n);if(0==a.length)return r;var l=resolveNode(a[0][0],e,i,!0,!0);return void 0!==l?l:'LOOP:'+r});var v=o?/!?\\(\\(([^\\)]*)\\)\\)/gi:/!\\(\\(([^\\)]*)\\)\\)/gi;c[':block/string']=c[':block/string'].replace(v,function(r,o){var n=o.trim(),a=window.roamAlphaAPI.q('[:find ?e :in $ ?a :where [?e :block/uid ?a]]',n);if(0==a.length)return r;var l=resolveNode(a[0][0],e,i,!0,!0,!0);return void 0!==l?l:'LOOP:'+r}),d+=l+c[':block/string']+t}if(c[':block/children']&&!a){var g,u=[];for(var h in c[':block/children'])void 0!==(g=resolveNode(c[':block/children'][h][':db/id'],e+1,i))&&u.push(g);u.sort(function(r,e){return r.order-e.order}),d+=u.map(function(r){return r.txt}).join('')}return 0==e||n?d:{txt:d,order:s}}};var node = window.roamAlphaAPI.q('[ :find (pull ?e [*]) :in $ ?t :where [?e :node/title ?t]] ','" & targetPage & "'); if (node.length>0) { let id=node[0][0].id; jsreturn=resolveNode(id);}"
+		log "Javascript to inject: " & getPageContent
 	else if mode is "gotoDaily" then
 
 		#go straight to daily page
@@ -754,6 +763,7 @@ on run argv
 	set foundtab to 0
 
 
+
 	if preferredBrowser is "Chrome" then
 		###################################################################
 		# Find Chrome tab running roam
@@ -769,7 +779,8 @@ on run argv
 					set found to true
 					set foundWindow to first window
 					set foundtab to active tab of first window
-
+					#indicate not to switch tabs
+					set tabindex to -1
 				end if
 			end tell
 		end using terms from
@@ -792,6 +803,7 @@ on run argv
 				repeat while tabindex ≤ length of thisWindowsTabsURLs and tabindex > 0
 					set TabURL to item tabindex of thisWindowsTabsURLs
 					if ((TabURL as text) contains searchString) then
+						log "tabindex " & (tabindex as string)
 						using terms from application "Google Chrome"
 							tell application browsername
 								set foundtab to item tabindex of thisWindowsTabs
@@ -827,6 +839,7 @@ on run argv
 
 
 		if found then
+			log "tabindex " & (tabindex as string)
 			if mode is "goToPageByName" then
 				#find the page uid
 				set pageID to injectChromeJavascript(foundWindow, searchjavascript, foundtab)
@@ -843,7 +856,9 @@ on run argv
 			else if mode is "goToPageByID" then
 				set targetURL to "https://roamresearch.com/#/app/" & dbname & "/page/" & targetPage
 				goToChromePage(foundWindow, targetURL, tabindex)
-
+			else if mode is "pastePageContent" then
+				set resp to injectChromeJavascript(foundWindow, getPageContent, foundtab)
+				return resp
 			else if mode is "quickEntryDaily" then
 				set targetURL to "https://roamresearch.com/#/app/" & dbname
 
@@ -961,7 +976,9 @@ on run argv
 			else if mode is "gotoDaily" then
 				set targetURL to "https://roamresearch.com/#/app/" & dbname
 				goToSafariPage(foundWindow, targetURL)
-
+			else if mode is "pastePageContent" then
+				set resp to injectSafariJavascript(foundWindow, getPageContent, foundtab)
+				return resp
 			else if mode is "quickEntryDaily" then
 
 
