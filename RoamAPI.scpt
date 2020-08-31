@@ -173,16 +173,47 @@ on addToTopOfPage(headingtoadd, texttoadd, pastemode, addtodo)
 		delay keydelay * 2
 		#escape- remove focus if there already
 		key code 53
-		delay keydelay
 
+		delay keydelay
 		#command enter: focus on first block
 		key code 36 using command down
-		delay keydelay
 
+		delay keydelay
 		#left arrow- start of line in case there is already something here
 		key code 123 using command down
-		delay keydelay
 
+
+		set oldclip to the clipboard
+		set newline to "
+"
+		set newclip to "- " & headingtoadd & newline & "    -"
+		if (addtodo) then
+			set newclip to newclip & "{{[[TODO]]}} "
+		end if
+
+		if ((system attribute "addtimestamp") is "true") then
+			set newclip to newclip & my getTimeInHoursAndMinutes() & " "
+		end if
+
+		set newclip to newclip & texttoadd
+
+		set the clipboard to newclip
+
+		delay keydelay
+		tell application "System Events" to keystroke "v" using command down
+
+		delay keydelay
+		key code 124
+
+		delay keydelay
+		key code 124 using command down
+
+		if (pastemode) then
+			set the clipboard to oldclip
+			delay keydelay
+			tell application "System Events" to keystroke "v" using command down
+		end if
+		(*
 		#enter- add new line
 		key code 36
 		delay keydelay
@@ -220,6 +251,8 @@ on addToTopOfPage(headingtoadd, texttoadd, pastemode, addtodo)
 		#key code 125
 
 		#keystroke texttoadd
+
+		*)
 	end tell
 
 end addToTopOfPage
@@ -236,14 +269,47 @@ on focusBottomOfPage(texttoadd, pastemode, addtodo)
 		key code 36 using command down
 		delay keydelay
 		#select all twice- selects all text, then right arrow takes us to end
-		keystroke "a" using command down
-		delay keydelay
-		keystroke "a" using command down
+		keystroke "aa" using command down
+		#delay keydelay
+		#keystroke "a" using command down
 		delay keydelay
 		#down arrow
 		key code 124
 		delay keydelay
+		key code 36
+
+		set oldclip to the clipboard
+		set newline to "
+"
+		set newclip to ""
+		if (addtodo) then
+			set newclip to newclip & "{{[[TODO]]}} "
+		end if
+
+		if ((system attribute "addtimestamp") is "true") then
+			set newclip to newclip & my getTimeInHoursAndMinutes() & " "
+		end if
+
+		set newclip to newclip & texttoadd
+
+		set the clipboard to newclip
+
+		delay keydelay
+		tell application "System Events" to keystroke "v" using command down
+
+		#delay keydelay
+		#key code 124
+
+		delay keydelay
+		key code 124 using command down
+
+		if (pastemode) then
+			set the clipboard to oldclip
+			#delay keydelay
+			tell application "System Events" to keystroke "v" using command down
+		end if
 		#enter
+		(*
 		key code 36
 		if (addtodo) then
 			delay keydelay
@@ -258,7 +324,7 @@ on focusBottomOfPage(texttoadd, pastemode, addtodo)
 			delay keydelay
 			tell application "System Events" to keystroke "v" using command down
 		end if
-
+		*)
 		#delay 0.1
 		#keystroke texttoadd
 	end tell

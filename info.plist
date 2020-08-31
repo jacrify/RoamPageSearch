@@ -1582,11 +1582,11 @@ echo -n $out</string>
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
-				<integer>11</integer>
+				<integer>0</integer>
 				<key>hotmod</key>
-				<integer>1179648</integer>
+				<integer>0</integer>
 				<key>hotstring</key>
-				<string>B</string>
+				<string></string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -1840,11 +1840,11 @@ end alfred_script</string>
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
-				<integer>0</integer>
+				<integer>17</integer>
 				<key>hotmod</key>
-				<integer>0</integer>
+				<integer>1179648</integer>
 				<key>hotstring</key>
-				<string></string>
+				<string>T</string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -1880,7 +1880,7 @@ end alfred_script</string>
 			<key>config</key>
 			<dict>
 				<key>argument</key>
-				<string>[[todos]]</string>
+				<string>[[todos123]]</string>
 				<key>passthroughargument</key>
 				<false/>
 				<key>variables</key>
@@ -2051,25 +2051,6 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>externaltriggerid</key>
-				<string>dailyPageConfig</string>
-				<key>passinputasargument</key>
-				<true/>
-				<key>passvariables</key>
-				<true/>
-				<key>workflowbundleid</key>
-				<string>self</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
-			<key>uid</key>
-			<string>3C9855AA-5086-453B-8C9C-A54DC4863E56</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -2167,6 +2148,25 @@ echo -n $query</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>externaltriggerid</key>
+				<string>dailyPageConfig</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>3C9855AA-5086-453B-8C9C-A54DC4863E56</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -2186,19 +2186,6 @@ echo -n $query</string>
 			<string>11746A23-1882-4878-AC9E-85F4AC69F8AA</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>triggerid</key>
-				<string>dailyPageConfig</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>53A8F508-C3C7-44C0-BFEB-68469018DE59</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2248,6 +2235,78 @@ echo -n $out</string>
 			<string>486D1D2F-9797-45A4-B7A0-06B43C72FBF1</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>triggerid</key>
+				<string>dailyPageConfig</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>53A8F508-C3C7-44C0-BFEB-68469018DE59</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>out</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>182A072B-FAC0-4016-B647-FDCB140B65C2</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>passthroughargument</key>
+				<true/>
+				<key>variables</key>
+				<dict>
+					<key>mode</key>
+					<string>getConfigPageData</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>89C6E2F3-D6B9-456F-903F-A5F51C467554</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>jump to block</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>90A68901-DE22-4D39-9177-0BB8318870B2</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2304,59 +2363,52 @@ echo -n $out</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>action</key>
+				<integer>0</integer>
 				<key>argument</key>
-				<string>{query}</string>
-				<key>passthroughargument</key>
-				<true/>
-				<key>variables</key>
-				<dict>
-					<key>mode</key>
-					<string>getConfigPageData</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>89C6E2F3-D6B9-456F-903F-A5F51C467554</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string></string>
-				<key>passthroughargument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>Favorite Pages</string>
+				<key>focusedappvariable</key>
 				<false/>
-				<key>variables</key>
-				<dict>
-					<key>out</key>
-					<string>{query}</string>
-				</dict>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>38</integer>
+				<key>hotmod</key>
+				<integer>1835008</integer>
+				<key>hotstring</key>
+				<string>J</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
+			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
-			<string>182A072B-FAC0-4016-B647-FDCB140B65C2</string>
+			<string>3D9531CF-8153-4753-9D07-49637AD18343</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
 				<key>externaltriggerid</key>
-				<string>jump to block</string>
+				<string>favoritePagesConfig</string>
 				<key>passinputasargument</key>
 				<true/>
 				<key>passvariables</key>
 				<true/>
 				<key>workflowbundleid</key>
-				<string>self</string>
+				<string>com.jc.roampagesearch</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.callexternaltrigger</string>
 			<key>uid</key>
-			<string>90A68901-DE22-4D39-9177-0BB8318870B2</string>
+			<string>E5DE65F1-C320-47AF-8241-CA9CFE420449</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2382,6 +2434,37 @@ echo -n $out</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>18</integer>
+				<key>hotmod</key>
+				<integer>1835008</integer>
+				<key>hotstring</key>
+				<string>1</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>238DF9EE-407A-4B65-9C63-D5ED949448F2</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>externaltriggerid</key>
 				<string>getTagsOfPage</string>
 				<key>passinputasargument</key>
@@ -2395,6 +2478,30 @@ echo -n $out</string>
 			<string>alfred.workflow.output.callexternaltrigger</string>
 			<key>uid</key>
 			<string>C8C15BD3-3EB9-4D6F-8180-ECDDB8173258</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>Demo Categories</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>addtimestamp</key>
+					<string>true</string>
+					<key>paste</key>
+					<string>true</string>
+					<key>todo</key>
+					<string>true</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>248FF69E-5CDD-4AF7-9BA7-5B47619E2ECC</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2486,58 +2593,6 @@ echo -n $out</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>3</integer>
-				<key>argumenttext</key>
-				<string>Favorite Pages</string>
-				<key>focusedappvariable</key>
-				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>38</integer>
-				<key>hotmod</key>
-				<integer>1835008</integer>
-				<key>hotstring</key>
-				<string>J</string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>3D9531CF-8153-4753-9D07-49637AD18343</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>externaltriggerid</key>
-				<string>favoritePagesConfig</string>
-				<key>passinputasargument</key>
-				<true/>
-				<key>passvariables</key>
-				<true/>
-				<key>workflowbundleid</key>
-				<string>com.jc.roampagesearch</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
-			<key>uid</key>
-			<string>E5DE65F1-C320-47AF-8241-CA9CFE420449</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argument</key>
 				<string>{query}</string>
 				<key>passthroughargument</key>
@@ -2574,99 +2629,6 @@ echo -n $out</string>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>A31CB604-DE0E-4AC5-9636-E37ADC507414</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>externaltriggerid</key>
-				<string>jump to named page</string>
-				<key>passinputasargument</key>
-				<true/>
-				<key>passvariables</key>
-				<true/>
-				<key>workflowbundleid</key>
-				<string>self</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
-			<key>uid</key>
-			<string>12DA6087-FED7-4587-B7E6-BBB1E3C4DF2B</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>externaltriggerid</key>
-				<string>getPagesWithTag</string>
-				<key>passinputasargument</key>
-				<true/>
-				<key>passvariables</key>
-				<true/>
-				<key>workflowbundleid</key>
-				<string>self</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
-			<key>uid</key>
-			<string>2222C20F-B62E-4E6F-B86C-13088E8C132A</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>focusedappvariable</key>
-				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>18</integer>
-				<key>hotmod</key>
-				<integer>1835008</integer>
-				<key>hotstring</key>
-				<string>1</string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>238DF9EE-407A-4B65-9C63-D5ED949448F2</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string>Demo Categories</string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>addtimestamp</key>
-					<string>true</string>
-					<key>paste</key>
-					<string>true</string>
-					<key>todo</key>
-					<string>true</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>248FF69E-5CDD-4AF7-9BA7-5B47619E2ECC</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2723,6 +2685,25 @@ echo -n $out</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>externaltriggerid</key>
+				<string>jump to named page</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>12DA6087-FED7-4587-B7E6-BBB1E3C4DF2B</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argument</key>
 				<string>Demo Categories</string>
 				<key>passthroughargument</key>
@@ -2741,6 +2722,25 @@ echo -n $out</string>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>507BA1DE-5683-40E8-A8E9-7C9C048121B5</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>getPagesWithTag</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>2222C20F-B62E-4E6F-B86C-13088E8C132A</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2822,9 +2822,9 @@ echo -n $out</string>
 			<key>note</key>
 			<string>External trigger to load dynamic list of favorite pages from config page. These will be displayed in the menu, and the selected page will be jumped to. Input is an arg containing contents of a block on config page use as base for menu. Each child block is expected to contain a reference to one and only one page.</string>
 			<key>xpos</key>
-			<integer>650</integer>
+			<integer>675</integer>
 			<key>ypos</key>
-			<integer>2770</integer>
+			<integer>3185</integer>
 		</dict>
 		<key>07129A05-5D47-4FC7-89EE-702238F6EB2D</key>
 		<dict>
@@ -2881,27 +2881,27 @@ paste : "true" if you want to paste</string>
 			<key>note</key>
 			<string>Load config page "RoamSearchConfig", find block whose name matched the block passed, and return sublocks as menu items that can then be jumped to or pasted under on daily page</string>
 			<key>xpos</key>
-			<integer>795</integer>
+			<integer>855</integer>
 			<key>ypos</key>
-			<integer>2325</integer>
+			<integer>2470</integer>
 		</dict>
 		<key>12DA6087-FED7-4587-B7E6-BBB1E3C4DF2B</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>5</integer>
 			<key>xpos</key>
-			<integer>1405</integer>
+			<integer>1430</integer>
 			<key>ypos</key>
-			<integer>2845</integer>
+			<integer>3260</integer>
 		</dict>
 		<key>182A072B-FAC0-4016-B647-FDCB140B65C2</key>
 		<dict>
 			<key>note</key>
 			<string>Clear query, but stash result in variable</string>
 			<key>xpos</key>
-			<integer>975</integer>
+			<integer>1040</integer>
 			<key>ypos</key>
-			<integer>2355</integer>
+			<integer>2500</integer>
 		</dict>
 		<key>191379D7-CFA6-4E8A-98DD-0028AED95DF6</key>
 		<dict>
@@ -2949,9 +2949,9 @@ Example that grabs selection and sends to tag under roam daily page, as a TODO</
 			<key>colorindex</key>
 			<integer>10</integer>
 			<key>xpos</key>
-			<integer>1415</integer>
+			<integer>1440</integer>
 			<key>ypos</key>
-			<integer>2990</integer>
+			<integer>3405</integer>
 		</dict>
 		<key>22C6085D-117D-4658-819C-2BCA0B3DED29</key>
 		<dict>
@@ -3017,9 +3017,9 @@ Example of one key bookmarking- grabs url of current browser tab and sends to ta
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<integer>1280</integer>
+			<integer>1330</integer>
 			<key>ypos</key>
-			<integer>2220</integer>
+			<integer>2380</integer>
 		</dict>
 		<key>3D04A873-9014-4A2A-BA23-1A7D1AF25369</key>
 		<dict>
@@ -3061,9 +3061,9 @@ Passes "Favourite Pages" as arg. Options show in menu are children of "Favourite
 			<key>note</key>
 			<string>Ask user to select a block from dynamically generated config page. Script will the jump to this block on dialy page, creating it if it does not exist</string>
 			<key>xpos</key>
-			<integer>1095</integer>
+			<integer>1135</integer>
 			<key>ypos</key>
-			<integer>2325</integer>
+			<integer>2470</integer>
 		</dict>
 		<key>4E778FC8-8A99-4279-A2EE-8190D3349558</key>
 		<dict>
@@ -3094,18 +3094,18 @@ add todo to true</string>
 			<key>note</key>
 			<string>External trigger to load dynamic config menu from Roam. Expects the contents of a block on the config page to be passed in the arg. Children of this block will then be shown in the menu. The selected block will be jumped to on daily page (added if not present), with optional paste, todo, timestamp etc.</string>
 			<key>xpos</key>
-			<integer>500</integer>
+			<integer>510</integer>
 			<key>ypos</key>
-			<integer>2325</integer>
+			<integer>2475</integer>
 		</dict>
 		<key>53BCF28B-1549-4403-9660-F7E11EC759DA</key>
 		<dict>
 			<key>note</key>
 			<string>set mode to getConfigPageNames</string>
 			<key>xpos</key>
-			<integer>845</integer>
+			<integer>870</integer>
 			<key>ypos</key>
-			<integer>2800</integer>
+			<integer>3215</integer>
 		</dict>
 		<key>56939936-AEDC-4349-9572-41DEFBDB0379</key>
 		<dict>
@@ -3172,9 +3172,9 @@ add todo to true</string>
 			<key>note</key>
 			<string>Ask user to select a block from dynamically generated config page. Script will the jump to this block on dialy page, creating it if it does not exist</string>
 			<key>xpos</key>
-			<integer>1235</integer>
+			<integer>1260</integer>
 			<key>ypos</key>
-			<integer>2770</integer>
+			<integer>3185</integer>
 		</dict>
 		<key>7F661539-269A-4BE1-8C85-0CE9BE095EA4</key>
 		<dict>
@@ -3201,9 +3201,9 @@ add todo to true</string>
 			<key>note</key>
 			<string>Load config page "RoamSearchConfig", find block whose name matched the block passed, and return sublocks as page names that can be jumped to</string>
 			<key>xpos</key>
-			<integer>945</integer>
+			<integer>970</integer>
 			<key>ypos</key>
-			<integer>2770</integer>
+			<integer>3185</integer>
 		</dict>
 		<key>83D39038-AB3A-4F47-8AA7-59FF56AC1C9A</key>
 		<dict>
@@ -3227,9 +3227,9 @@ add todo to true</string>
 			<string>set mode to 
 getConfigPageData</string>
 			<key>xpos</key>
-			<integer>680</integer>
+			<integer>710</integer>
 			<key>ypos</key>
-			<integer>2355</integer>
+			<integer>2505</integer>
 		</dict>
 		<key>8ABF6748-C5F1-4BAF-8B66-4B1845F3C12F</key>
 		<dict>
@@ -3247,9 +3247,9 @@ getConfigPageData</string>
 			<key>note</key>
 			<string>Jump to daily page block</string>
 			<key>xpos</key>
-			<integer>1285</integer>
+			<integer>1320</integer>
 			<key>ypos</key>
-			<integer>2410</integer>
+			<integer>2575</integer>
 		</dict>
 		<key>9198E5F7-E1B4-4E5B-88D2-5AC7E1DD3511</key>
 		<dict>
@@ -3336,9 +3336,9 @@ Can be run by keyword "roam" or by hotkey</string>
 			<key>note</key>
 			<string>Clear query, but stash result in variable</string>
 			<key>xpos</key>
-			<integer>1130</integer>
+			<integer>1155</integer>
 			<key>ypos</key>
-			<integer>2800</integer>
+			<integer>3215</integer>
 		</dict>
 		<key>A5EAD48D-7BDB-466B-8314-9866D8586C43</key>
 		<dict>
@@ -3383,9 +3383,9 @@ Can be run by keyword "roam" or by hotkey</string>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<integer>270</integer>
+			<integer>285</integer>
 			<key>ypos</key>
-			<integer>2335</integer>
+			<integer>2630</integer>
 		</dict>
 		<key>BECDCB00-E806-4033-B78A-F81BFFA8F9CC</key>
 		<dict>
@@ -3397,9 +3397,9 @@ Example showing jumping to tag on daily page with dynamic configuration, driven 
 
 Passes "Quick Capture Categories" as arg</string>
 			<key>xpos</key>
-			<integer>90</integer>
+			<integer>95</integer>
 			<key>ypos</key>
-			<integer>2335</integer>
+			<integer>2590</integer>
 		</dict>
 		<key>C00679E8-7344-4506-88A2-B8FE0A3872A7</key>
 		<dict>
@@ -3424,9 +3424,9 @@ Passes "Quick Capture Categories" as arg</string>
 			<key>colorindex</key>
 			<integer>12</integer>
 			<key>xpos</key>
-			<integer>1405</integer>
+			<integer>1430</integer>
 			<key>ypos</key>
-			<integer>2710</integer>
+			<integer>3125</integer>
 		</dict>
 		<key>C98D1012-5979-49E9-A758-F78A5EE0118F</key>
 		<dict>
@@ -3453,9 +3453,9 @@ Passes "Quick Capture Categories" as arg</string>
 			<key>colorindex</key>
 			<integer>7</integer>
 			<key>xpos</key>
-			<integer>1415</integer>
+			<integer>1450</integer>
 			<key>ypos</key>
-			<integer>2575</integer>
+			<integer>2940</integer>
 		</dict>
 		<key>D0EFFBD2-DC88-4DB5-9B1D-23290D33375D</key>
 		<dict>
@@ -3625,7 +3625,7 @@ Example that grabs screenshot, and prompts for where to paste it based on dynami
 		<key>keydelay</key>
 		<string>0.3</string>
 		<key>preferredBrowser</key>
-		<string>Chrome</string>
+		<string>Vivaldi</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
