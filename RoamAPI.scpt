@@ -346,6 +346,7 @@ on run argv
 	#Having braces [] or tags # in search titles throws out Alfreds autocomplete, so we remove them
 	#below using this snippet of javascript
 	set bracestrip to ".split('[').join('').split(']').join('').split('#').join('')"
+	set bracestripMatch to bracestrip & ".replace(/(.*)/, function($1){return $1+' '+$1.replace(/([\\u4e00-\\u9fa5]+|[0-9]+|[a-z]+)/ig,' $1 ')+' '+$1.replace(/([\\u4e00-\\u9fa5])/g,' $1')})"
 
 	#this clojure rule finds any ancestor of block ?block
 	set ancestorrule to "'[ [ (ancestor ?block ?ancestor) [?ancestor :block/children ?block] ] [ (ancestor ?block ?ancestor) [?parent :block/children ?block ] (ancestor ?parent ?ancestor) ] ] ]'"
@@ -398,7 +399,7 @@ on run argv
 					{return {
 						title:n[0]['title'],
 						subtitle:'(⏎ goto, ⌘ inbound links, ⌥ outbound links, ⇧ paste content )',
-						match:n[0]['title']" & bracestrip & ",
+						match:n[0]['title']" & bracestripMatch & ",
 						uid:n[0]['uid'],
 						arg:n[0]['title'],
 						text:{copy:'[['+n[0]['title']+']]'},
@@ -447,7 +448,7 @@ on run argv
 					{return {
 						title:n[0]['title'],
 						subtitle:'(⏎ goto, ⌘ inbound links, ⌥ outbound links, ⇧ paste content )',
-						match:n[0]['title']" & bracestrip & ",
+						match:n[0]['title']" & bracestripMatch & ",
 						uid:n[0]['uid'],
 						arg:n[0]['title'],
 						text:{copy:'[['+n[0]['title']+']]'},
@@ -498,7 +499,7 @@ on run argv
 							{return {
 								title:n[0]['title'],
 								subtitle:'(⏎ goto, ⌘ inbound links, ⌥ outbound links, ⇧ paste content )',
-								match:n[0]['title']" & bracestrip & ",
+								match:n[0]['title']" & bracestripMatch & ",
 								uid:n[0]['uid'],
 								arg:n[0]['title'],
 								text:{copy:'[['+n[0]['title']+']]'},
@@ -647,7 +648,7 @@ on run argv
 							{return {
 								title:n['title'],
 								subtitle:'(⏎ goto, ⌘ inbound links, ⌥ outbound links, ⇧ paste content )',
-								match:n['title']" & bracestrip & ",
+								match:n['title']" & bracestripMatch & ",
 								uid:n['uid'],
 								arg:n['title'],
 								text:{copy:'[['+n['title']+']]'},
