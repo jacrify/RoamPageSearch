@@ -142,19 +142,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>238DF9EE-407A-4B65-9C63-D5ED949448F2</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>248FF69E-5CDD-4AF7-9BA7-5B47619E2ECC</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>248FF69E-5CDD-4AF7-9BA7-5B47619E2ECC</key>
 		<array>
 			<dict>
@@ -352,6 +339,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>EE341FD2-38E2-440A-9072-1AA4B9DF1A25</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>71CA844A-42DF-4F45-AA1E-CED01F527D3C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>248FF69E-5CDD-4AF7-9BA7-5B47619E2ECC</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -1480,6 +1480,8 @@ echo -n $out</string>
 				<true/>
 				<key>clipboardtext</key>
 				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
 				<key>transient</key>
 				<true/>
 			</dict>
@@ -1840,11 +1842,11 @@ end alfred_script</string>
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
-				<integer>17</integer>
+				<integer>0</integer>
 				<key>hotmod</key>
-				<integer>1179648</integer>
+				<integer>0</integer>
 				<key>hotstring</key>
-				<string>T</string>
+				<string></string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -1866,6 +1868,8 @@ end alfred_script</string>
 				<false/>
 				<key>clipboardtext</key>
 				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
 				<key>transient</key>
 				<true/>
 			</dict>
@@ -2434,33 +2438,44 @@ echo -n $out</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>focusedappvariable</key>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>rexjumptodailywithtodoandtimestamp</string>
+				<key>subtext</key>
+				<string>Tag on daily page will be chosen from menu on config page called "Demo Categories"</string>
+				<key>text</key>
+				<string>Jump to named node on daily page, with todo and timestamp</string>
+				<key>withspace</key>
 				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>18</integer>
-				<key>hotmod</key>
-				<integer>1835008</integer>
-				<key>hotstring</key>
-				<string>1</string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
+			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>238DF9EE-407A-4B65-9C63-D5ED949448F2</string>
+			<string>58D56949-7CCF-40EB-8D6E-FB6DA81F0BE7</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>rexpastetodailywithtodoandtimestamp</string>
+				<key>subtext</key>
+				<string>Tag on daily page will be chosen from menu on config page called "Demo Categories"</string>
+				<key>text</key>
+				<string>Paste clipboard to named node on daily page, with todo and timestamp</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>71CA844A-42DF-4F45-AA1E-CED01F527D3C</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2654,37 +2669,6 @@ echo -n $out</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>focusedappvariable</key>
-				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>19</integer>
-				<key>hotmod</key>
-				<integer>1835008</integer>
-				<key>hotstring</key>
-				<string>2</string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>DD054B9B-7D04-4241-B19B-30B4AE5D5C7A</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>externaltriggerid</key>
 				<string>jump to named page</string>
 				<key>passinputasargument</key>
@@ -2700,6 +2684,37 @@ echo -n $out</string>
 			<string>12DA6087-FED7-4587-B7E6-BBB1E3C4DF2B</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>hotstring</key>
+				<string></string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>DD054B9B-7D04-4241-B19B-30B4AE5D5C7A</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2756,11 +2771,11 @@ echo -n $out</string>
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
-				<integer>20</integer>
+				<integer>0</integer>
 				<key>hotmod</key>
-				<integer>1835008</integer>
+				<integer>0</integer>
 				<key>hotstring</key>
-				<string>3</string>
+				<string></string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -2960,15 +2975,6 @@ Example that grabs selection and sends to tag under roam daily page, as a TODO</
 			<key>ypos</key>
 			<integer>970</integer>
 		</dict>
-		<key>238DF9EE-407A-4B65-9C63-D5ED949448F2</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>3</integer>
-			<key>xpos</key>
-			<integer>80</integer>
-			<key>ypos</key>
-			<integer>3120</integer>
-		</dict>
 		<key>23ADB478-09CF-414E-A699-70CEAFA081C0</key>
 		<dict>
 			<key>colorindex</key>
@@ -3116,6 +3122,13 @@ add todo to true</string>
 			<key>ypos</key>
 			<integer>365</integer>
 		</dict>
+		<key>58D56949-7CCF-40EB-8D6E-FB6DA81F0BE7</key>
+		<dict>
+			<key>xpos</key>
+			<integer>290</integer>
+			<key>ypos</key>
+			<integer>3000</integer>
+		</dict>
 		<key>5CEBBE94-29E6-4AAA-9B30-492D6DF9D985</key>
 		<dict>
 			<key>note</key>
@@ -3155,6 +3168,13 @@ add todo to true</string>
 			<integer>790</integer>
 			<key>ypos</key>
 			<integer>1280</integer>
+		</dict>
+		<key>71CA844A-42DF-4F45-AA1E-CED01F527D3C</key>
+		<dict>
+			<key>xpos</key>
+			<integer>60</integer>
+			<key>ypos</key>
+			<integer>3120</integer>
 		</dict>
 		<key>74EA125C-81A7-4BA8-B114-1CE76B121C25</key>
 		<dict>
@@ -3483,9 +3503,9 @@ Example using Hook to grab markdown link to documents, files, etc, and sending t
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<integer>85</integer>
+			<integer>105</integer>
 			<key>ypos</key>
-			<integer>3255</integer>
+			<integer>3275</integer>
 		</dict>
 		<key>E1042330-8DA6-4CA6-9F67-89733B706456</key>
 		<dict>
