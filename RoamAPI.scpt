@@ -346,7 +346,7 @@ on run argv
 	#Having braces [] or tags # in search titles throws out Alfreds autocomplete, so we remove them
 	#below using this snippet of javascript
 	set bracestrip to ".split('[').join('').split(']').join('').split('#').join('')"
-	set bracestripMatch to bracestrip & ".replace(/(.*)/, function($1){return $1+' '+$1.replace(/([\\u4e00-\\u9fa5]+|[0-9]+|[a-z]+)/ig,' $1 ')+' '+$1.replace(/([\\u4e00-\\u9fa5])/g,' $1')})"
+	set bracestripMatch to ".replace(/(.*)/, function($1){f=function(a){b=a.replace(/ /g,'');return [b,a.replace(/(.)/g,' $1'),a.replace(/(.{2})/g,' $1'),a.substring(1).replace(/(.{2})/g,' $1'),a.replace(/(.{3})/g,' $1'),a.substring(1).replace(/(.{3})/g,' $1'),a.substring(2).replace(/(.{3})/g,' $1'),a.replace(/(.{4})/g,' $1'),a.substring(1).replace(/(.{4})/g,' $1'),a.substring(2).replace(/(.{4})/g,' $1'),a.substring(3).replace(/(.{4})/g,' $1')].join(' ')};w=$1.replace(/[^0-9a-z,.:?;!@#$%&*_+=`~|}{<>·/]+/ig,' ');return [$1,f($1.replace(/[^\\u4e00-\\u9fa5]+/g,' ')),f(w),w.replace(/([0-9]+|[a-z]+)/ig,' $1 ')].join(' ')})"
 
 	#this clojure rule finds any ancestor of block ?block
 	set ancestorrule to "'[ [ (ancestor ?block ?ancestor) [?ancestor :block/children ?block] ] [ (ancestor ?block ?ancestor) [?parent :block/children ?block ] (ancestor ?parent ?ancestor) ] ] ]'"
