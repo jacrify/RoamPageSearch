@@ -444,6 +444,9 @@ on run argv
 
 		#pulls backlinks using :block_ref expression !
 		#would be nice to pull count of outbound links, but it's too slow.
+
+
+
 		set getallpagesjavascript to oneline("
 			{jsreturn =JSON.stringify(
 			{items:
@@ -482,6 +485,7 @@ on run argv
 					}}
 					)
 			})}")
+
 
 
 	else if mode is "getPagesWithTag" then
