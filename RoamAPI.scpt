@@ -30,7 +30,7 @@ end replace_chars
 
 on oneline(s)
 	return replace_chars(replace_chars(s, "
-	", " "), "	", "")
+	", ""), "	", "")
 end oneline
 
 to getTimeInHoursAndMinutes()
