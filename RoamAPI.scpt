@@ -11,10 +11,7 @@
 global browsername
 global keydelay
 
-#time of last run.
-property lastRunTime : 0
-#cached response
-property allPagesResponse : ""
+
 
 #remove this later and pass around
 
@@ -796,23 +793,6 @@ on run argv
 		return
 	end if
 
-
-	#cache result if this is a query run
-	if mode is "getAllPages" then
-		if allPagesResponse is not "" then
-			set cacheTimeInSeconds to (system attribute "cacheTimeInSeconds") as number
-			#cache results for some time to make it faaaaast
-			set timeSinceLastRun to start - lastRunTime
-			set lastRunTime to start
-
-			if (lastRunTime is not 0) and (timeSinceLastRun < cacheTimeInSeconds) then
-				return allPagesResponse
-			end if
-		end if
-	end if
-
-
-
 	set windowIndex to 1
 	#current tab being scanned
 	set tabindex to 0
@@ -962,9 +942,6 @@ on run argv
 
 				set r to injectChromeJavascript(foundWindow, getallpagesjavascript, foundtab)
 
-				if mode is "getAllPages" then
-					set allPagesResponse to r
-				end if
 
 				return r
 			end if
@@ -1092,9 +1069,7 @@ on run argv
 				tell application "Safari"
 					set index of foundWindow to 1
 					set response to (do JavaScript getallpagesjavascript in document 1)
-					if mode is "getAllPages" then
-						set allPagesResponse to response
-					end if
+
 					return response
 				end tell
 			end if

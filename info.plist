@@ -3638,14 +3638,12 @@ Example that grabs screenshot, and prompts for where to paste it based on dynami
 	<dict>
 		<key>DBName</key>
 		<string>JCThoughts</string>
-		<key>cacheTimeInSeconds</key>
-		<string>0</string>
 		<key>configPageName</key>
 		<string>RoamSearchConfig</string>
 		<key>keydelay</key>
 		<string>0.3</string>
 		<key>preferredBrowser</key>
-		<string>Vivaldi</string>
+		<string>Chrome</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
