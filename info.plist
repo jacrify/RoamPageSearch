@@ -559,19 +559,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>9198E5F7-E1B4-4E5B-88D2-5AC7E1DD3511</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>9A077982-30B0-4BED-9EC9-E924BFA05DCD</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>9616EF40-89B7-42CB-B7A7-4DFCDAAF840F</key>
 		<array>
 			<dict>
@@ -613,6 +600,19 @@
 				<string>show pages that reference this</string>
 				<key>vitoclose</key>
 				<true/>
+			</dict>
+		</array>
+		<key>976FBD17-05BC-4867-8185-36B69535943B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9A077982-30B0-4BED-9EC9-E924BFA05DCD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 		</array>
 		<key>9A077982-30B0-4BED-9EC9-E924BFA05DCD</key>
@@ -866,7 +866,7 @@
 				<false/>
 			</dict>
 		</array>
-		<key>DD054B9B-7D04-4241-B19B-30B4AE5D5C7A</key>
+		<key>DC4D476F-EF10-4220-BF08-C6FCA6D5A0FD</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -2885,7 +2885,7 @@ echo -n $out</string>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
-				<string>rexpastetodailywithtodoandtimestamp</string>
+				<string>roampastetodailywithtodoandtimestamp</string>
 				<key>subtext</key>
 				<string>Tag on daily page will be chosen from menu on config page called "Demo Categories"</string>
 				<key>text</key>
@@ -2927,37 +2927,6 @@ echo -n $out</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>focusedappvariable</key>
-				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>0</integer>
-				<key>hotmod</key>
-				<integer>0</integer>
-				<key>hotstring</key>
-				<string></string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>DD054B9B-7D04-4241-B19B-30B4AE5D5C7A</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>externaltriggerid</key>
 				<string>dailyPageConfig</string>
 				<key>passinputasargument</key>
@@ -2971,6 +2940,27 @@ echo -n $out</string>
 			<string>alfred.workflow.output.callexternaltrigger</string>
 			<key>uid</key>
 			<string>1D35B0BA-99BA-468A-BE80-EF97AD6D52FC</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>roamaddtodotodaily</string>
+				<key>subtext</key>
+				<string>Tag on daily page will be chosen from menu on config page called "Demo Categories"</string>
+				<key>text</key>
+				<string>Add todo to daily page, with timestamp</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>DC4D476F-EF10-4220-BF08-C6FCA6D5A0FD</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -3001,33 +2991,23 @@ echo -n $out</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>focusedappvariable</key>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>roamaddtodo</string>
+				<key>subtext</key>
+				<string>Tag on daily page will be chosen from menu on config page called "Demo Categories"</string>
+				<key>text</key>
+				<string>Add todo to daily without timestamp</string>
+				<key>withspace</key>
 				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>0</integer>
-				<key>hotmod</key>
-				<integer>0</integer>
-				<key>hotstring</key>
-				<string></string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
+			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>9198E5F7-E1B4-4E5B-88D2-5AC7E1DD3511</string>
+			<string>976FBD17-05BC-4867-8185-36B69535943B</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -3442,10 +3422,12 @@ add todo to true</string>
 		</dict>
 		<key>71CA844A-42DF-4F45-AA1E-CED01F527D3C</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
 			<key>xpos</key>
-			<integer>40</integer>
+			<integer>30</integer>
 			<key>ypos</key>
-			<integer>4595</integer>
+			<integer>4605</integer>
 		</dict>
 		<key>74EA125C-81A7-4BA8-B114-1CE76B121C25</key>
 		<dict>
@@ -3543,15 +3525,6 @@ getConfigPageData</string>
 			<key>ypos</key>
 			<integer>3345</integer>
 		</dict>
-		<key>9198E5F7-E1B4-4E5B-88D2-5AC7E1DD3511</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>3</integer>
-			<key>xpos</key>
-			<integer>50</integer>
-			<key>ypos</key>
-			<integer>4900</integer>
-		</dict>
 		<key>9616EF40-89B7-42CB-B7A7-4DFCDAAF840F</key>
 		<dict>
 			<key>note</key>
@@ -3560,6 +3533,15 @@ getConfigPageData</string>
 			<integer>1215</integer>
 			<key>ypos</key>
 			<integer>680</integer>
+		</dict>
+		<key>976FBD17-05BC-4867-8185-36B69535943B</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>xpos</key>
+			<integer>35</integer>
+			<key>ypos</key>
+			<integer>4900</integer>
 		</dict>
 		<key>9A077982-30B0-4BED-9EC9-E924BFA05DCD</key>
 		<dict>
@@ -3808,14 +3790,14 @@ Example using Hook to grab markdown link to documents, files, etc, and sending t
 			<key>ypos</key>
 			<integer>2465</integer>
 		</dict>
-		<key>DD054B9B-7D04-4241-B19B-30B4AE5D5C7A</key>
+		<key>DC4D476F-EF10-4220-BF08-C6FCA6D5A0FD</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<integer>45</integer>
+			<integer>35</integer>
 			<key>ypos</key>
-			<integer>4740</integer>
+			<integer>4745</integer>
 		</dict>
 		<key>E1042330-8DA6-4CA6-9F67-89733B706456</key>
 		<dict>
