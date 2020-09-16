@@ -73,6 +73,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>13590767-29F2-45EA-A3EC-4205D0351613</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>80D4A5FD-ABB0-4927-B93A-46185D01EBA5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>182A072B-FAC0-4016-B647-FDCB140B65C2</key>
 		<array>
 			<dict>
@@ -185,7 +198,20 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>E5DE65F1-C320-47AF-8241-CA9CFE420449</string>
+				<string>4ECCC2CE-7B6E-4FA6-9AFE-9F19A4308583</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>437F7CB4-DEE5-4476-A16F-7C2E43C88C37</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BCDAD50A-7BF0-4C94-A86E-F43D41F93035</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -243,6 +269,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>4ECCC2CE-7B6E-4FA6-9AFE-9F19A4308583</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E5DE65F1-C320-47AF-8241-CA9CFE420449</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>507BA1DE-5683-40E8-A8E9-7C9C048121B5</key>
 		<array>
 			<dict>
@@ -287,6 +326,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>C5A87E8B-7396-4272-B149-2DEA1087C8F1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>58D56949-7CCF-40EB-8D6E-FB6DA81F0BE7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4ECCC2CE-7B6E-4FA6-9AFE-9F19A4308583</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -632,6 +684,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>9BC71092-DECE-435D-87A8-87EB47FB9596</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F2D81D94-2F17-4307-97B6-A20C21D68D57</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>9D34CEEC-8419-4A54-A3C0-6C285B6EBE7B</key>
 		<array>
 			<dict>
@@ -684,6 +749,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>AB327E47-6C1D-4BA8-8AE6-C0C3578473E8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>437F7CB4-DEE5-4476-A16F-7C2E43C88C37</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>B39F7A8C-0519-4209-9545-8929037CC5FB</key>
 		<array>
 			<dict>
@@ -701,7 +779,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>BCDAD50A-7BF0-4C94-A86E-F43D41F93035</string>
+				<string>437F7CB4-DEE5-4476-A16F-7C2E43C88C37</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -728,6 +806,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>1C60E887-DAF1-4A80-AEAB-65824E657643</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>C92056FA-F890-4EF8-A476-510647A32E18</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C9DB5FE2-8090-439A-8A18-DD74E04A84C1</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -793,6 +884,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>7F661539-269A-4BE1-8C85-0CE9BE095EA4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E2B8D8F1-1432-4646-A02D-EDEEB0AD29C7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6602F097-AAF8-43AB-8E44-8FEB832EF626</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -1070,6 +1174,29 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>runAppleScript.sh</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>56939936-AEDC-4349-9572-41DEFBDB0379</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<true/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -1119,25 +1246,22 @@ echo -n $out</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
+				<key>argument</key>
 				<string></string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>runAppleScript.sh</string>
-				<key>type</key>
-				<integer>8</integer>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>out</key>
+					<string>{query}</string>
+				</dict>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>56939936-AEDC-4349-9572-41DEFBDB0379</string>
+			<string>C5A87E8B-7396-4272-B149-2DEA1087C8F1</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1156,26 +1280,6 @@ echo -n $out</string>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>F3494981-8358-4610-9C8F-96B8DBEBB47D</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string></string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>out</key>
-					<string>{query}</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>C5A87E8B-7396-4272-B149-2DEA1087C8F1</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1246,6 +1350,29 @@ echo -n $out</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>runAppleScript.sh</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>E3B8A694-6F69-4B70-BA3F-4A15E8BE1172</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<true/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -1291,29 +1418,6 @@ echo -n $out</string>
 			<string>9616EF40-89B7-42CB-B7A7-4DFCDAAF840F</string>
 			<key>version</key>
 			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string></string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>runAppleScript.sh</string>
-				<key>type</key>
-				<integer>8</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>E3B8A694-6F69-4B70-BA3F-4A15E8BE1172</string>
-			<key>version</key>
-			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1453,25 +1557,15 @@ echo -n $out</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string></string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>runAppleScript.sh</string>
-				<key>type</key>
-				<integer>8</integer>
+				<key>triggerid</key>
+				<string>pasteContentsOfPage</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.trigger.external</string>
 			<key>uid</key>
-			<string>9D34CEEC-8419-4A54-A3C0-6C285B6EBE7B</string>
+			<string>4E778FC8-8A99-4279-A2EE-8190D3349558</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1495,15 +1589,25 @@ echo -n $out</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>triggerid</key>
-				<string>pasteContentsOfPage</string>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>runAppleScript.sh</string>
+				<key>type</key>
+				<integer>8</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>4E778FC8-8A99-4279-A2EE-8190D3349558</string>
+			<string>9D34CEEC-8419-4A54-A3C0-6C285B6EBE7B</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1724,6 +1828,47 @@ echo -n $out</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>roambookmarkpage</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Bookmark Chrome or Safari Page</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>C92056FA-F890-4EF8-A476-510647A32E18</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+#from here
+#https://gist.github.com/vitorgalvao/5392178#file-get_title_and_url-applescript
+
+tell application "System Events" to set frontApp to name of first process whose frontmost is trueif (frontApp starts with "Google Chrome") or (frontApp starts with "Chromium") or (frontApp starts with "Opera") or (frontApp starts with "Vivaldi") or (frontApp starts with "Brave Browser") or (frontApp starts with "Microsoft Edge") then	using terms from application "Google Chrome"		tell application frontApp to set currentTabTitle to title of active tab of front window		tell application frontApp to set currentTabUrl to URL of active tab of front window	end using terms fromelse if (frontApp starts with "Safari") or (frontApp starts with "Webkit") then	using terms from application "Safari"		tell application frontApp to set currentTabTitle to name of front document		tell application frontApp to set currentTabUrl to URL of front document	end using terms fromelse	display dialog "You need a supported browser as your frontmost app"end ifset the clipboard to  "[" &amp; currentTabTitle &amp; "](" &amp; currentTabUrl &amp; ")"
+end alfred_script</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>C9DB5FE2-8090-439A-8A18-DD74E04A84C1</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>externaltriggerid</key>
 				<string>jump to block</string>
 				<key>passinputasargument</key>
@@ -1737,6 +1882,26 @@ echo -n $out</string>
 			<string>alfred.workflow.output.callexternaltrigger</string>
 			<key>uid</key>
 			<string>07129A05-5D47-4FC7-89EE-702238F6EB2D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>[[webclips]]</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>paste</key>
+					<string>true</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>ED366AEF-3B13-423A-91C8-883E9CE05D55</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1774,65 +1939,6 @@ echo -n $out</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>applescript</key>
-				<string>on alfred_script(q)
-#from here
-#https://gist.github.com/vitorgalvao/5392178#file-get_title_and_url-applescript
-
-tell application "System Events" to set frontApp to name of first process whose frontmost is trueif (frontApp starts with "Google Chrome") or (frontApp starts with "Chromium") or (frontApp starts with "Opera") or (frontApp starts with "Vivaldi") or (frontApp starts with "Brave Browser") or (frontApp starts with "Microsoft Edge") then	using terms from application "Google Chrome"		tell application frontApp to set currentTabTitle to title of active tab of front window		tell application frontApp to set currentTabUrl to URL of active tab of front window	end using terms fromelse if (frontApp starts with "Safari") or (frontApp starts with "Webkit") then	using terms from application "Safari"		tell application frontApp to set currentTabTitle to name of front document		tell application frontApp to set currentTabUrl to URL of front document	end using terms fromelse	display dialog "You need a supported browser as your frontmost app"end ifset the clipboard to  "[" &amp; currentTabTitle &amp; "](" &amp; currentTabUrl &amp; ")"
-end alfred_script</string>
-				<key>cachescript</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.applescript</string>
-			<key>uid</key>
-			<string>C9DB5FE2-8090-439A-8A18-DD74E04A84C1</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string>[[webclips]]</string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>paste</key>
-					<string>true</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>ED366AEF-3B13-423A-91C8-883E9CE05D55</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>externaltriggerid</key>
-				<string>jump to block</string>
-				<key>passinputasargument</key>
-				<true/>
-				<key>passvariables</key>
-				<true/>
-				<key>workflowbundleid</key>
-				<string>com.jc.roampagesearch</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
-			<key>uid</key>
-			<string>0068D4BB-5C4D-4076-A160-9E38FFDCBB45</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -1860,6 +1966,25 @@ end alfred_script</string>
 			<string>1DF1ACEA-3AD8-468C-8677-0D70D8158D57</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>jump to block</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>com.jc.roampagesearch</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>0068D4BB-5C4D-4076-A160-9E38FFDCBB45</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1907,6 +2032,40 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>roamtodo</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Create a roam todo</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>9BC71092-DECE-435D-87A8-87EB47FB9596</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>triggerid</key>
+				<string>jump to block</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>0D19AAEB-6160-4A33-A00E-97C42DBA7215</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -1932,19 +2091,6 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>triggerid</key>
-				<string>jump to block</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>0D19AAEB-6160-4A33-A00E-97C42DBA7215</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argument</key>
 				<string>{query}</string>
 				<key>passthroughargument</key>
@@ -1959,25 +2105,6 @@ end alfred_script</string>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>5CEBBE94-29E6-4AAA-9B30-492D6DF9D985</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>externaltriggerid</key>
-				<string>jump to block</string>
-				<key>passinputasargument</key>
-				<true/>
-				<key>passvariables</key>
-				<true/>
-				<key>workflowbundleid</key>
-				<string>com.jc.roampagesearch</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
-			<key>uid</key>
-			<string>191379D7-CFA6-4E8A-98DD-0028AED95DF6</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2011,6 +2138,25 @@ end alfred_script</string>
 			<string>DA7C5E48-923E-4F00-ABD8-482FB61DBEDA</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>jump to block</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>com.jc.roampagesearch</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>191379D7-CFA6-4E8A-98DD-0028AED95DF6</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2055,6 +2201,27 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>roamhook</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Inoke hook, then pass to roam</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>13590767-29F2-45EA-A3EC-4205D0351613</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -2086,25 +2253,6 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>externaltriggerid</key>
-				<string>dailyPageConfig</string>
-				<key>passinputasargument</key>
-				<true/>
-				<key>passvariables</key>
-				<true/>
-				<key>workflowbundleid</key>
-				<string>com.jc.roampagesearch</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
-			<key>uid</key>
-			<string>A5EAD48D-7BDB-466B-8314-9866D8586C43</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -2132,6 +2280,25 @@ echo -n $query</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>externaltriggerid</key>
+				<string>dailyPageConfig</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>com.jc.roampagesearch</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>A5EAD48D-7BDB-466B-8314-9866D8586C43</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argument</key>
 				<string>Screenshot Categories</string>
 				<key>passthroughargument</key>
@@ -2146,6 +2313,27 @@ echo -n $query</string>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>B39F7A8C-0519-4209-9545-8929037CC5FB</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>roamscreenshot</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Grab screenshot, paste into roam</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>E2B8D8F1-1432-4646-A02D-EDEEB0AD29C7</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2318,9 +2506,7 @@ echo -n $out</string>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
-				<integer>3</integer>
-				<key>argumenttext</key>
-				<string>Quick Capture Categories</string>
+				<integer>0</integer>
 				<key>focusedappvariable</key>
 				<false/>
 				<key>focusedappvariablename</key>
@@ -2367,12 +2553,124 @@ echo -n $out</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argument</key>
+				<string>Quick Capture Categories</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>437F7CB4-DEE5-4476-A16F-7C2E43C88C37</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>roamjumptodailyexample</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Jump to named tag on daily page</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>AB327E47-6C1D-4BA8-8AE6-C0C3578473E8</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>roamjumptodailywithtodoandtimestamp</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Jump to favorite page, as specified by config page</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>58D56949-7CCF-40EB-8D6E-FB6DA81F0BE7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>pasteContentsOfPage</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>D086F33B-FB97-466F-BE2C-46D40C56BAEE</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>favoritePagesConfig</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>com.jc.roampagesearch</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>E5DE65F1-C320-47AF-8241-CA9CFE420449</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>Favorite Pages</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>4ECCC2CE-7B6E-4FA6-9AFE-9F19A4308583</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
-				<integer>3</integer>
-				<key>argumenttext</key>
-				<string>Favorite Pages</string>
+				<integer>0</integer>
 				<key>focusedappvariable</key>
 				<false/>
 				<key>focusedappvariablename</key>
@@ -2401,86 +2699,6 @@ echo -n $out</string>
 			<key>config</key>
 			<dict>
 				<key>externaltriggerid</key>
-				<string>favoritePagesConfig</string>
-				<key>passinputasargument</key>
-				<true/>
-				<key>passvariables</key>
-				<true/>
-				<key>workflowbundleid</key>
-				<string>com.jc.roampagesearch</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
-			<key>uid</key>
-			<string>E5DE65F1-C320-47AF-8241-CA9CFE420449</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>externaltriggerid</key>
-				<string>pasteContentsOfPage</string>
-				<key>passinputasargument</key>
-				<true/>
-				<key>passvariables</key>
-				<true/>
-				<key>workflowbundleid</key>
-				<string>self</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
-			<key>uid</key>
-			<string>D086F33B-FB97-466F-BE2C-46D40C56BAEE</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>rexjumptodailywithtodoandtimestamp</string>
-				<key>subtext</key>
-				<string>Tag on daily page will be chosen from menu on config page called "Demo Categories"</string>
-				<key>text</key>
-				<string>Jump to named node on daily page, with todo and timestamp</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>58D56949-7CCF-40EB-8D6E-FB6DA81F0BE7</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>rexpastetodailywithtodoandtimestamp</string>
-				<key>subtext</key>
-				<string>Tag on daily page will be chosen from menu on config page called "Demo Categories"</string>
-				<key>text</key>
-				<string>Paste clipboard to named node on daily page, with todo and timestamp</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>71CA844A-42DF-4F45-AA1E-CED01F527D3C</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>externaltriggerid</key>
 				<string>getTagsOfPage</string>
 				<key>passinputasargument</key>
 				<true/>
@@ -2499,24 +2717,13 @@ echo -n $out</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
-				<string>Demo Categories</string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>addtimestamp</key>
-					<string>true</string>
-					<key>paste</key>
-					<string>true</string>
-					<key>todo</key>
-					<string>true</string>
-				</dict>
+				<key>triggerid</key>
+				<string>favoritePagesConfig</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
+			<string>alfred.workflow.trigger.external</string>
 			<key>uid</key>
-			<string>248FF69E-5CDD-4AF7-9BA7-5B47619E2ECC</string>
+			<string>0145BD8E-631A-4396-BAED-38A26C64FFE6</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2595,13 +2802,20 @@ echo -n $out</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>triggerid</key>
-				<string>favoritePagesConfig</string>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>out</key>
+					<string>{query}</string>
+				</dict>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
+			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>0145BD8E-631A-4396-BAED-38A26C64FFE6</string>
+			<string>A31CB604-DE0E-4AC5-9636-E37ADC507414</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2630,45 +2844,6 @@ echo -n $out</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
-				<string></string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>out</key>
-					<string>{query}</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>A31CB604-DE0E-4AC5-9636-E37ADC507414</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>externaltriggerid</key>
-				<string>dailyPageConfig</string>
-				<key>passinputasargument</key>
-				<true/>
-				<key>passvariables</key>
-				<true/>
-				<key>workflowbundleid</key>
-				<string>com.jc.roampagesearch</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
-			<key>uid</key>
-			<string>1D35B0BA-99BA-468A-BE80-EF97AD6D52FC</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>externaltriggerid</key>
 				<string>jump to named page</string>
 				<key>passinputasargument</key>
@@ -2682,6 +2857,70 @@ echo -n $out</string>
 			<string>alfred.workflow.output.callexternaltrigger</string>
 			<key>uid</key>
 			<string>12DA6087-FED7-4587-B7E6-BBB1E3C4DF2B</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>getPagesWithTag</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>2222C20F-B62E-4E6F-B86C-13088E8C132A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>rexpastetodailywithtodoandtimestamp</string>
+				<key>subtext</key>
+				<string>Tag on daily page will be chosen from menu on config page called "Demo Categories"</string>
+				<key>text</key>
+				<string>Paste clipboard to named node on daily page, with todo and timestamp</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>71CA844A-42DF-4F45-AA1E-CED01F527D3C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>Demo Categories</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>addtimestamp</key>
+					<string>true</string>
+					<key>paste</key>
+					<string>true</string>
+					<key>todo</key>
+					<string>true</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>248FF69E-5CDD-4AF7-9BA7-5B47619E2ECC</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2719,6 +2958,25 @@ echo -n $out</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>externaltriggerid</key>
+				<string>dailyPageConfig</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>com.jc.roampagesearch</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>1D35B0BA-99BA-468A-BE80-EF97AD6D52FC</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argument</key>
 				<string>Demo Categories</string>
 				<key>passthroughargument</key>
@@ -2737,25 +2995,6 @@ echo -n $out</string>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>507BA1DE-5683-40E8-A8E9-7C9C048121B5</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>externaltriggerid</key>
-				<string>getPagesWithTag</string>
-				<key>passinputasargument</key>
-				<true/>
-				<key>passvariables</key>
-				<true/>
-				<key>workflowbundleid</key>
-				<string>self</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
-			<key>uid</key>
-			<string>2222C20F-B62E-4E6F-B86C-13088E8C132A</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2828,7 +3067,7 @@ echo -n $out</string>
 			<key>xpos</key>
 			<integer>600</integer>
 			<key>ypos</key>
-			<integer>1785</integer>
+			<integer>2105</integer>
 		</dict>
 		<key>0145BD8E-631A-4396-BAED-38A26C64FFE6</key>
 		<dict>
@@ -2837,9 +3076,9 @@ echo -n $out</string>
 			<key>note</key>
 			<string>External trigger to load dynamic list of favorite pages from config page. These will be displayed in the menu, and the selected page will be jumped to. Input is an arg containing contents of a block on config page use as base for menu. Each child block is expected to contain a reference to one and only one page.</string>
 			<key>xpos</key>
-			<integer>675</integer>
+			<integer>870</integer>
 			<key>ypos</key>
-			<integer>3185</integer>
+			<integer>4265</integer>
 		</dict>
 		<key>07129A05-5D47-4FC7-89EE-702238F6EB2D</key>
 		<dict>
@@ -2848,9 +3087,9 @@ echo -n $out</string>
 			<key>note</key>
 			<string>Jump to daily page block</string>
 			<key>xpos</key>
-			<integer>600</integer>
+			<integer>585</integer>
 			<key>ypos</key>
-			<integer>1560</integer>
+			<integer>1650</integer>
 		</dict>
 		<key>0AAE0185-4588-4C32-B094-7CDB68C31F7A</key>
 		<dict>
@@ -2864,7 +3103,7 @@ and addtimestamp to true</string>
 			<key>xpos</key>
 			<integer>475</integer>
 			<key>ypos</key>
-			<integer>1815</integer>
+			<integer>2135</integer>
 		</dict>
 		<key>0B1CB30C-4EED-4F3B-B1C7-EA370A79E0CD</key>
 		<dict>
@@ -2887,36 +3126,48 @@ Pass (as argument) the string contents of the block on daily page you want to ju
 Pass vars as follows
 paste : "true" if you want to paste</string>
 			<key>xpos</key>
-			<integer>820</integer>
+			<integer>805</integer>
 			<key>ypos</key>
-			<integer>1925</integer>
+			<integer>2330</integer>
 		</dict>
 		<key>11746A23-1882-4878-AC9E-85F4AC69F8AA</key>
 		<dict>
 			<key>note</key>
 			<string>Load config page "RoamSearchConfig", find block whose name matched the block passed, and return sublocks as menu items that can then be jumped to or pasted under on daily page</string>
 			<key>xpos</key>
-			<integer>855</integer>
+			<integer>1120</integer>
 			<key>ypos</key>
-			<integer>2470</integer>
+			<integer>3240</integer>
 		</dict>
 		<key>12DA6087-FED7-4587-B7E6-BBB1E3C4DF2B</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>5</integer>
 			<key>xpos</key>
-			<integer>1430</integer>
+			<integer>1625</integer>
 			<key>ypos</key>
-			<integer>3260</integer>
+			<integer>4340</integer>
+		</dict>
+		<key>13590767-29F2-45EA-A3EC-4205D0351613</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>note</key>
+			<string>HOOK EXAMPLE
+Example using Hook to grab markdown link to documents, files, etc, and sending to a named tag in Roam</string>
+			<key>xpos</key>
+			<integer>85</integer>
+			<key>ypos</key>
+			<integer>2675</integer>
 		</dict>
 		<key>182A072B-FAC0-4016-B647-FDCB140B65C2</key>
 		<dict>
 			<key>note</key>
 			<string>Clear query, but stash result in variable</string>
 			<key>xpos</key>
-			<integer>1040</integer>
+			<integer>1305</integer>
 			<key>ypos</key>
-			<integer>2500</integer>
+			<integer>3270</integer>
 		</dict>
 		<key>191379D7-CFA6-4E8A-98DD-0028AED95DF6</key>
 		<dict>
@@ -2925,9 +3176,9 @@ paste : "true" if you want to paste</string>
 			<key>note</key>
 			<string>Jump to daily page block</string>
 			<key>xpos</key>
-			<integer>590</integer>
+			<integer>595</integer>
 			<key>ypos</key>
-			<integer>1970</integer>
+			<integer>2570</integer>
 		</dict>
 		<key>1C60E887-DAF1-4A80-AEAB-65824E657643</key>
 		<dict>
@@ -2943,9 +3194,9 @@ paste : "true" if you want to paste</string>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<integer>455</integer>
+			<integer>450</integer>
 			<key>ypos</key>
-			<integer>3255</integer>
+			<integer>4740</integer>
 		</dict>
 		<key>1DF1ACEA-3AD8-468C-8677-0D70D8158D57</key>
 		<dict>
@@ -2955,18 +3206,18 @@ paste : "true" if you want to paste</string>
 			<string>TODO EXAMPLE
 Example that grabs selection and sends to tag under roam daily page, as a TODO</string>
 			<key>xpos</key>
-			<integer>95</integer>
+			<integer>85</integer>
 			<key>ypos</key>
-			<integer>1785</integer>
+			<integer>2035</integer>
 		</dict>
 		<key>2222C20F-B62E-4E6F-B86C-13088E8C132A</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>10</integer>
 			<key>xpos</key>
-			<integer>1440</integer>
+			<integer>1635</integer>
 			<key>ypos</key>
-			<integer>3405</integer>
+			<integer>4485</integer>
 		</dict>
 		<key>22C6085D-117D-4658-819C-2BCA0B3DED29</key>
 		<dict>
@@ -2993,18 +3244,18 @@ Example that grabs selection and sends to tag under roam daily page, as a TODO</
 set addtimestamp to true
 add todo to true</string>
 			<key>xpos</key>
-			<integer>280</integer>
+			<integer>275</integer>
 			<key>ypos</key>
-			<integer>3150</integer>
+			<integer>4635</integer>
 		</dict>
 		<key>2D6448F3-A55C-411C-B8BB-426570C809DC</key>
 		<dict>
 			<key>note</key>
-			<string>Go to tag under daily note. Create tag if not present. Do not paste text</string>
+			<string>Go to tag under daily note. Create tag if not present.</string>
 			<key>xpos</key>
-			<integer>1090</integer>
+			<integer>1075</integer>
 			<key>ypos</key>
-			<integer>1925</integer>
+			<integer>2330</integer>
 		</dict>
 		<key>30E87419-E57D-42EF-823F-B21DCB1ADC89</key>
 		<dict>
@@ -3014,18 +3265,18 @@ add todo to true</string>
 			<string>BOOKMARK EXAMPLE
 Example of one key bookmarking- grabs url of current browser tab and sends to tag under daily page. Hook is better :)</string>
 			<key>xpos</key>
-			<integer>95</integer>
+			<integer>55</integer>
 			<key>ypos</key>
-			<integer>1560</integer>
+			<integer>1765</integer>
 		</dict>
 		<key>3C9855AA-5086-453B-8C9C-A54DC4863E56</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<integer>1330</integer>
+			<integer>1595</integer>
 			<key>ypos</key>
-			<integer>2380</integer>
+			<integer>3150</integer>
 		</dict>
 		<key>3D04A873-9014-4A2A-BA23-1A7D1AF25369</key>
 		<dict>
@@ -3049,9 +3300,18 @@ Example showing list of favorite pages with dynamic configuration, driven out of
 
 Passes "Favourite Pages" as arg. Options show in menu are children of "Favourite pages" block on "RoamResearchConfig" page</string>
 			<key>xpos</key>
-			<integer>95</integer>
+			<integer>55</integer>
 			<key>ypos</key>
-			<integer>2785</integer>
+			<integer>4175</integer>
+		</dict>
+		<key>437F7CB4-DEE5-4476-A16F-7C2E43C88C37</key>
+		<dict>
+			<key>note</key>
+			<string>Search config page for tags under block called "Quick Capture Categories"</string>
+			<key>xpos</key>
+			<integer>305</integer>
+			<key>ypos</key>
+			<integer>3605</integer>
 		</dict>
 		<key>4574976C-551F-4B76-882C-B407599C2842</key>
 		<dict>
@@ -3067,9 +3327,9 @@ Passes "Favourite Pages" as arg. Options show in menu are children of "Favourite
 			<key>note</key>
 			<string>Ask user to select a block from dynamically generated config page. Script will the jump to this block on dialy page, creating it if it does not exist</string>
 			<key>xpos</key>
-			<integer>1135</integer>
+			<integer>1400</integer>
 			<key>ypos</key>
-			<integer>2470</integer>
+			<integer>3240</integer>
 		</dict>
 		<key>4E778FC8-8A99-4279-A2EE-8190D3349558</key>
 		<dict>
@@ -3080,6 +3340,15 @@ Passes "Favourite Pages" as arg. Options show in menu are children of "Favourite
 			<key>ypos</key>
 			<integer>970</integer>
 		</dict>
+		<key>4ECCC2CE-7B6E-4FA6-9AFE-9F19A4308583</key>
+		<dict>
+			<key>note</key>
+			<string>Search config page for pages under block called "Favorite Pages"</string>
+			<key>xpos</key>
+			<integer>270</integer>
+			<key>ypos</key>
+			<integer>4155</integer>
+		</dict>
 		<key>507BA1DE-5683-40E8-A8E9-7C9C048121B5</key>
 		<dict>
 			<key>colorindex</key>
@@ -3089,9 +3358,9 @@ Passes "Favourite Pages" as arg. Options show in menu are children of "Favourite
 set addtimestamp to true
 add todo to true</string>
 			<key>xpos</key>
-			<integer>280</integer>
+			<integer>275</integer>
 			<key>ypos</key>
-			<integer>3285</integer>
+			<integer>4770</integer>
 		</dict>
 		<key>53A8F508-C3C7-44C0-BFEB-68469018DE59</key>
 		<dict>
@@ -3100,18 +3369,18 @@ add todo to true</string>
 			<key>note</key>
 			<string>External trigger to load dynamic config menu from Roam. Expects the contents of a block on the config page to be passed in the arg. Children of this block will then be shown in the menu. The selected block will be jumped to on daily page (added if not present), with optional paste, todo, timestamp etc.</string>
 			<key>xpos</key>
-			<integer>510</integer>
+			<integer>775</integer>
 			<key>ypos</key>
-			<integer>2475</integer>
+			<integer>3245</integer>
 		</dict>
 		<key>53BCF28B-1549-4403-9660-F7E11EC759DA</key>
 		<dict>
 			<key>note</key>
 			<string>set mode to getConfigPageNames</string>
 			<key>xpos</key>
-			<integer>870</integer>
+			<integer>1065</integer>
 			<key>ypos</key>
-			<integer>3215</integer>
+			<integer>4295</integer>
 		</dict>
 		<key>56939936-AEDC-4349-9572-41DEFBDB0379</key>
 		<dict>
@@ -3124,19 +3393,21 @@ add todo to true</string>
 		</dict>
 		<key>58D56949-7CCF-40EB-8D6E-FB6DA81F0BE7</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
 			<key>xpos</key>
-			<integer>290</integer>
+			<integer>50</integer>
 			<key>ypos</key>
-			<integer>3000</integer>
+			<integer>4010</integer>
 		</dict>
 		<key>5CEBBE94-29E6-4AAA-9B30-492D6DF9D985</key>
 		<dict>
 			<key>note</key>
 			<string>set mode to quickEntryDaily</string>
 			<key>xpos</key>
-			<integer>995</integer>
+			<integer>980</integer>
 			<key>ypos</key>
-			<integer>1955</integer>
+			<integer>2360</integer>
 		</dict>
 		<key>6602F097-AAF8-43AB-8E44-8FEB832EF626</key>
 		<dict>
@@ -3145,9 +3416,9 @@ add todo to true</string>
 			<key>note</key>
 			<string>grabs a sceenshot and puts into clipboard. Alfred needs screen recording permissions</string>
 			<key>xpos</key>
-			<integer>280</integer>
+			<integer>290</integer>
 			<key>ypos</key>
-			<integer>2280</integer>
+			<integer>3025</integer>
 		</dict>
 		<key>6761B0AF-825E-46C6-B70E-03EA1A755652</key>
 		<dict>
@@ -3156,9 +3427,9 @@ add todo to true</string>
 			<key>note</key>
 			<string>set paste to true, and set target tag on daily page</string>
 			<key>xpos</key>
-			<integer>470</integer>
+			<integer>475</integer>
 			<key>ypos</key>
-			<integer>2000</integer>
+			<integer>2600</integer>
 		</dict>
 		<key>6FD03D07-5C84-4D66-B81B-95562E336F93</key>
 		<dict>
@@ -3172,16 +3443,17 @@ add todo to true</string>
 		<key>71CA844A-42DF-4F45-AA1E-CED01F527D3C</key>
 		<dict>
 			<key>xpos</key>
-			<integer>60</integer>
+			<integer>40</integer>
 			<key>ypos</key>
-			<integer>3120</integer>
+			<integer>4595</integer>
 		</dict>
 		<key>74EA125C-81A7-4BA8-B114-1CE76B121C25</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>note</key>
-			<string>Example of using a keyword to jump straight to a page</string>
+			<string>GO TO NAMED PAGE EXAMPLE
+In this case go to page named "Roam"</string>
 			<key>xpos</key>
 			<integer>50</integer>
 			<key>ypos</key>
@@ -3192,9 +3464,9 @@ add todo to true</string>
 			<key>note</key>
 			<string>Ask user to select a block from dynamically generated config page. Script will the jump to this block on dialy page, creating it if it does not exist</string>
 			<key>xpos</key>
-			<integer>1260</integer>
+			<integer>1455</integer>
 			<key>ypos</key>
-			<integer>3185</integer>
+			<integer>4265</integer>
 		</dict>
 		<key>7F661539-269A-4BE1-8C85-0CE9BE095EA4</key>
 		<dict>
@@ -3212,18 +3484,18 @@ add todo to true</string>
 			<key>note</key>
 			<string>Get url and title of front chrome or safari windows as markdown in clipboard</string>
 			<key>xpos</key>
-			<integer>275</integer>
+			<integer>280</integer>
 			<key>ypos</key>
-			<integer>1970</integer>
+			<integer>2570</integer>
 		</dict>
 		<key>83ACD212-8384-4AEA-9BEA-67934CF93DC3</key>
 		<dict>
 			<key>note</key>
 			<string>Load config page "RoamSearchConfig", find block whose name matched the block passed, and return sublocks as page names that can be jumped to</string>
 			<key>xpos</key>
-			<integer>970</integer>
+			<integer>1165</integer>
 			<key>ypos</key>
-			<integer>3185</integer>
+			<integer>4265</integer>
 		</dict>
 		<key>83D39038-AB3A-4F47-8AA7-59FF56AC1C9A</key>
 		<dict>
@@ -3247,9 +3519,9 @@ add todo to true</string>
 			<string>set mode to 
 getConfigPageData</string>
 			<key>xpos</key>
-			<integer>710</integer>
+			<integer>975</integer>
 			<key>ypos</key>
-			<integer>2505</integer>
+			<integer>3275</integer>
 		</dict>
 		<key>8ABF6748-C5F1-4BAF-8B66-4B1845F3C12F</key>
 		<dict>
@@ -3267,18 +3539,18 @@ getConfigPageData</string>
 			<key>note</key>
 			<string>Jump to daily page block</string>
 			<key>xpos</key>
-			<integer>1320</integer>
+			<integer>1585</integer>
 			<key>ypos</key>
-			<integer>2575</integer>
+			<integer>3345</integer>
 		</dict>
 		<key>9198E5F7-E1B4-4E5B-88D2-5AC7E1DD3511</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<integer>90</integer>
+			<integer>50</integer>
 			<key>ypos</key>
-			<integer>3410</integer>
+			<integer>4900</integer>
 		</dict>
 		<key>9616EF40-89B7-42CB-B7A7-4DFCDAAF840F</key>
 		<dict>
@@ -3298,9 +3570,9 @@ getConfigPageData</string>
 set addtimestamp to false
 add todo to true</string>
 			<key>xpos</key>
-			<integer>280</integer>
+			<integer>275</integer>
 			<key>ypos</key>
-			<integer>3440</integer>
+			<integer>4925</integer>
 		</dict>
 		<key>9B1204F4-C451-4A32-B3EF-D6592EDE88F1</key>
 		<dict>
@@ -3321,6 +3593,18 @@ Can be run by keyword "roam" or by hotkey</string>
 			<integer>495</integer>
 			<key>ypos</key>
 			<integer>670</integer>
+		</dict>
+		<key>9BC71092-DECE-435D-87A8-87EB47FB9596</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>note</key>
+			<string>TODO EXAMPLE
+Example that grabs selection and sends to tag under roam daily page, as a TODO</string>
+			<key>xpos</key>
+			<integer>85</integer>
+			<key>ypos</key>
+			<integer>2255</integer>
 		</dict>
 		<key>9BEF8B77-9290-4E5E-9848-AB965CB2085B</key>
 		<dict>
@@ -3356,18 +3640,18 @@ Can be run by keyword "roam" or by hotkey</string>
 			<key>note</key>
 			<string>Clear query, but stash result in variable</string>
 			<key>xpos</key>
-			<integer>1155</integer>
+			<integer>1350</integer>
 			<key>ypos</key>
-			<integer>3215</integer>
+			<integer>4295</integer>
 		</dict>
 		<key>A5EAD48D-7BDB-466B-8314-9866D8586C43</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<integer>610</integer>
+			<integer>620</integer>
 			<key>ypos</key>
-			<integer>2280</integer>
+			<integer>3025</integer>
 		</dict>
 		<key>A795CE93-18F3-440F-B223-30241E27459C</key>
 		<dict>
@@ -3377,6 +3661,20 @@ Can be run by keyword "roam" or by hotkey</string>
 			<integer>190</integer>
 			<key>ypos</key>
 			<integer>285</integer>
+		</dict>
+		<key>AB327E47-6C1D-4BA8-8AE6-C0C3578473E8</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>note</key>
+			<string>JUMP TO DAILY TAG EXAMPLE
+Example showing jumping to tag on daily page with dynamic configuration, driven out of roam.
+
+Passes "Quick Capture Categories" as arg</string>
+			<key>xpos</key>
+			<integer>95</integer>
+			<key>ypos</key>
+			<integer>3695</integer>
 		</dict>
 		<key>B0B5D83C-21CF-43B3-8698-480FF5018C2D</key>
 		<dict>
@@ -3394,18 +3692,18 @@ Can be run by keyword "roam" or by hotkey</string>
 			<key>note</key>
 			<string>set paste to true</string>
 			<key>xpos</key>
-			<integer>485</integer>
+			<integer>495</integer>
 			<key>ypos</key>
-			<integer>2310</integer>
+			<integer>3055</integer>
 		</dict>
 		<key>BCDAD50A-7BF0-4C94-A86E-F43D41F93035</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<integer>285</integer>
+			<integer>440</integer>
 			<key>ypos</key>
-			<integer>2630</integer>
+			<integer>3575</integer>
 		</dict>
 		<key>BECDCB00-E806-4033-B78A-F81BFFA8F9CC</key>
 		<dict>
@@ -3417,9 +3715,9 @@ Example showing jumping to tag on daily page with dynamic configuration, driven 
 
 Passes "Quick Capture Categories" as arg</string>
 			<key>xpos</key>
-			<integer>95</integer>
+			<integer>90</integer>
 			<key>ypos</key>
-			<integer>2590</integer>
+			<integer>3415</integer>
 		</dict>
 		<key>C00679E8-7344-4506-88A2-B8FE0A3872A7</key>
 		<dict>
@@ -3444,9 +3742,21 @@ Passes "Quick Capture Categories" as arg</string>
 			<key>colorindex</key>
 			<integer>12</integer>
 			<key>xpos</key>
-			<integer>1430</integer>
+			<integer>1625</integer>
 			<key>ypos</key>
-			<integer>3125</integer>
+			<integer>4205</integer>
+		</dict>
+		<key>C92056FA-F890-4EF8-A476-510647A32E18</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>note</key>
+			<string>BOOKMARK EXAMPLE
+Example of one key bookmarking- grabs url of current browser tab and sends to tag under daily page. Hook is better :)</string>
+			<key>xpos</key>
+			<integer>55</integer>
+			<key>ypos</key>
+			<integer>1530</integer>
 		</dict>
 		<key>C98D1012-5979-49E9-A758-F78A5EE0118F</key>
 		<dict>
@@ -3464,18 +3774,18 @@ Passes "Quick Capture Categories" as arg</string>
 			<key>note</key>
 			<string>Get url and title of front chrome or safari windows as markdown</string>
 			<key>xpos</key>
-			<integer>295</integer>
+			<integer>280</integer>
 			<key>ypos</key>
-			<integer>1560</integer>
+			<integer>1650</integer>
 		</dict>
 		<key>D086F33B-FB97-466F-BE2C-46D40C56BAEE</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>7</integer>
 			<key>xpos</key>
-			<integer>1450</integer>
+			<integer>1645</integer>
 			<key>ypos</key>
-			<integer>2940</integer>
+			<integer>4020</integer>
 		</dict>
 		<key>D0EFFBD2-DC88-4DB5-9B1D-23290D33375D</key>
 		<dict>
@@ -3494,18 +3804,18 @@ Passes "Quick Capture Categories" as arg</string>
 			<string>HOOK EXAMPLE
 Example using Hook to grab markdown link to documents, files, etc, and sending to a named tag in Roam</string>
 			<key>xpos</key>
-			<integer>95</integer>
+			<integer>85</integer>
 			<key>ypos</key>
-			<integer>1970</integer>
+			<integer>2465</integer>
 		</dict>
 		<key>DD054B9B-7D04-4241-B19B-30B4AE5D5C7A</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<integer>105</integer>
+			<integer>45</integer>
 			<key>ypos</key>
-			<integer>3275</integer>
+			<integer>4740</integer>
 		</dict>
 		<key>E1042330-8DA6-4CA6-9F67-89733B706456</key>
 		<dict>
@@ -3517,6 +3827,18 @@ I set this to ⇧⌘D same as Roam</string>
 			<integer>65</integer>
 			<key>ypos</key>
 			<integer>825</integer>
+		</dict>
+		<key>E2B8D8F1-1432-4646-A02D-EDEEB0AD29C7</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>note</key>
+			<string>GRAB SCREENSHOT EXAMPLE
+Example that grabs screenshot, and prompts for where to paste it based on dynamic config in Roam. Note that this hotkey sends name of menu node as an arg</string>
+			<key>xpos</key>
+			<integer>85</integer>
+			<key>ypos</key>
+			<integer>3145</integer>
 		</dict>
 		<key>E3B8A694-6F69-4B70-BA3F-4A15E8BE1172</key>
 		<dict>
@@ -3541,9 +3863,9 @@ I set this to ⇧⌘D same as Roam</string>
 			<key>colorindex</key>
 			<integer>2</integer>
 			<key>xpos</key>
-			<integer>270</integer>
+			<integer>430</integer>
 			<key>ypos</key>
-			<integer>2785</integer>
+			<integer>4125</integer>
 		</dict>
 		<key>ED366AEF-3B13-423A-91C8-883E9CE05D55</key>
 		<dict>
@@ -3552,9 +3874,9 @@ I set this to ⇧⌘D same as Roam</string>
 			<key>note</key>
 			<string>set paste to true, and set target tag on daily page</string>
 			<key>xpos</key>
-			<integer>485</integer>
+			<integer>470</integer>
 			<key>ypos</key>
-			<integer>1590</integer>
+			<integer>1680</integer>
 		</dict>
 		<key>EE341FD2-38E2-440A-9072-1AA4B9DF1A25</key>
 		<dict>
@@ -3592,7 +3914,7 @@ I set this to ⇧⌘D same as Roam</string>
 			<key>xpos</key>
 			<integer>275</integer>
 			<key>ypos</key>
-			<integer>1785</integer>
+			<integer>2105</integer>
 		</dict>
 		<key>F2F339A7-A90B-4FA2-95EE-E8B1F96ADEA7</key>
 		<dict>
@@ -3604,7 +3926,7 @@ Example that grabs screenshot, and prompts for where to paste it based on dynami
 			<key>xpos</key>
 			<integer>85</integer>
 			<key>ypos</key>
-			<integer>2280</integer>
+			<integer>2885</integer>
 		</dict>
 		<key>F3494981-8358-4610-9C8F-96B8DBEBB47D</key>
 		<dict>
