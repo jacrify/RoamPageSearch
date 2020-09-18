@@ -3954,7 +3954,7 @@ Example that grabs screenshot, and prompts for where to paste it based on dynami
 		<string>DBName</string>
 	</array>
 	<key>version</key>
-	<string>5.1</string>
+	<string>5.2</string>
 	<key>webaddress</key>
 	<string>https://www.putyourleftfoot.in/roampagesearch</string>
 </dict>

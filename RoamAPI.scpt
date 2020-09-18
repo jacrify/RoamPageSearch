@@ -955,7 +955,7 @@ on run argv
 					open location "https://" & searchString
 				end tell
 			end using terms from
-			display dialog "You must have a tab in your preferred browser (Chrome) open on your roam database. Opening one for you, once open please try again"
+			display dialog "You must have a tab in your preferred browser (" & preferredBrowser & ") open on your roam database. Opening one for you, once open please try again"
 		end if
 		return
 
@@ -1081,7 +1081,7 @@ on run argv
 			tell application "Safari"
 				open location "https://" & searchString
 			end tell
-			display dialog "You must have a tab in your preferred browser (Safari) open on your roam database. Opening one for you, once open please try again"
+			display dialog "You must have a tab in your preferred browser (" & preferredBrowser & ") open on your roam database. Opening one for you, once open please try again"
 		end if
 	end if
 
