@@ -3946,12 +3946,15 @@ Example that grabs screenshot, and prompts for where to paste it based on dynami
 		<string>RoamSearchConfig</string>
 		<key>keydelay</key>
 		<string>0.3</string>
+		<key>offlinedb</key>
+		<string>true</string>
 		<key>preferredBrowser</key>
 		<string>Chrome</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
 		<string>DBName</string>
+		<string>offlinedb</string>
 	</array>
 	<key>version</key>
 	<string>5.2</string>

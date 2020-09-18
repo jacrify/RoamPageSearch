@@ -346,6 +346,14 @@ on run argv
 	set keydelay to (system attribute "keydelay") as number
 	set mode to (system attribute "mode")
 
+
+	set offlinedb to (system attribute "offlinedb")
+	if offlinedb is "true" then
+		set baseurl to "https://roamresearch.com/#/offline/" & dbname
+	else
+		set baseurl to "https://roamresearch.com/#/app/" & dbname
+	end if
+
 	if ((system attribute "addtimestamp") is "true") then
 		set addtimestamp to true
 	else
@@ -801,7 +809,7 @@ on run argv
 	set tabindex to 0
 
 
-	set searchString to "roamresearch.com/#/app/" & dbname
+	set searchString to baseurl
 
 	#list of list of tab urls from all windows
 	set allWindowsTabURLList to ""
@@ -902,32 +910,29 @@ on run argv
 				#find the page uid
 				set pageID to injectChromeJavascript(foundWindow, searchjavascript, foundtab)
 				#TODO we should really check if this is not found
-				set pageURL to "https://roamresearch.com/#/app/" & dbname & "/page/" & pageID
+				set pageURL to baseurl & "/page/" & pageID
 
 				goToChromePage(foundWindow, pageURL, tabindex)
 				#end if
 
 			else if mode is "gotoDaily" then
-				set targetURL to "https://roamresearch.com/#/app/" & dbname
-				goToChromePage(foundWindow, targetURL, tabindex)
+				goToChromePage(foundWindow, baseurl, tabindex)
 
 			else if mode is "goToPageByID" then
-				set targetURL to "https://roamresearch.com/#/app/" & dbname & "/page/" & targetPage
+				set targetURL to baseurl & "/page/" & targetPage
 				goToChromePage(foundWindow, targetURL, tabindex)
 			else if mode is "pastePageContent" then
 				set resp to injectChromeJavascript(foundWindow, getPageContent, foundtab)
 				return resp
 			else if mode is "quickEntryDaily" then
-				set targetURL to "https://roamresearch.com/#/app/" & dbname
-
 				set pageID to injectChromeJavascript(foundWindow, quickentryjavascript, foundtab)
 
 				if (pageID as string) is equal to "notfound" then
 					#add tag to daily notes page
-					goToChromePage(foundWindow, targetURL, tabindex)
+					goToChromePage(foundWindow, baseurl, tabindex)
 					addToTopOfPage(targetTag, textToEnter, pastemode, addtodo)
 				else
-					set pageURL to "https://roamresearch.com/#/app/" & dbname & "/page/" & pageID
+					set pageURL to baseurl & "/page/" & pageID
 					goToChromePage(foundWindow, pageURL, tabindex)
 					focusBottomOfPage(textToEnter, pastemode, addtodo)
 				end if
@@ -1027,33 +1032,29 @@ on run argv
 				#find the page uid
 				set pageID to injectSafariJavascript(foundWindow, searchjavascript)
 				#TODO we should really check if this is not found
-				set pageURL to "https://roamresearch.com/#/app/" & dbname & "/page/" & pageID
+				set pageURL to baseurl & "/page/" & pageID
 				goToSafariPage(foundWindow, pageURL)
 
 			else if mode is "goToPageByID" then
-				set targetURL to "https://roamresearch.com/#/app/" & dbname & "/page/" & targetPage
+				set targetURL to baseurl & "/page/" & targetPage
 				goToSafariPage(foundWindow, targetURL)
 
 
 			else if mode is "gotoDaily" then
-				set targetURL to "https://roamresearch.com/#/app/" & dbname
-				goToSafariPage(foundWindow, targetURL)
+				goToSafariPage(foundWindow, baseurl)
 			else if mode is "pastePageContent" then
 				set resp to injectSafariJavascript(foundWindow, getPageContent, foundtab)
 				return resp
 			else if mode is "quickEntryDaily" then
 
-
-				set targetURL to "https://roamresearch.com/#/app/" & dbname
-
 				set pageID to injectSafariJavascript(foundWindow, quickentryjavascript)
 				if (pageID as string) is equal to "notfound" then
 					#display dialog "pageID"
 					#add tag to daily notes page
-					goToSafariPage(foundWindow, targetURL)
+					goToSafariPage(foundWindow, baseurl)
 					addToTopOfPage(targetTag, textToEnter, pastemode, addtodo)
 				else
-					set pageURL to "https://roamresearch.com/#/app/" & dbname & "/page/" & pageID
+					set pageURL to baseurl & "/page/" & pageID
 					goToSafariPage(foundWindow, pageURL)
 					focusBottomOfPage(textToEnter, pastemode, addtodo)
 				end if
